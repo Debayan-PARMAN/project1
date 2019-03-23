@@ -35,7 +35,7 @@ class ForgotPassword extends Component {
 
     onSubmit = () => {
         const { userDetails } = this.props.userState;
-        if (userDetails.contactNo !== '' && userDetails.contactNo.length === 10) {
+        if (userDetails.contactNo !== '' && userDetails.contactNo.length === 13) {
             this.props.forgotPassword();
             this.props.navigation.navigate('ForgotPasswordOtp');
 
@@ -71,8 +71,8 @@ class ForgotPassword extends Component {
                     <TextInput style={textInputStyle.primaryTextInput}
                         placeholder="Enter Number"
                         value={userDetails.contactNo}
-                        maxLength={10}
-                        keyboardType="numeric"
+                        maxLength={13}
+                       // keyboardType="numeric"
                         onChangeText={(e) => this.onValueChange(e, 'contactNo')}
                     />
 

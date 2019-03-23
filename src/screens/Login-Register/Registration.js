@@ -50,7 +50,7 @@ class Registration extends Component {
     const {userDetails} = this.props.userState;
     const regex = /[0-9]/g;
 
-    if (!(regex.test(userDetails.contactNo) && userDetails.contactNo.length === 10)){
+    if (!(regex.test(userDetails.contactNo) && userDetails.contactNo.length === 13)){
       Alert.alert(
         '',
         message='Provide a valid number',
@@ -65,7 +65,6 @@ class Registration extends Component {
     }
     else {
       this.props.numberCheckRegistration(this.props.navigation.navigate)
-     
     }
   }
   render() {
@@ -78,10 +77,10 @@ class Registration extends Component {
             <Text style={FontStyles.font}>{en.commonLabel.createAccountBtn}</Text>
           </View> */}
           <View style={LoginStyles.textInput}>
-            <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.mobileNumberLabel}</Text>          
-           <TextInput
+            <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.mobileNumberLabel}</Text>         
+            <TextInput
               style={textInputStyle.primaryTextInput}
-              placeholder="Enter your Mobile Number"
+              // placeholder="Enter your Mobile Number"
               value={userDetails.contactNo}
               maxLength={13}
               // keyboardType="numeric"

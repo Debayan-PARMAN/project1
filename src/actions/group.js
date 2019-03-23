@@ -29,7 +29,6 @@ export function getMyGroup() {
 };
 
 export function getMyGroupSuccess(payload) {
-   // console.log('Arpan Khan',payload);
     return {
         type: USER_TYPE.GET_MYGROUP_SUCCESS,
         payload,
