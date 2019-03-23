@@ -10,14 +10,13 @@ import Search_Doctor_Card from '../../components/Card/SearchDoctorCard';
 import ToggleSwitch from 'toggle-switch-react-native';
 import imageConstantURI from '../../constants/imageConst';
 import { textInputStyle } from '../../styelsheets/CommonStyle';
-import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 
 class Find_Doctor_Filter extends Component {
     
      static navigationOptions = {
-         title: 'Find Doctor',
+         title: 'FIND DOCTOR',
          headerBackground: (
              <LinearGradient
                  colors={['#a25ca8', '#582491']}

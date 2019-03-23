@@ -14,7 +14,7 @@ import en from '../../messages/en-us';
 
 class AddAddress extends Component {
     static navigationOptions = {
-        title: 'AddAddress',
+        title: 'ADD ADDRESS',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -218,7 +218,7 @@ class AddAddress extends Component {
         return (
             <View style={AddAddressStyle.mainWrapper}>
                 <ScrollView>                   
-                    <KeyboardAvoidingView behavior="position">
+                  
                             {/*<HomeAddress/>*/}                          
                                     {customAddressArea }
                                     { selectCountryArea }
@@ -228,7 +228,7 @@ class AddAddress extends Component {
                                     { city }
                                     { selectStateArea }
                                     { addressBtn }                              
-                       </KeyboardAvoidingView>
+                       
                 </ScrollView>                  
             </View>
         );

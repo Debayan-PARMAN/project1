@@ -36,18 +36,20 @@ export default MyAppointmentStyle = StyleSheet.create({
     },
     dateArea: {
         flex: 1,
-        height: 25,     
+        //height: 25,  
+    
+           
     },
     datetext: {
         fontFamily: styleConstants.fontStyles.fontFamily,       
-        fontSize: styleConstants.fontStyles.bodyFontSize2,
+        fontSize: styleConstants.fontStyles.bodyFontSize4,
         color: styleConstants.fontStyles.fontColor,
-        padding:3,
-        marginLeft:5     
+        //padding:3,
+        //marginLeft:5     
     },
     cardArea:{
         flex: 1,
-        height: 130,
+        //height: 130,
         backgroundColor:'#fff',       
         justifyContent: 'center',
                  
@@ -56,12 +58,14 @@ export default MyAppointmentStyle = StyleSheet.create({
         flex: 0.88,            
         backgroundColor: '#fff',
         borderBottomWidth: 1, borderColor: '#ccc',
-        padding: 5 
+        
+       // padding: 5 
     },  
     doctordetails: {
         flex: 0.98,
         flexDirection: 'row',
-        padding: 5,
+        marginTop: 3,
+        //padding: 5,
     },  
     doctorName: {
         fontWeight: styleConstants.fontStyles.fontWeight,
@@ -71,23 +75,24 @@ export default MyAppointmentStyle = StyleSheet.create({
     },  
     chamberLocation: {
         fontFamily: styleConstants.fontStyles.fontFamily,
-        fontSize: styleConstants.fontStyles.headerGroup.h3FontSize,
+        fontSize: styleConstants.fontStyles.bodyFontSize2,
         color: styleConstants.fontStyles.fontColor,
         marginTop: 3
     }, 
     patientName: {
         fontFamily: styleConstants.fontStyles.fontFamily,
-        fontWeight: styleConstants.fontStyles.fontWeight,
-        fontSize: styleConstants.fontStyles.bodyFontSize2,
+        //fontWeight: styleConstants.fontStyles.fontWeight,
+        fontSize: styleConstants.fontStyles.bodyFontSize4,
         color: styleConstants.fontStyles.fontColor,
          marginTop: 3
     },   
     confirmpaid: {
         fontWeight: styleConstants.fontStyles.fontWeight,
         fontFamily: styleConstants.fontStyles.fontFamily,
-        fontSize: styleConstants.fontStyles.bodyFontSize2,
+        fontSize: styleConstants.fontStyles.bodyFontSize4,
         color: styleConstants.fontStyles.fontColor1,  
-         marginTop: 10
+         marginTop: 3,
+         marginBottom: 5,
     },
     rightArrow: {
         flex: 0.1,
@@ -104,22 +109,22 @@ export default MyAppointmentStyle = StyleSheet.create({
     // ****************for Past Tab*************
     pastContainer: {
         flex: 1,
-        height: 145,
+       // height: 145,
     },
     pastInnerContainer: {
         flex: 1,
-        margin: 10,
+       // margin: 10,
         borderBottomWidth: 1,
         borderColor: '#ccc',
     },
     doctorContainer: {
-        height: 25,
+        //height: 25,
         flexDirection: 'row',
-        justifyContent: 'center'
+        justifyContent: 'space-between',
     },
     doctor: {
         flex: 0.7,
-        height: 25,
+        //height: 25,
     },
     doctorText: {       
        
@@ -137,7 +142,9 @@ export default MyAppointmentStyle = StyleSheet.create({
         },
     
     complete: {
-        flex: 0.3, height: 25,
+        flex: 0.3, 
+
+        //height: 25,
     },
     completeText: {
         fontWeight: styleConstants.fontStyles.fontWeight,
@@ -146,7 +153,9 @@ export default MyAppointmentStyle = StyleSheet.create({
         color: styleConstants.fontStyles.fontColor1,
     },
     locationContainer: {
-        flex: 1, height: 40, flexDirection: 'row',
+        flex: 1, 
+        //height: 40, 
+        flexDirection: 'row',
     },
     locationInnerContainer: {
         flex: 0.85, height: 50,
@@ -175,7 +184,7 @@ export default MyAppointmentStyle = StyleSheet.create({
         width: 23, height: 23, marginTop: 15, marginLeft: 25
     },
     rateprescriptionorderContainer: {
-        flex: 0.97, height: 30, marginTop: 15, flexDirection: 'row',
+        flex: 0.97, height: 30, marginTop: 15, flexDirection: 'row',marginBottom: 10,
         justifyContent: 'space-between',
     },
     ratebtn: {

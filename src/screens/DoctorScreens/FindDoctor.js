@@ -22,23 +22,22 @@ class Find_Doctor extends Component {
         title: 'FIND DOCTOR',
         headerBackground: (
             <LinearGradient
-                colors={['#a25ca8', '#582491'] }
-                style={{ flex: 1,  }}
-                start = { [0, 0.5]}
-                end = { [1, 0]}
-                
-        />
-  ),
-    headerTitleStyle: { 
-        color: '#fff',
-          
-        fontWeight: 'bold',
-      //paddingLeft: 50,
-      //justifyContent: 'center',
-       //alignItems: 'center',
-       marginLeft: 100,
-                    },
-}
+                colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+                style={{ flex: 1, }}
+                start={[0, 0]}
+                end={[1, 1]}
+            />
+        ),
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+            //paddingLeft: 50,
+            textAlign: "center",
+            justifyContent: 'center',
+            flex: 0.8,
+
+        }
+    };
 
     onPressSpeicalityButton = () => {
         this.props.updateState({ selectedBTN: 'Specialities' });

@@ -9,6 +9,7 @@ import { viewGroupMember, deleteGroup, addMember } from '../../actions/group';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import en from '../../messages/en-us';
+import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 
 class GroupMemberCard extends Component {   
     render() { 
@@ -16,9 +17,12 @@ class GroupMemberCard extends Component {
         //console.log(memberData.groupPermission.status);      
         return (   
                   
-            <Card style={GroupStyle.CardContainer}>                   
+            <View style = {{ paddingTop: 7, paddingLeft:10, paddingRight: 10 }}>                   
                 <View style={GroupStyle.CardRow1}>
-                    <Text style={GroupStyle.MemberNameText}>{en.commonLabel.nameLabel} : { memberData.name }</Text>                        
+                    <View style = {{ flexDirection: 'row',}}>
+                        <Text style={textInputStyle.primaryTextInputFontStyle}>{en.commonLabel.nameLabel}   : </Text>
+                        <Text style={GroupStyle.chamberLocation}>{ memberData.name }</Text>                        
+                    </View>
                     
                     <Text style={GroupStyle.relationNameText}> { memberData.groupRole }</Text>
                    
@@ -26,17 +30,31 @@ class GroupMemberCard extends Component {
 
                 <View style={GroupStyle.CardmidContainer}>
                     <View style={GroupStyle.midtextContainer}>
-                       <Text style={GroupStyle.MemberNameText}>{en.commonLabel.contactNoLabel} : { memberData.contactNo }</Text>                         
-                       <Text style={[GroupStyle.MemberNameText, {marginTop:5}]}>{en.loginLabels.emailLabel} : { memberData.emailAddress }</Text>
+
+                        <View style={{ flexDirection: 'row',marginTop:5 } }>
+                            <Text style={textInputStyle.primaryTextInputFontStyle}>Mobile : </Text>
+                            <Text style={GroupStyle.chamberLocation}>{memberData.contactNo}</Text>
+                        </View>
+
+                        <View style={{ flexDirection: 'row', marginTop: 5}}>
+                            <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.emailLabel}   : </Text>
+                            <Text style={GroupStyle.chamberLocation}>{memberData.emailAddress}</Text>
+                        </View>
                     </View>
                     <TouchableOpacity onPress={(e) => this.props.onSelectedMember(memberData.id)}>
                         <View style={GroupStyle.imageCont}>
                             <Image style={GroupStyle.ArrowContainer} source={imageConstantURI.rightArrow.src}/>
                         </View>
                     </TouchableOpacity>
-                </View>                   
-                <Text style={[GroupStyle.MemberNameText,{marginTop: 3}]}>{en.appointmentScreens.statusLabel} : { memberData.groupPermission.status ? 'True' : 'False'}</Text>
-                </Card>             
+                </View>
+                
+                <View style={{ flexDirection: 'row', marginTop: 5}}>
+                    <Text style={textInputStyle.primaryTextInputFontStyle}>{en.appointmentScreens.statusLabel} : </Text>
+                    <Text style={GroupStyle.chamberLocation}>{memberData.groupPermission.status ? 'True' : 'False'}</Text>
+                </View>
+                <View style={{ borderBottomWidth: 1, borderBottomColor: "#ccc", marginTop: 7 }}/>
+                    
+            </View>             
                 
         );
     }

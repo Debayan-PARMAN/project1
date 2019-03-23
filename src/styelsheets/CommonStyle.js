@@ -53,15 +53,15 @@ export const buttonStyle = {
     primaryBtnText: {
         fontFamily:'Roboto',
         color: '#fff',
-        fontSize: 17,
-        fontWeight:'bold',
+        fontSize: 15,
+        //fontWeight:'bold',
         textAlign:'center'
     },
     secondaryBtnText: {
         fontFamily: 'Roboto',
         color: '#93278f',
-        fontSize: 17,
-        fontWeight: 'bold',
+        fontSize: 15,
+        //fontWeight: 'bold',
         textAlign: 'center'
     },
 };
@@ -69,13 +69,13 @@ export const buttonStyle = {
 export const textInputStyle = {
     primaryTextInputFontStyle: {
         fontFamily: 'Roboto',
-        fontSize: 16,
-        color: '#808080',
-        fontWeight: 'bold',
+        fontSize: 15,
+        color: '#ad4274',
+        //fontWeight: 'bold',
     },
     primaryTextInput:{
         height: 35,
-        fontSize: 18,       
+        fontSize: 16,       
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
         color: styleConstants.fontStyles.fontColor,  

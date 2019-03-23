@@ -14,7 +14,7 @@ import en from '../../messages/en-us';
 
 class CancelAppointmentComment extends Component {
     static navigationOptions = {
-        title: 'CancelAppointment',
+        title: 'CANCEL APPOINTMENT',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -63,21 +63,24 @@ class CancelAppointmentComment extends Component {
             <View style={CancelAppointmentStyle.mainWrapper}>
                 <ScrollView>            
 
-                        <Text style={[CancelAppointmentStyle.AreYouSureText, {margin:10}]}>
-                            {en.appointmentScreens.cancelCommentHeading}</Text>
+                    {/*  <Text style={[CancelAppointmentStyle.AreYouSureText, {margin:10}]}>
+                            {en.appointmentScreens.cancelCommentHeading}</Text>*/}
                    
                     <View style={CancelAppointmentStyle.CancelCommentContainer}>
-                        {/* <View style={{ flex: 0.7, height: 120,}}> */}
+                        <Text style={CancelAppointmentStyle.PleaseShareText}>Please Share the Reason </Text>
+                        {/* <View style={{ flex: 0.7, height: 120,}}> */}   
+                      <View style = {{justifyContent:'center',alignItems:'center'}}>                     
                             <TextInput
                             style={CancelAppointmentStyle.CancelCommentContainerTextInput}
                                 editable={true}
                                 maxLength={250}
                                 multiline={true}
-                                placeholder="Please Type your Comment "
+                                //placeholder="Please Type your Comment "
                                 onChangeText={(e) => this.onValueChange(e, 'appointmentCxlReason')}
                                 value={commentText.appointmentCxlReason}
                             />
                         {/* </View> */}
+                        </View>
                     </View>
 
                     <View style={CancelAppointmentStyle.YesBtnContainer}>
@@ -94,16 +97,14 @@ class CancelAppointmentComment extends Component {
                   
                     <Text style={[CancelAppointmentStyle.AreYouSureText,]}>{en.appointmentScreens.orLabel}</Text>
                    
-                    <View style={CancelAppointmentStyle.YesBtnContainer}>                   
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('AppointmentDetails')} >
-                                <LinearGradient
-                                    style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle6]}
-                                    colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
-                                    start={{ x: 0, y: 0 }}
-                                    end={{ x: 1, y: 1 }} >
-                                    <Text style={[buttonStyle.primaryBtnText]}>{en.appointmentScreens.goBackBtnLabel}</Text>
-                                </LinearGradient>
-                            </TouchableOpacity>
+                    <View style={CancelAppointmentStyle.YesBtnContainer}>               
+                       
+
+                        <TouchableOpacity
+                            style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle6]}
+                            onPress={() => this.props.navigation.navigate('AppointmentDetails')} >
+                            <Text style={[buttonStyle.secondaryBtnText]}>{en.appointmentScreens.goBackBtnLabel}</Text>
+                        </TouchableOpacity>
                         
                     </View>
 

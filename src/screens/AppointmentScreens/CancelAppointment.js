@@ -60,16 +60,13 @@ class CancelAppointment extends Component {
 
                      </View> 
 
-                    <View style={CancelAppointmentStyle.YesBtnContainer}>                                               
+                    <View style={CancelAppointmentStyle.YesBtnContainer}>                                              
+                           
+
                             <TouchableOpacity
-                                onPress={() => this.props.navigation.navigate('AppointmentDetails')}>
-                                <LinearGradient
-                                    style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle6]}
-                                    colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
-                                    start={{ x: 0, y: 0 }}
-                                    end={{ x: 1, y: 1 }} >
-                                    <Text style={[buttonStyle.primaryBtnText, { fontSize: 14 }]}>{en.appointmentScreens.goBackBtnLabel}</Text>
-                                </LinearGradient>
+                                style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle6]}
+                                onPress={() => this.props.navigation.navigate('AppointmentDetails')} >
+                                <Text style={[buttonStyle.secondaryBtnText]}>{en.appointmentScreens.goBackBtnLabel}</Text>
                             </TouchableOpacity>
 
                     </View>                  

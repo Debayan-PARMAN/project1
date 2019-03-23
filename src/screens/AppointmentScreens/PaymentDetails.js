@@ -21,7 +21,7 @@ import en from '../../messages/en-us';
 class Payment_Details extends Component {
 
     static navigationOptions = {
-        title: 'PaymentDetails',
+        title: 'PAYMENT DETAILS',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}

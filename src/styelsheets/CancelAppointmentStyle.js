@@ -27,18 +27,24 @@ export default CancelAppointmentStyle = StyleSheet.create({
     },
 
     AreYouSureText: {
-        fontSize: styleConstants.fontStyles.headerGroup.h3FontSize,
-        fontWeight: styleConstants.fontStyles.fontWeight,
-        color: styleConstants.fontStyles.fontColor,
+        fontSize: styleConstants.fontStyles.bodyFontSize1,     
+        color: styleConstants.fontStyles.fontColor3,
         padding:5,
-        textAlign:'center' 
+        textAlign: styleConstants.fontStyles.textAlign,
+    },
+     PleaseShareText: {
+        fontSize: styleConstants.fontStyles.bodyFontSize1,     
+        color: styleConstants.fontStyles.fontColor3,
+        padding:5,
+        marginLeft:14
+       
     },
     CancelCommentContainer:  
-     { flex: 1, height: 130, justifyContent: 'center', alignItems: 'center' 
+     { flex: 1, height: 180,marginTop :20
 
     }, 
     CancelCommentContainerTextInput:    
-        { width: 320, height: 120,borderRadius:3, borderColor: '#93278f', borderWidth: 1, paddingLeft: 5 }
+        { width: 320, height: 120,borderRadius:3, borderColor: '#93278f', borderWidth: 1, padding: 5  }
     , 
 
    YesBtnContainer : {

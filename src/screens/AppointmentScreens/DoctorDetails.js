@@ -16,7 +16,7 @@ class Doctor_Details extends Component {
     // }
 
     static navigationOptions = {
-        title: 'Doctor Details',
+        title: 'DOCTOR DETAILS',
         headerStyle: {
             backgroundColor: '#572a6f',
         },

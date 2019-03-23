@@ -87,19 +87,22 @@ export default GroupStyles = StyleSheet.create({
         flex: 0.85, height: 25, marginTop: 5, flexDirection: 'row', justifyContent: 'space-between',
     },
     ratebtn: {
-        width: 60, height: 25, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'
+        width: 60, 
+        height: 25, flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center',
+        //backgroundColor: "#ccc",
 
     },
     notificationbtn: {
-        width: 100, height: 25, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginRight: 10
+        width: 100, height: 25, flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', marginRight: 10
 
     },
     ratebtnText: {
-        padding: .1, 
+        //padding: 1, 
         fontFamily: styleConstants.fontStyles.fontFamily,
         fontSize: styleConstants.fontStyles.bodyFontSize2,
         color: styleConstants.fontStyles.fontColor,       
-        textAlign: styleConstants.fontStyles.textAlign,
+       // textAlign: styleConstants.fontStyles.textAlign,
+       textAlign: "left",
     },
     groupbtnContainer: 
     {
@@ -123,7 +126,7 @@ export default GroupStyles = StyleSheet.create({
     },
     SubContainer2:
     {
-       flex: 0.85, height: 25, marginTop: 5, flexDirection: 'row', justifyContent: 'space-between', 
+        flex: 0.85, height: 25, marginTop: 5, flexDirection: 'row', justifyContent: 'space-evenly', 
     },
     horizontalrowContainer:
         { flex: 1, height: 50, padding: 10, flexDirection: 'row', },
@@ -141,10 +144,12 @@ export default GroupStyles = StyleSheet.create({
         flex: 1,
         backgroundColor: "red",
     },
+
+    
     CardRow1:
     {
      flex: 1,
-     height: 30,
+     //height: 30,
      justifyContent: 'space-between',
      alignItems: 'center',
      flexDirection: 'row',
@@ -161,8 +166,8 @@ export default GroupStyles = StyleSheet.create({
     {
         //textAlign: styleConstants.fontStyles.textAlign,
         fontFamily: styleConstants.fontStyles.fontFamily,
-        fontWeight: styleConstants.fontStyles.fontWeight,
-        fontSize: styleConstants.fontStyles.bodyFontSize2,
+        //fontWeight: styleConstants.fontStyles.fontWeight,
+        fontSize: styleConstants.fontStyles.bodyFontSize3,
         color: styleConstants.fontStyles.fontColor1,
     },
     ArrowContainer:
@@ -172,14 +177,22 @@ export default GroupStyles = StyleSheet.create({
     },
     midtextContainer:
     {
-        flex: 1, height: 60, justifyContent: 'center',
+        flex: 1, justifyContent: 'center',
     },
     imageCont:
     {
-        width: 40, height: 60, justifyContent: 'space-around', borderRadius: 5
+        width: 40,
+        // height: 60, 
+        justifyContent: 'space-around', borderRadius: 5
     },
     CardmidContainer:
     {
-        flex: 1, height: 55, justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row',
+        flex: 1,  justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row',
     },
+    chamberLocation: {
+        fontFamily: styleConstants.fontStyles.fontFamily,
+        fontSize: styleConstants.fontStyles.bodyFontSize2,
+        color: styleConstants.fontStyles.fontColor,
+      
+    }, 
 });

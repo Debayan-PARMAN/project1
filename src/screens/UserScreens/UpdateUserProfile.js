@@ -16,7 +16,7 @@ import styleConstants from '../../constants/styleConstants';
 class Update_User_Profile extends Component {
 
     static navigationOptions = {
-        title: 'UpdateUserProfile',
+        title: 'UPDATE USER PROFILE',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -147,7 +147,7 @@ class Update_User_Profile extends Component {
                     <TextInput editable={userDetails.fieldsEditable}
                         value={userDetails.bloodGroup}
                         style={textInputStyle.primaryTextInput}
-                        placeholder="bloodGroup"
+                        placeholder=""
                         onChangeText={(e) => this.onValueChange(e, 'bloodGroup')}
                         value={userDetails.bloodGroup}
                     />
@@ -167,7 +167,7 @@ class Update_User_Profile extends Component {
                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.heightLabel}</Text>
                 <TextInput editable={userDetails.fieldsEditable}
                     style={textInputStyle.primaryTextInput}
-                    placeholder="Height"
+                    placeholder=""
                     keyboardType="numeric"
                     onChangeText={(e) => this.onValueChange(e, 'height')}
                     value={userDetails.height} 
@@ -178,7 +178,7 @@ class Update_User_Profile extends Component {
                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.weightLabel}</Text>
                 <TextInput editable={userDetails.fieldsEditable}
                     style={textInputStyle.primaryTextInput}
-                    placeholder="Weight"
+                    placeholder=""
                     keyboardType="numeric"
                     onChangeText={(e) => this.onValueChange(e, 'weight')}
                     value={userDetails.weight} />
@@ -190,7 +190,7 @@ class Update_User_Profile extends Component {
             <Text editable={userDetails.fieldsEditable} style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.genderLabel}</Text>
                 <TextInput editable={userDetails.fieldsEditable}
                     style={textInputStyle.primaryTextInput}
-                    placeholder="gender"
+                    placeholder=""
                     onChangeText={(e) => this.onValueChange(e, 'gender')}
                     value={userDetails.gender} />
             </View>
@@ -198,7 +198,7 @@ class Update_User_Profile extends Component {
                 <Text editable={userDetails.fieldsEditable} style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.maritalStatusLable}</Text>
                 <TextInput editable={userDetails.fieldsEditable}
                     style={textInputStyle.primaryTextInput}
-                    placeholder="maritialStatus"
+                    placeholder=""
                     onChangeText={(e) => this.onValueChange(e, 'maritialStatus')}
                     value={userDetails.maritialStatus} />
             </View>

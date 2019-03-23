@@ -12,7 +12,7 @@ import en from '../../messages/en-us';
 
 class ForgotPasswordOtp extends Component {
     static navigationOptions = {
-        title: 'ForgotPassword',
+        title: 'FORGOT PASSWORD',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}

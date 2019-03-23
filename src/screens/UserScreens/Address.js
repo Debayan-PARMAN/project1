@@ -15,7 +15,7 @@ import en from '../../messages/en-us';
 
 class Address extends Component {
     static navigationOptions = {
-        title: 'Address Type',
+        title: 'ADDRESS TYPE',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}

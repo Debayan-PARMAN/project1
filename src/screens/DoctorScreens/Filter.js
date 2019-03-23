@@ -14,7 +14,7 @@ import en from '../../messages/en-us';
 class Filter extends React.Component {
 
    static navigationOptions = {
-      title: 'Find Doctor',
+      title: 'FIND DOCTOR',
       headerStyle: {
          backgroundColor: '#572a6f',
       },

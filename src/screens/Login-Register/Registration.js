@@ -38,15 +38,7 @@ class Registration extends Component {
     this.props.updateState({ userDetails });
   }
 
-  // checkData = (commonData) => {
-  //   if (commonData.length === 10 && commonData.test(/d/g)){
-  //     this.setState({ contactNo: commonData });
-  //     return true;
-  //   } else {
-  //     this.setState({ emailAddress: commonData });
-  //     return false;
-  //   }
-  // }
+  
 
   onCancelAlert = () => {
     this.props.updateState({ responseTriggerred: false });
@@ -73,25 +65,12 @@ class Registration extends Component {
     }
     else {
       this.props.numberCheckRegistration(this.props.navigation.navigate)
-      //   // this.props.navigation.navigate('VerifyMobileMumber');
-      // } else {
-      //   Alert.alert(
-      //     '',
-      //     message = 'Number1 already exists',
-      //     [{
-      //       text: 'Cancel',
-      //       onPress: this.onCancelAlert,
-      //       style: 'cancel'
-      //     }], {
-      //       cancelable: false
-      //     }
-      //   );
-      // }
+     
     }
   }
   render() {
     const { userDetails } = this.props.userState;
-    const { contactNo } = this.props.userState;
+   
     return (
       <View style={LoginStyles.mainWrapper}>
         <ScrollView>
@@ -99,13 +78,13 @@ class Registration extends Component {
             <Text style={FontStyles.font}>{en.commonLabel.createAccountBtn}</Text>
           </View> */}
           <View style={LoginStyles.textInput}>
-            <Text style={TextInputStyles.font}>{en.loginLabels.mobileNumberLabel}</Text>           
-            <TextInput
-              style={TextInputStyles.textInputfield}
-              placeholder="Type your Mobile Number"
+            <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.mobileNumberLabel}</Text>          
+           <TextInput
+              style={textInputStyle.primaryTextInput}
+              placeholder="Enter your Mobile Number"
               value={userDetails.contactNo}
-              maxLength={10}
-              keyboardType="numeric"
+              maxLength={13}
+              // keyboardType="numeric"
               onChangeText={(e) => this.onValueChange(e, 'contactNo')} />
           </View>         
           <View style={[LoginStyles.button, { marginTop: 20 }]}>          

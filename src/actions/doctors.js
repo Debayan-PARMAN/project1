@@ -194,7 +194,7 @@ export function getAppoinmentListFailure(error) {
 
 export function cancelAppointment() {
     return (dispatch, getState) => {
-        console.log("Trigger Cencel......")
+        //console.log("Trigger Cencel......")
         const { userDetails } = getState().userState;
         const { AppointmentDetails, commentText } = getState().doctorState;
         const tokenValue = userDetails.token;
@@ -239,7 +239,7 @@ export function cancelAppointmentFailure(error) {
 
 //====================For Doctor Specialization================
 export function doctorSpecializations() {
-    console.log("get doctor specialization pressed")
+    //console.log("get doctor specialization pressed")
     return (dispatch, getState) => {
         const { AppointmentDetails } = getState().doctorState;
         const { userDetails } = getState().userState;
@@ -258,7 +258,7 @@ export function doctorSpecializations() {
 }
 
 export function doctorSpecializationsSuccess(payload) {
-    console.log("DoctorDetails:",payload);
+    //console.log("DoctorDetails:",payload);
     return {
         type: DOCTOR_TYPE.DOCTOR_SPECIALIZATION_SUCCESS,
         payload,

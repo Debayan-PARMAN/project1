@@ -9,6 +9,7 @@ export default styleConstants = {
     fontColor:'#4d4d4d',
     fontColor1: '#93278f',
     fontColor2: '#808080',
+    fontColor3: '#ad4274',   
     fontWeight:'bold',
     textAlign:'center',
     textDecorationLine: 'underline',

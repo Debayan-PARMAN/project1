@@ -11,7 +11,7 @@ import en from '../../messages/en-us';
 
 class LifeStyle extends Component {
    static navigationOptions = {
-      title: 'LifeStyle',
+      title: 'LIFE STYLE',
       headerStyle: {
          backgroundColor: '#572a6f',
       },

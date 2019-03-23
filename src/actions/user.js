@@ -79,8 +79,11 @@ export function numberCheckRegistration(callback) {
         if (result.status === 5051) {
           dispatch(numberCheckSuccess(result));
         } else {
-          dispatch(requestOTP());
-          callback(('VerifyMobileMumber'));
+          
+            alert('Number Already Exits.....');
+         
+          // dispatch(requestOTP());
+          // callback(('VerifyMobileMumber'));
         }
       })
       .catch(error => dispatch(numberCheckFailure(error)));
@@ -366,7 +369,7 @@ export function addAddress() {
     dispatch({
       type: USER_TYPE.ADD_ADDRESS
     });
-     console.log("addAddress Params*******************",addAddressParams);
+    // console.log("addAddress Params*******************",addAddressParams);
     doPut(`${URI.updateUserProfile}`, addAddressParams, true, true, tokenValue)
     // doPut(`http://206.189.150.18:9090/v1/inusers`, addAddressParams, true, true, tokenValue)
       .then(result => dispatch(addAddressSuccess(result)))

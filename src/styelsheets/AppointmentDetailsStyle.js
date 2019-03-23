@@ -9,24 +9,30 @@ export default AppointmentDetailsStyle = StyleSheet.create({
     },
     TopFlex: {
         flex: 1,
-        height: 120,
+        height: 80,
         flexDirection: 'row',
     },
     ImageContainer: {
-        flex: 0.3,
+        flex: 0.25,
         margin: 10
     },
+     profileImageArea:
+    { width: 50,
+      height: 50,
+      margin: 5 
+    },
     DoctorNameContainer: {
-        flex: 0.7,
+        flex: 0.75,
         margin: 10
     },
     DoctorName: {
-        fontSize: styleConstants.fontStyles.headerGroup.h3FontSize,
+        fontSize: styleConstants.fontStyles.bodyFontSize2,
         fontWeight: styleConstants.fontStyles.fontWeight,
-        color: styleConstants.fontStyles.fontColor,
+        color: styleConstants.fontStyles.fontColor3,
     },
     DoctorDesignation: {
-        fontSize: styleConstants.fontStyles.bodyFontSize1,
+         fontSize: styleConstants.fontStyles.bodyFontSize2,
+        color: styleConstants.fontStyles.fontColor,
     },
     AppointmentStatusContainer: {
         flex: 1,
@@ -60,16 +66,16 @@ export default AppointmentDetailsStyle = StyleSheet.create({
     },
 
     HeaderText: {
-        fontSize: styleConstants.fontStyles.headerGroup.h4FontSize,
+        fontSize: styleConstants.fontStyles.bodyFontSize2,
         padding: 1,
         marginLeft: 10,
-        fontWeight: styleConstants.fontStyles.fontWeight,
-        color: styleConstants.fontStyles.fontColor,
+       // fontWeight: styleConstants.fontStyles.fontWeight,
+        color: styleConstants.fontStyles.fontColor3,
     },
-    FooterText: {
-        fontSize: styleConstants.fontStyles.bodyFontSize1,
+    FooterText: {        
         padding: 1,
         marginLeft: 10, 
-        color: styleConstants.fontStyles.fontColor,      
+        fontSize: styleConstants.fontStyles.bodyFontSize2,
+        color: styleConstants.fontStyles.fontColor,   
     },
 });

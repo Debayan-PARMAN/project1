@@ -18,7 +18,7 @@ class MyAppointmentPast extends Component {
     }
 
     static navigationOptions = {
-        title: 'MyAppointment',
+        title: 'MY APPOINTMENT PAST',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
