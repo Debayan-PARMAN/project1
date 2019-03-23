@@ -244,7 +244,7 @@ export default en = {
   userProfileMessages: {
     welcomeMsgLabel: 'Welcome',
     accountCreatedMsg: 'Account Successfully Created',
-    welcomeMessageInfo: 'To Serve you better please share a Few Information with us',
+    welcomeMessageInfo: 'TO SEARVE YOU BETTER PLEASE SHARE A FEW INFORMATION WITH US',
 
   },
   

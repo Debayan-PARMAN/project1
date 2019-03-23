@@ -61,8 +61,8 @@ class ForgotPasswordOtp extends Component {
                         <TextInput style={textInputStyle.primaryTextInput}
                             placeholder="Enter Number"
                             value={userDetails.contactNo}
-                            maxLength={10}
-                            keyboardType="numeric"
+                            maxLength={13}
+                           // keyboardType="numeric"
                             onChangeText={(e) => this.onValueChange(e, 'contactNo')} 
                         />         
                    

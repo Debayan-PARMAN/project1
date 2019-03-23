@@ -1,23 +1,24 @@
+
 import styleConstants from '../constants/styleConstants';
 export const buttonStyle = {
 
-    primaryBtnStyle:{   
+    primaryBtnStyle: {
         borderRadius: 3,
-        justifyContent: 'center',      
+        justifyContent: 'center',
     },
-    secondaryBtnStyle:{       
-        justifyContent: 'center',       
+    secondaryBtnStyle: {
+        justifyContent: 'center',
         borderRadius: 3,
-        borderWidth:1,
-        borderColor:'#93278f',
+        borderWidth: 1,
+        borderColor: '#93278f',
     },
-    tertiaryBtnStyle:{
+    tertiaryBtnStyle: {
 
     },
-    disabledBtnStyle:{
+    disabledBtnStyle: {
 
     },
-    btnSizeStyle1:{
+    btnSizeStyle1: {
         width: 140,
         height: 32,
     },
@@ -28,7 +29,6 @@ export const buttonStyle = {
     btnSizeStyle3: {
         width: 60,
         height: 26,
-      
     },
     btnSizeStyle4: {
         width: 100,
@@ -37,11 +37,11 @@ export const buttonStyle = {
     btnSizeStyle5: {
         width: 60,
         height: 32,
-        backgroundColor:'#972493',       
+        backgroundColor: '#972493',
     },
     btnSizeStyle6: {
         width: 200,
-        height: 32,         
+        height: 32,
     },
     btnSizeStyle7: {
         width: 100,
@@ -51,17 +51,17 @@ export const buttonStyle = {
         borderColor: '#93278f'
     },
     primaryBtnText: {
-        fontFamily:'Roboto',
+        fontFamily: 'Roboto',
         color: '#fff',
-        fontSize: 17,
-        fontWeight:'bold',
-        textAlign:'center'
+        fontSize: 15,
+        //fontWeight:'bold',
+        textAlign: 'center'
     },
     secondaryBtnText: {
         fontFamily: 'Roboto',
         color: '#93278f',
-        fontSize: 17,
-        fontWeight: 'bold',
+        fontSize: 15,
+        //fontWeight: 'bold',
         textAlign: 'center'
     },
 };
@@ -69,30 +69,27 @@ export const buttonStyle = {
 export const textInputStyle = {
     primaryTextInputFontStyle: {
         fontFamily: 'Roboto',
-        fontSize: 16,
-        color: '#808080',
-        fontWeight: 'bold',
+        fontSize: 15,
+        color: '#ad4274',
+        //fontWeight: 'bold',
     },
-    primaryTextInput:{
+    primaryTextInput: {
         height: 35,
-        fontSize: 18,       
+        fontSize: 16,
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
-        color: styleConstants.fontStyles.fontColor,  
+        color: styleConstants.fontStyles.fontColor,
     },
     ActiveTextInput: {
-        color: styleConstants.colorStyles.activeColor,  
+        color: styleConstants.colorStyles.activeColor,
     },
     InActiveTextInput: {
-        color: styleConstants.colorStyles.inActiveColor,  
+        color: styleConstants.colorStyles.inActiveColor,
     },
-    secondaryTextInput:{
+    secondaryTextInput: {
 
     },
-    disabledTextInput:{
+    disabledTextInput: {
 
     }
 };
-
-
-

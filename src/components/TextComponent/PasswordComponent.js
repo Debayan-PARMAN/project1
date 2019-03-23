@@ -29,7 +29,7 @@ export default class PasswordComponent extends React.Component {
   render() {
     return (
       <View>
-        <Text style={this.props.labelStyle}>Password</Text>
+        <Text style={this.props.labelStyle}>{this.props.label}</Text>
         <TextInput {...this.props} secureTextEntry={this.state.password}/>
         <Icon style={styles.icon}
           name={this.state.icEye}

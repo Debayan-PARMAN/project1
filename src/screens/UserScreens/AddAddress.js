@@ -6,7 +6,7 @@ import { updateState, addAddress } from '../../actions/user';
 import { getStates } from '../../actions/common';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
-import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { LinearGradient } from 'expo';
 import AddAddressStyle from '../../styelsheets/AddAddressStyle';
 import Drop_Down from '../../components/DropDown';

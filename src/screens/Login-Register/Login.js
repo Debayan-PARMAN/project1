@@ -97,7 +97,7 @@ class LogIn extends Component {
             <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.mobileNumberLabel}</Text>
             <TextInput
                 style={textInputStyle.primaryTextInput}
-                placeholder="Enter your Mobile Number"
+               // placeholder="Enter your Mobile Number"
                 value={userDetails.contactNo}
                 maxLength={13}
                 // keyboardType="numeric"
@@ -108,7 +108,7 @@ class LogIn extends Component {
             <PasswordComponent
                 style={textInputStyle.primaryTextInput}
                 labelStyle={textInputStyle.primaryTextInputFontStyle}
-                placeholder="Type your Password"
+                label='Password'
                 secureTextEntry={showPassword}
                 value={userDetails.password}
                 onChangeText={(e) => this.onValueChange(e, 'password')}

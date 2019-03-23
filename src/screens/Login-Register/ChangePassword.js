@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { resetPassword, updateState } from '../../actions/user';
-import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView, showPassword } from 'react-native';
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
+import PasswordComponent from '../../components/TextComponent/PasswordComponent';
 import styleConstants from '../../constants/styleConstants';
 
 class ChangePassword extends Component {
@@ -49,27 +50,35 @@ class ChangePassword extends Component {
          const { userDetails } = this.props.userState;           
             
         return (
-             <View style={{ flex: 1, padding:5}}>
-                <ScrollView>                                      
-             <View style={{ flex:1,marginTop:15}}>
-                <Text style={[textInputStyle.primaryTextInputFontStyle, { marginTop: 4 }]}>{en.loginLabels.newPasswordLabel}</Text>
-                     <TextInput style={textInputStyle.primaryTextInput}
-                    placeholder="************"
-                    value={userDetails.password}    
-                    onChangeText={(e) => this.onValueChange(e, 'password')}
-                />
+           
+            <ScrollView style={LoginStyles.mainWrapper}>                                      
+             <View style={{ flex:1,marginTop:15}}>               
+
+                        <PasswordComponent
+                            style={textInputStyle.primaryTextInput}
+                            labelStyle={textInputStyle.primaryTextInputFontStyle}
+                            label='Password'
+                            secureTextEntry={showPassword}
+                            value={userDetails.password}
+                            onChangeText={(e) => this.onValueChange(e, 'password')}
+                        />
             </View>  
 
               <View style={{ flex: 1, height: 40, marginTop: 15, justifyContent: 'center',alignItems: 'center', }}>
-                          <TouchableOpacity onPress={this.onSubmit}>
-                            <View style={{ width: 120, height: 35, backgroundColor: '#572a6f',alignItems: 'center', justifyContent: 'center',   borderWidth: 1, borderRadius: 5 }}>
-                                <Text style={{ textAlign: 'center', color: '#fff', }}>{en.commonLabel.submitLabel}</Text>
-                            </View>
-                          </TouchableOpacity>                      
+                         
+                        <TouchableOpacity onPress={this.onSubmit}>
+                            <LinearGradient
+                                style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle1,]}
+                                colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+                                start={{ x: 0, y: 0 }}
+                                end={{ x: 1, y: 1 }} >
+                                <Text style={[buttonStyle.primaryBtnText]}>{en.commonLabel.submitLabel}</Text>
+                            </LinearGradient>
+                        </TouchableOpacity>                     
                        </View>                                                             
                                  
                 </ScrollView>                  
-            </View>           
+            
         ); 
       }
 };
