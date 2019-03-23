@@ -12,23 +12,22 @@ export default class Appointment_Card_Past extends Component {
         //console.log(AppointmentDetails);
         return (
             
-            <View>
+            <View style ={{ padding: 10 }}>
                 {/* ************for rate tab********************* */}
-                <View style={MyAppointmentStyle.dateArea}>
-                    <Text style={MyAppointmentStyle.datetext}>Feb 11,2019,Monday</Text>
+                <View style={[MyAppointmentStyle.dateArea,{marginBottom: 5 }]}>
+                    <Text style={MyAppointmentStyle.datetext}>Feb 11, 2019, Monday</Text>
                 </View>
                 <View style={MyAppointmentStyle.pastContainer}>
                     <View
                         style={MyAppointmentStyle.pastInnerContainer}>
                         <View
                             style={MyAppointmentStyle.doctorContainer}>
-                            <View style={MyAppointmentStyle.doctor}>
-                                <Text style={MyAppointmentStyle.doctorText}>{en.appointmentScreens.drLabel}Rajib Bhattarcharya </Text>
-                            </View>
-                            <View
-                                style={MyAppointmentStyle.complete}>
+                            
+                                <Text style={MyAppointmentStyle.doctorText}>{en.appointmentScreens.drLabel} Rajib Bhattarcharya </Text>
+                            
+                            
                                 <Text style={MyAppointmentStyle.completeText}>{en.appointmentScreens.completedLabel} </Text>
-                            </View>
+                            
                         </View>
 
                         <View
@@ -36,10 +35,10 @@ export default class Appointment_Card_Past extends Component {
                             <View
                                 style={MyAppointmentStyle.locationInnerContainer}>
                                 <View style={MyAppointmentStyle.location}>
-                                    <Text style={MyAppointmentStyle.locationText}>Amri SaltLake, 10am </Text>
+                                     <Text style={MyAppointmentStyle.chamberLocation}>Amri SaltLake, 10am </Text>
                                 </View>
                                 <View style={MyAppointmentStyle.patient}>
-                                    <Text style={MyAppointmentStyle.patientText}>{en.appointmentScreens.forLabel} RupNarayan Bhattarcharya </Text>
+                                    <Text style={MyAppointmentStyle.patientName}>{en.appointmentScreens.forLabel} RupNarayan Bhattarcharya </Text>
                                 </View>
                             </View>
                             <View

@@ -19,7 +19,7 @@ class GroupDetails extends Component {
         this.props.viewGroupMember();
     }
     static navigationOptions = {
-        title: 'GroupDetails',
+        title: 'GROUP DETAILS',
        headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -72,12 +72,17 @@ class GroupDetails extends Component {
         );
         const groupBtn = (
             <View style={GroupStyle.groupDetailsbtnContainer}> 
-               <View>             
-                 <TouchableOpacity
-                    style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle1]}
-                    onPress={() => this.props.navigation.navigate('AddNewGroupMember')} >
-                    <Text style={[buttonStyle.secondaryBtnText]}>{en.groupLabels.addMemberBtn}</Text>
-                 </TouchableOpacity>              
+               <View>            
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate('AddNewGroupMember')}>
+                        <LinearGradient
+                            style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle1]}
+                            colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+                            start={{ x: 0, y: 0 }}
+                            end={{ x: 1, y: 1 }} >
+                            <Text style={[buttonStyle.primaryBtnText]}>{en.groupLabels.addMemberBtn}</Text>
+                        </LinearGradient>
+                    </TouchableOpacity>
                 </View>
                 <View>
                 <TouchableOpacity

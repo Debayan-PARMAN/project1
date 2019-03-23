@@ -12,7 +12,7 @@ import styleConstants from '../../constants/styleConstants';
 
 class ChangePassword extends Component {
     static navigationOptions = {
-        title: 'ChangePassword',
+        title: 'CHANGE PASSWORD',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}

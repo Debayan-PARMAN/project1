@@ -21,7 +21,7 @@ class Appointment_Confirmation extends Component {
     };
 
     static navigationOptions = {
-        title: 'Appointment Confirmation',
+        title: 'APPOINTMENT CONFIRMATION',
         headerStyle: {
             backgroundColor: '#572a6f',
         },

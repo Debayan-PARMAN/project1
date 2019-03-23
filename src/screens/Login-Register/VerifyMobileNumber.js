@@ -12,7 +12,7 @@ import en from '../../messages/en-us';
 
 class Verify_Mobile_Number extends Component {
     static navigationOptions = {
-        title: 'VerifyMobileNumber',
+        title: 'VERIFY MOBILE NUMBER',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}

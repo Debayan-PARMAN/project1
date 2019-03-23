@@ -26,7 +26,7 @@ class GroupMember extends Component {
 
     }
     static navigationOptions = {
-        title: 'GroupMember',
+        title: 'GROUP MEMBER',
        headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -74,11 +74,18 @@ class GroupMember extends Component {
                     onPress={this.onSubmit}>
                     <Text style={[buttonStyle.secondaryBtnText]}>{en.groupLabels.removeBtnLabel}</Text>
                 </TouchableOpacity>
+                
+                
                 <TouchableOpacity
-                    style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle1]}
-                    onPress={this.updateMember} >
-                    <Text style={[buttonStyle.secondaryBtnText]}>{en.groupLabels.updateBtnLabel}</Text>
-                </TouchableOpacity>               
+                    onPress={this.onSubmit}>
+                    <LinearGradient
+                        style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle1]}
+                        colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }} >
+                        <Text style={[buttonStyle.primaryBtnText]}>{en.groupLabels.updateBtnLabel}</Text>
+                    </LinearGradient>
+                </TouchableOpacity>
             </View>
         );
         return (
@@ -101,9 +108,9 @@ class GroupMember extends Component {
                                             <Text style={GroupStyle.ratebtnText}>{en.groupLabels.editCheckboxLabel}</Text>
                                                 </View>
                                                 <View style={GroupStyle.ratebtn}>
-                                                <CheckBox checked={memberDetails.groupPermission.viewPermissionFlag} 
+                                                    <CheckBox checked={memberDetails.groupPermission.viewPermissionFlag} 
                                                         onPress={() =>this.onClick('viewPermissionFlag') }/>
-                                            <Text style={GroupStyle.ratebtnText}>{en.groupLabels.viewCheckboxLabel} </Text>
+                                                    <Text style={GroupStyle.ratebtnText}>{en.groupLabels.viewCheckboxLabel} </Text>
                                                 </View>
                                                 <View style={GroupStyle.notificationbtn}>
                                                 <CheckBox checked={memberDetails.groupPermission.notifyPermissionFlag} 

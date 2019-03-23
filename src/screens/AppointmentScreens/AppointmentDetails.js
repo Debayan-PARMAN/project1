@@ -18,7 +18,7 @@ import en from '../../messages/en-us';
 class AppointmentDetails extends Component {
     
     static navigationOptions = {
-        title: 'AppointmentDetails',
+        title: 'APPOINTMENT DETAILS',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -50,7 +50,7 @@ class AppointmentDetails extends Component {
                 <ScrollView>    
                     <View style={AppointmentDetailsStyle.TopFlex}>
                         <View style={AppointmentDetailsStyle.ImageContainer}>
-                            <Image style={UpdateUserProfileStyle.profileImageArea}
+                            <Image style={AppointmentDetailsStyle.profileImageArea}
                                 source={imageConstantURI.doctorImage.src} />
                         </View>
                         <View style={AppointmentDetailsStyle.DoctorNameContainer}>
@@ -63,9 +63,13 @@ class AppointmentDetails extends Component {
                         <Text style={AppointmentDetailsStyle.HeaderText}>{en.appointmentScreens.appointmentStatusLabel}</Text>
                         <Text style={AppointmentDetailsStyle.FooterText}>{AppointmentDetails.appointmentState} </Text>                       
                     </View>
-                    <View style={AppointmentDetailsStyle.LocationContainer}>
+                    <View style={[AppointmentDetailsStyle.LocationContainer,{height:85}]}>
                         <Text style={AppointmentDetailsStyle.HeaderText}>{en.doctorSearchLabel.locationLabel}</Text>
-                        <Text style={AppointmentDetailsStyle.FooterText}>{AppointmentDetails.chamberAddress} </Text>
+                        <Text style={AppointmentDetailsStyle.FooterText}>{AppointmentDetails.chamberAddress}Amri Hospital</Text>
+                      
+                            <Text style={AppointmentDetailsStyle.FooterText}>127 Eastern MetroPolitan Bypass, Netai Nagar,</Text>
+                            <Text style={AppointmentDetailsStyle.FooterText}>Mukundupur, Kolkata, West Bengal 700099 </Text>
+                       
                     </View>
 
                      <View style={AppointmentDetailsStyle.LocationContainer}>  
@@ -73,14 +77,11 @@ class AppointmentDetails extends Component {
                         <Text style={AppointmentDetailsStyle.FooterText}>{AppointmentDetails.appointmentDate}, {AppointmentDetails.appointmentTime} </Text>
                     </View>
 
-                    <View style={AppointmentDetailsStyle.LocationContainer}>  
-                        <Text style={AppointmentDetailsStyle.FooterText}>127 Eastern MetroPolitan Bypass, Netai Nagar,</Text>
-                        <Text style={AppointmentDetailsStyle.FooterText}>Mukundupur, Kolkata, West Bengal 700099 </Text>
-                    </View>
+                   
 
                    <View style={AppointmentDetailsStyle.LocationContainer}>  
                         <Text style={AppointmentDetailsStyle.HeaderText}>{en.appointmentScreens.patientNameLabel}</Text>
-                        <Text style={AppointmentDetailsStyle.FooterText}>{AppointmentDetails.userName}{AppointmentDetails.paymentStatus}</Text>
+                        <Text style={AppointmentDetailsStyle.FooterText}>{AppointmentDetails.userName}</Text>
                     </View>
 
                     <View style={AppointmentDetailsStyle.PaymentStatusContainer}>

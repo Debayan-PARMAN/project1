@@ -76,6 +76,7 @@ export const textInputStyle = {
     primaryTextInput: {
         height: 35,
         fontSize: 16,
+
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
         color: styleConstants.fontStyles.fontColor,

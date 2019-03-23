@@ -13,7 +13,7 @@ import en from '../../messages/en-us';
 
 class AddNewGroupMember extends Component {
     static navigationOptions = {
-        title: 'AddNewGroupMember',
+        title: 'ADD NEW GROUP MEMBER',
        headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}

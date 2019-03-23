@@ -38,15 +38,7 @@ class Registration extends Component {
     this.props.updateState({ userDetails });
   }
 
-  // checkData = (commonData) => {
-  //   if (commonData.length === 10 && commonData.test(/d/g)){
-  //     this.setState({ contactNo: commonData });
-  //     return true;
-  //   } else {
-  //     this.setState({ emailAddress: commonData });
-  //     return false;
-  //   }
-  // }
+  
 
   onCancelAlert = () => {
     this.props.updateState({ responseTriggerred: false });
@@ -73,12 +65,11 @@ class Registration extends Component {
     }
     else {
       this.props.numberCheckRegistration(this.props.navigation.navigate)
-      
     }
   }
   render() {
     const { userDetails } = this.props.userState;
-    const { contactNo } = this.props.userState;
+   
     return (
       <View style={LoginStyles.mainWrapper}>
         <ScrollView>

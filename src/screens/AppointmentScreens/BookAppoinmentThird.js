@@ -19,7 +19,7 @@ import en from '../../messages/en-us';
 class Book_Appoinment_Third extends Component {
 
     static navigationOptions = {
-        title: 'Book Appoinment',
+        title: 'BOOK APPOINTMENT',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}

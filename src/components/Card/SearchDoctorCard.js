@@ -42,12 +42,13 @@ class Search_Doctor_Card extends Component {
 
     render() {
         // const { searchDetails } = this.props.doctorState;
+        const { doctorData } = this.props;
         const starStyle = {
             width: 100,
             height: 20,
             marginBottom: 20,
+
         };
-        const { doctorData } = this.props;
         return (
             <Card container style={DoctorCardStyle}>
                 <View style = { DoctorCardStyle.mainContainer }>

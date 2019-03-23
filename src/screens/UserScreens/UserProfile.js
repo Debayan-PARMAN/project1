@@ -17,7 +17,7 @@ import { TextInputStyles } from '../../styelsheets/TextInputStyle';
 class User_Profile extends Component {
 
     static navigationOptions = {
-        title: 'UserProfile',
+        title: 'USER PROFILE',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}

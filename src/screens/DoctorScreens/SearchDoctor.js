@@ -39,7 +39,7 @@ class Search_Doctor extends Component {
     }
 
     static navigationOptions = {
-        title: 'Find Doctor',
+        title: 'FIND DOCTOR',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -154,11 +154,10 @@ class Search_Doctor extends Component {
                             <View style={SearchDoctorStyle.toggleContainer}>
                                 <ToggleSwitch
                                     isOn={false}
-                                    onColor='#d8c0ef' offColor='#d8c0ef'
+                                    onColor='#972493' offColor='#972493'
                                     size='small'
-                                    onToggle={(isOn) => this.onToggle(isOn)}
+                                    onToggle={ (isOn) => console.log('changed to : ', isOn) }
                                 />
-                                
                             </View>
                         </View>
                         <View style={SearchDoctorStyle.middleSubContainer2}>

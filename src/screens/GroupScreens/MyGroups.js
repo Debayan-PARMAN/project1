@@ -18,7 +18,7 @@ class MyGroups extends Component {
         this.props.getMyGroup();
     }
     static navigationOptions = {
-        title: 'My Groups',
+        title: 'MY GROUPS',
        headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}

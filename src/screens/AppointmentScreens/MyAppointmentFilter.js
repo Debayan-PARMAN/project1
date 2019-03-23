@@ -12,7 +12,7 @@ import { LinearGradient } from 'expo';
 
 class MyAppointmentFilter extends Component {
     static navigationOptions = {
-        title: 'MyAppointment Filter',
+        title: 'MY APPOINTMENT FILTER',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
