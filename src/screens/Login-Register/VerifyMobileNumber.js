@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { verifyOTP, updateState } from '../../actions/user';
-import { View, Text, Alert, TextInput, Button, ScrollView, TouchableHighlight, Image } from 'react-native';
+import { View, Text, Alert, TextInput,ScrollView, TouchableOpacity, } from 'react-native';
 import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
@@ -72,41 +72,35 @@ class Verify_Mobile_Number extends Component {
         return (
             <View style={LoginStyles.mainWrapper}>
                 <ScrollView>
-                    <View style={LoginStyles.bannerArea2_Text}>
-                        <Text style={FontStyles.font}>{en.loginLabels.mobileNumberVerifyLabel}</Text>
-                    </View>
-                    <View style={Space.space_20}>
-                    </View>
-
+                   
                     <View style={LoginStyles.textInput}>
-                        <Text style={[FontStyles.font, { color: '#808080' }]}>{en.verifyMobileNumberMsg.verifyMobileNumberMsgInfo} {userDetails.contactNo} </Text>
+                        <Text style={textInputStyle.primaryTextInputFontStyle}>
+                           {en.verifyMobileNumberMsg.verifyMobileNumberMsgInfo} {userDetails.contactNo} </Text>
                         
                         
                         <TextInput
-                            style={LoginStyles.textInput_pass_email}
-                            placeholder="Type your OTP"
+                            style={textInputStyle.primaryTextInput}
+                           // placeholder="Type your OTP"
                             value={userDetails.userOTP}
                             onChangeText={(e) => this.onValueChange(e, 'userOTP')}
                         />
                     </View>
-                    <View style={Space.space_30}>
+                    <View style={Space.space_20}>
                     </View>
 
                     
-                                <View style={LoginStyles.button}>
-                                <View style={{ flex: 0.7, }}>
-                                </View>
-                                <View style={{ flex: 1, }}>
-                                    <LinearGradient
-                                        colors={['#a25ca8', '#582491']}
-                                        style={HomeStyles.signinbtn}>
-                                        <TouchableHighlight onPress={this.onSubmit}>
-                                    <Text style={[HomeStyles.signinbtnText]}>{en.commonLabel.nextBtnLabel}</Text>
-                                        </TouchableHighlight>
-                                    </LinearGradient>
-                                </View>
-                                <View style={{ flex: 0.7, }}>
-                                </View>
+                                <View style={LoginStyles.button}>                             
+
+                            <TouchableOpacity onPress={this.onSubmit}>
+                                <LinearGradient
+                                    style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle1]}
+                                    colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+                                    start={{ x: 0, y: 0 }}
+                                    end={{ x: 1, y: 1 }} >
+                                    <Text style={[buttonStyle.primaryBtnText]}>{en.commonLabel.nextBtnLabel}</Text>
+                                </LinearGradient>
+                            </TouchableOpacity>    
+                               
           </View>
 
                     

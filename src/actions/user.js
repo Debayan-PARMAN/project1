@@ -75,12 +75,13 @@ export function numberCheckRegistration(callback) {
     dispatch({ type: USER_TYPE.NUMBER_CHECK });
     doGet(`${URI.verifyMobile}${userDetails.contactNo}`, false, '')
       .then(result => {
-        // console.log(result.status);
-        if (result.status === 5051) {
+         console.log(result);
+        if (result.status === 2000) {
           dispatch(numberCheckSuccess(result));
-        } else {
           dispatch(requestOTP());
           callback(('VerifyMobileMumber'));
+        } else {
+          alert('Contact No. Exists');
         }
       })
       .catch(error => dispatch(numberCheckFailure(error)));
@@ -247,13 +248,13 @@ export function userRegistration() {
     doPost(`${URI.signup}`, signUpParams, true, false, '')
       //.then(result => dispatch(userRegistrationSuccess(result)))
       .then(result => {
-        // console.log(result.status);
+        console.log(result);
         if (result.status === 2000) {
           dispatch(userLogin());
           console.log('Login');
           //alert('Number Not Exits, Create Account First');
         } else {
-          alert('Something wrong');
+          alert(result.message);
         }
 
       })

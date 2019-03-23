@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { userRegistration, updateState } from '../../actions/user';
-import {  BackHandler, View, Text, Alert, TextInput, ScrollView, ProgressBarAndroid, KeyboardAvoidingView, TouchableHighlight, Image } from 'react-native';
+import { BackHandler, View, Text, Alert, TextInput, ScrollView, ProgressBarAndroid, KeyboardAvoidingView, TouchableOpacity, Image } from 'react-native';
 import { LoginStyles, FontStyles, } from '../../styelsheets/MainStyle';
 import PasswordInputText from 'react-native-hide-show-password-input';
 import { LinearGradient } from 'expo';
+import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import Header_Component_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
+import PasswordComponent from '../../components/TextComponent/PasswordComponent';
 
 class Create_Account extends Component {
     componentDidMount() {
@@ -24,14 +26,16 @@ class Create_Account extends Component {
     }
 
     static navigationOptions = {
-        title: 'MED-e-Pal',
+        title: 'CREATE ACCOUNT',
         headerTintColor: '#fff',
-        headerTitleStyle: {
-            fontWeight: 'bold',
-            paddingLeft: 50,
-            //justifyContent: 'center',
-            //alignItems: 'center',
-        },
+        headerBackground: (
+            <LinearGradient
+                colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+                style={{ flex: 1, }}
+                start={[0, 0]}
+                end={[1, 1]}
+            />
+        ),
         headerLeft: (<Header_Component_Blank />),
     };
 
@@ -166,37 +170,39 @@ class Create_Account extends Component {
         }
 
         const userNameArea = (<View style={LoginStyles.textInput}>
-            <Text style={[FontStyles.font, { color: '#808080' }]}>{en.loginLabels.firstNamelabel}</Text>
+          
+              
+            <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.firstNamelabel}</Text>
                 <TextInput
-                    style={LoginStyles.textInput_pass_email}
-                    placeholder="Type your name"
+                    style={textInputStyle.primaryTextInput}
+                   // placeholder="Type your name"
                     value={userDetails.firstName}
                     onChangeText={(e) => this.onValueChange(e, 'firstName')} 
                     />
-            <Text style={[FontStyles.font, { color: '#808080' }]}>{en.loginLabels.lastNamelabel}</Text>
-                <TextInput
-                    style={LoginStyles.textInput_pass_email}
-                    placeholder="Type your name"
+            <Text style={[textInputStyle.primaryTextInputFontStyle,{marginTop:10}]}>{en.loginLabels.lastNamelabel}</Text>
+            <TextInput
+                style={textInputStyle.primaryTextInput}
+                   // placeholder="Type your name"
                     value={userDetails.lastName}
                     onChangeText={(e) => this.onValueChange(e, 'lastName')}
                 />
  
             </View>);
 
-        const passwordInputArea = (<View style={LoginStyles.textInput}>
-                    <PasswordInputText
-                    // style={LoginStyles.textInput}
-                    //color="black"
-                    placeholder="Type your Password"
-                    secureTextEntry={showPassword}
-                    value={userDetails.password}
-                    onChangeText={(e) => this.onValueChange(e, 'password')} 
-                    />
-                </View>
+        const passwordInputArea = (
+            <PasswordComponent
+                style={[textInputStyle.primaryTextInput, {marginTop:10}]} 
+                labelStyle={textInputStyle.primaryTextInputFontStyle}
+                label='Password'
+                secureTextEntry={showPassword}
+                value={userDetails.password}
+                onChangeText={(e) => this.onValueChange(e, 'password')}
+            />
+               
             );
 
         const passwordStrengthArea = (
-            <View style={{ flex: 1, height: 30, flexDirection: 'row', paddingRight: 10, paddingLeft: 10 }}>
+            <View style={{ flex: 1, flexDirection: 'row', marginTop:10  }}>
                 <View style={{ flex: 1 }}>
                     <Text style={{ textAlign: 'left', fontWeight: 'bold' }} style={FontStyles.font}>{en.loginLabels.passwordStrengthLabel}</Text>
                 </View>
@@ -214,7 +220,7 @@ class Create_Account extends Component {
         );
 
         const passwordValidateArea = (
-            <View style={{ flex: 1, paddingTop: 10,  paddingRight: 10, paddingLeft: 10 }}>
+            <View style={{ flex: 1,}}>
                 <View style={{ flex: 0.6 }}>
                     <Text style={FontStyles.font} style={{textAlign:'center', color:'red'}}>
                     {
@@ -228,49 +234,38 @@ class Create_Account extends Component {
         );    
 
         const confirmPasswordInputArea = (
-            <View style={LoginStyles.textInput}>
-                <PasswordInputText
-                    //style={LoginStyles.textInput_pass_email}
-                    //color="black"
-                    placeholder="Confirm Password"
-                    secureTextEntry={showPassword}
-                    value={userDetails.confirmpassword}
-                    onChangeText={(e) => this.onValueChange(e, 'confirmpassword')}
-                />
-            </View>
+            <PasswordComponent
+                style={textInputStyle.primaryTextInput}
+                labelStyle={textInputStyle.primaryTextInputFontStyle}
+                label='Confirm Password'
+                secureTextEntry={showPassword}
+                value={userDetails.confirmpassword}
+                onChangeText={(e) => this.onValueChange(e, 'confirmpassword')}
+            />
+           
         );
 
         let passwordMatchArea = (<Text></Text>);
         if (userDetails.password.length > 1){
             passwordMatchArea = (
-            <View style={{ flex: 1, paddingTop: 15, }}>
+
                 <Text style={FontStyles.font} style={{textAlign:'center', color:'#ccc'}}>
                     {
                         this.matchPassword(userDetails.password, userDetails.confirmpassword) ?
                             `Passwords match` : "Passwords don't match"
                     }
                 </Text>
-            </View>
+
             );
         }
 
         return (
-            <KeyboardAvoidingView style={LoginStyles.mainWrapper} behavior="padding" enabled>
-                <View style={LoginStyles.bannerArea2_Text}>
-                    <Text style={FontStyles.font}>{en.createAccountMsg.createAccountHeading}</Text>
-                </View>
-                <ScrollView>
-                    <View style={{ height: 10 }}></View>
-                    <View style={{paddingLeft:10, paddingRight:10}}>
-                        {userNameArea}
-                    </View>
-                    
-
-                    <View style={{ height: 10 }}></View>
-
-                    
+                            
+            <ScrollView style={LoginStyles.mainWrapper}> 
+                    <KeyboardAvoidingView behavior="position">                   
+                        {userNameArea}               
                     <View style={LoginStyles.textInput}>
-                        <Text style={FontStyles.font} style={{ fontWeight: 'bold', paddingLeft: 10, paddingRight: 10 }}>{en.createAccountMsg.createAccountMsgInfo}</Text>
+                        <Text style={FontStyles.font} style={{ fontWeight: 'bold', }}>{en.createAccountMsg.createAccountMsgInfo}</Text>
                         
                         {passwordInputArea}
                         
@@ -281,28 +276,23 @@ class Create_Account extends Component {
                         {confirmPasswordInputArea}
 
                         {passwordMatchArea}
-                        
-                        <View style={{ height: 30 }}></View>
-                        
+      
                     </View>
-
-                    <View style={{ height: 30 }}></View>
-                    <View style={LoginStyles.button}>
-                        <View style={{ flex: 0.7, }}></View>
-                        <View style={{ flex: 1, }}>
-                            <LinearGradient colors={['#a25ca8', '#582491']} style={HomeStyles.signinbtn}>
-                                <TouchableHighlight onPress={this.onSubmit}>
-                                    <Text style={[HomeStyles.signinbtnText]}>{en.loginLabels.createAccountLable}</Text>
-                                </TouchableHighlight>
+                    <View style={[LoginStyles.button, {marginTop:15}]}>                
+                        <TouchableOpacity
+                            onPress={this.onSubmit}>
+                            <LinearGradient
+                                style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle1]}
+                                colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+                                start={{ x: 0, y: 0 }}
+                                end={{ x: 1, y: 1 }} >
+                                <Text style={[buttonStyle.primaryBtnText]}>{en.loginLabels.createAccountLable}</Text>
                             </LinearGradient>
-                        </View>
-                        <View style={{ flex: 0.7, }}></View>
-                        
+                        </TouchableOpacity>
                     </View>
-                    <View style={{ height: 20 }}>
-                    </View>
-                </ScrollView>
-            </KeyboardAvoidingView>
+                </KeyboardAvoidingView>                   
+             </ScrollView>
+           
         );
     }
 };

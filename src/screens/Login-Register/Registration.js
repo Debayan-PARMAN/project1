@@ -58,7 +58,7 @@ class Registration extends Component {
     const {userDetails} = this.props.userState;
     const regex = /[0-9]/g;
 
-    if (!(regex.test(userDetails.contactNo) && userDetails.contactNo.length === 10)){
+    if (!(regex.test(userDetails.contactNo) && userDetails.contactNo.length === 13)){
       Alert.alert(
         '',
         message='Provide a valid number',
@@ -73,20 +73,7 @@ class Registration extends Component {
     }
     else {
       this.props.numberCheckRegistration(this.props.navigation.navigate)
-      //   // this.props.navigation.navigate('VerifyMobileMumber');
-      // } else {
-      //   Alert.alert(
-      //     '',
-      //     message = 'Number1 already exists',
-      //     [{
-      //       text: 'Cancel',
-      //       onPress: this.onCancelAlert,
-      //       style: 'cancel'
-      //     }], {
-      //       cancelable: false
-      //     }
-      //   );
-      // }
+      
     }
   }
   render() {
@@ -99,13 +86,13 @@ class Registration extends Component {
             <Text style={FontStyles.font}>{en.commonLabel.createAccountBtn}</Text>
           </View> */}
           <View style={LoginStyles.textInput}>
-            <Text style={TextInputStyles.font}>{en.loginLabels.mobileNumberLabel}</Text>           
+            <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.mobileNumberLabel}</Text>         
             <TextInput
-              style={TextInputStyles.textInputfield}
-              placeholder="Type your Mobile Number"
+              style={textInputStyle.primaryTextInput}
+              // placeholder="Enter your Mobile Number"
               value={userDetails.contactNo}
-              maxLength={10}
-              keyboardType="numeric"
+              maxLength={13}
+              // keyboardType="numeric"
               onChangeText={(e) => this.onValueChange(e, 'contactNo')} />
           </View>         
           <View style={[LoginStyles.button, { marginTop: 20 }]}>          
