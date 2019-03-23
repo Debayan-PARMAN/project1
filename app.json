@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "MedePalApp",
+    "slug": "MedePalApp",
+    "privacy": "unlisted",
+    "sdkVersion": "31.0.0",
+    "android": {
+      "package": "com.parmancs.medepal"
+    },
+    "ios": {
+     "bundleIdentifier": "com.parmancs.medepal",
+     "supportsTablet": true
+    },
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/medepal1.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "description": ""
+  }
+}

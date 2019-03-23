@@ -1,0 +1,57 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "rnpm": {
+    "assets": [
+      "assets/fonts/Roboto"
+    ]
+  },
+  "scripts": {
+    "postinstall": "rndebugger-open",
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^8.1.0",
+    "expo": "^31.0.2",
+    "expo-cli": "^2.11.9",
+    "install": "^0.12.2",
+    "moment": "^2.24.0",
+    "native-base": "^2.10.0",
+    "npm": "^6.6.0",
+    "prop-types": "^15.6.2",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "react-native-banner-carousel": "^1.0.3",
+    "react-native-calendar-strip-slide-navigation": "^0.0.3",
+    "react-native-comments": "^1.1.4",
+    "react-native-datepicker": "^1.7.2",
+    "react-native-debugger-open": "^0.3.17",
+    "react-native-elements": "^1.0.0-beta7",
+    "react-native-flexi-radio-button": "^0.2.2",
+    "react-native-flip-toggle-button": "^1.0.5",
+    "react-native-gesture-handler": "^1.0.12",
+    "react-native-hide-show-password-input": "^1.0.7",
+    "react-native-image-picker": "^0.28.0",
+    "react-native-image-slider": "^2.0.3",
+    "react-native-linear-gradient": "^2.5.3",
+    "react-native-modal": "^7.0.2",
+    "react-native-modal-datetime-picker": "^6.0.0",
+    "react-native-photo-upload": "^1.3.0",
+    "react-native-star-view": "^1.1.3",
+    "react-native-svg": "^9.0.2",
+    "react-native-tab-navigator": "^0.3.4",
+    "react-native-vector-icons": "^6.1.0",
+    "react-navigation": "^3.3.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.7",
+    "redux-thunk": "^2.3.0",
+    "toggle-switch-react-native": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "^5.0.0"
+  },
+  "private": true
+}
