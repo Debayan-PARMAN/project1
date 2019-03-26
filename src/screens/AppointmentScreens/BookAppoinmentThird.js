@@ -15,6 +15,7 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Moment from 'moment';
 
 class Book_Appoinment_Third extends Component {
 
@@ -74,7 +75,7 @@ class Book_Appoinment_Third extends Component {
                         </View>
 
                            <Text style={BookAppointmentStyle.HeaderText}>{en.doctorSearchLabel.locationLabel} - {chamberDetails.line1}, {chamberDetails.line2}</Text>
-                           <Text style={[BookAppointmentStyle.HeaderText,{marginTop:5}]}>{en.appointmentScreens.dateTimeLabel} - {AppointmentDetails.appointmentDate}, {AppointmentDetails.appointmentTime}</Text>
+                        <Text style={[BookAppointmentStyle.HeaderText, { marginTop: 5 }]}>{en.appointmentScreens.dateTimeLabel} - {Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
                         
                         <View style={BookAppointmentStyle.PatientFirstPart}>
                             <View style={[BookAppointmentStyle.PatientName,]}>                                 

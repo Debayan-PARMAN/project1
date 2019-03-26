@@ -49,9 +49,9 @@ export default class Doctor_Card extends Component {
                 </View>
                 <ScrollView horizontal>
                     <View style={CardStyle.buttonContainer}>
-                        <View style={CardStyle.buttonStyle}><TouchableOpacity onPress={(e) => this.props.selectedChamber(chamberDetails,'09:15:00')}><Text style={CardStyle.buttonText}>9.15 am</Text></TouchableOpacity></View>
-                        <View style={CardStyle.buttonStyle}><TouchableOpacity onPress={(e) => this.props.selectedChamber(chamberDetails, '09:30:00')}><Text style={CardStyle.buttonText}>9.30 am</Text></TouchableOpacity></View>
-                        <View style={CardStyle.buttonStyle}><TouchableOpacity onPress={(e) => this.props.selectedChamber(chamberDetails, '17:30:00')}><Text style={CardStyle.buttonText}>5.30 pm</Text></TouchableOpacity></View>
+                        <View style={CardStyle.buttonStyle}><TouchableOpacity onPress={(e) => this.props.selectedChamber(chamberDetails,'09:15:00')}><Text style={CardStyle.buttonText}>9:15</Text></TouchableOpacity></View>
+                        <View style={CardStyle.buttonStyle}><TouchableOpacity onPress={(e) => this.props.selectedChamber(chamberDetails, '09:30:00')}><Text style={CardStyle.buttonText}>9:30</Text></TouchableOpacity></View>
+                        <View style={CardStyle.buttonStyle}><TouchableOpacity onPress={(e) => this.props.selectedChamber(chamberDetails, '17:30:00')}><Text style={CardStyle.buttonText}>5:30</Text></TouchableOpacity></View>
                     </View>
                 </ScrollView>
             </View>

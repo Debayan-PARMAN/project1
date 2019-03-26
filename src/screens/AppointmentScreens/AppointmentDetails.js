@@ -39,7 +39,7 @@ class AppointmentDetails extends Component {
     render() {
 
         const { AppointmentDetails, doctorDetails } = this.props.doctorState;
-        console.log(doctorDetails.doctorSpecializationList);
+        //console.log(doctorDetails.doctorSpecializationList);
         const specialities = doctorDetails.doctorSpecializationList !== undefined
             && doctorDetails.doctorSpecializationList.length > 0 ?
             doctorDetails.doctorSpecializationList.map(item => item.specialization).join(',')
@@ -74,7 +74,7 @@ class AppointmentDetails extends Component {
 
                      <View style={AppointmentDetailsStyle.LocationContainer}>  
                         <Text style={AppointmentDetailsStyle.HeaderText}>{en.appointmentScreens.appointmentDateLabel}</Text>
-                        <Text style={AppointmentDetailsStyle.FooterText}>{AppointmentDetails.appointmentDate}, {AppointmentDetails.appointmentTime} </Text>
+                        <Text style={AppointmentDetailsStyle.FooterText}>{Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")} </Text>
                     </View>
 
                    

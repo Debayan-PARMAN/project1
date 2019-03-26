@@ -37,9 +37,11 @@ class LifeStyle extends Component {
          <View style={{ flex: 1,backgroundColor:'#fff'}}>
             <View style={{ flex: 1, height: 35, marginTop: 20, backgroundColor: '#fff',alignItems: 'center',}}>
                <View style={{ width: 300, height: 32, flexDirection: 'row',justifyContent: 'center', alignItems: 'center',borderColor:'#972493',borderWidth: 1}}>
-                  <View style={{ width: 100, height: 30, justifyContent: 'center',borderRightWidth: 1,borderColor:'#972493',}} >
-                     <Text style={{ fontSize: 15, textAlign: 'center' }}>{en.userScreensLabel.personalTabLabel}</Text>
-                  </View>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('UpdateUserProfile')} >
+                     <View style={{ width: 100, height: 30, justifyContent: 'center',borderRightWidth: 1,borderColor:'#972493',}} >
+                        <Text style={{ fontSize: 15, textAlign: 'center' }}>{en.userScreensLabel.personalTabLabel}</Text>
+                     </View>
+                  </TouchableOpacity>
                   <View style={{width: 100,height: 30,justifyContent: 'center',borderRightWidth: 1,borderColor:'#972493',}}>
                      <Text style={{ fontSize: 15, textAlign: 'center' }}>{en.userScreensLabel.medicalTabLabel}</Text>
                   </View>

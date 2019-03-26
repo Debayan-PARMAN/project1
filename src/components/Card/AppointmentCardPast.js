@@ -15,7 +15,7 @@ export default class Appointment_Card_Past extends Component {
             <View style ={{ padding: 10 }}>
                 {/* ************for rate tab********************* */}
                 <View style={[MyAppointmentStyle.dateArea,{marginBottom: 5 }]}>
-                    <Text style={MyAppointmentStyle.datetext}>Feb 11, 2019, Monday</Text>
+                    <Text style={MyAppointmentStyle.datetext}>11-02-2019</Text>
                 </View>
                 <View style={MyAppointmentStyle.pastContainer}>
                     <View

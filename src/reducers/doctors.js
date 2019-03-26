@@ -203,7 +203,7 @@ const handlers = {
             entityName: action.payload.entityName,
         };
         return {
-            doctorDetails,
+             doctorDetails,
             loading: false,
             responseTriggerred: true,
         };
@@ -227,8 +227,8 @@ const handlers = {
     };
 },
     [DOCTOR_TYPE.UPDATE_APPOINTMENT_DETAILS_SUCCESS]: (state, action) => {
-        console.log("Getting DATA:  ", action.payload);
-
+      //  console.log("Getting DATA:  ", action.payload);
+        
         const AppointmentDetails = action.payload.data;
             // "appointmentPk": action.payload.data.appointmentPk,
             // "userPk": action.payload.data.userPk,
@@ -276,6 +276,7 @@ const handlers = {
     },
     [DOCTOR_TYPE.GET_APPOINTMENT_LIST_SUCCESS]: (state, action) => {
     //console.log("Getting Appointment list:  ", action.payload.data);
+        
         const appointmentList = action.payload.data;
     return {
         appointmentList,

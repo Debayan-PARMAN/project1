@@ -20,7 +20,9 @@ export function userLogin() {
       "password": userDetails.password,
       "roleName": "INDIVIDUAL",
       "registrationProvider": "SBIS",
-      //"otp": true,
+      "entityName": "INDIVIDUAL",
+      "loginWithRole": true,
+      "otp": false ,
 
     }
     dispatch({
@@ -56,10 +58,11 @@ return (dispatch, getState)=>{
       // console.log(result.status);
       if(result.status === 2000){
         dispatch(numberCheckSuccess(result));
-        // console.log('Number Not Exits');
-        alert('Number Not Exits, Create Account First');
-      } else {
         dispatch(requestOTP());
+        // console.log('Number Not Exits');
+        
+      } else {
+        alert('Number Not Exits, Create Account First');
       }
 
     })
@@ -114,6 +117,8 @@ export function otpLogin() {
       "password": userDetails.userOTP,
       "roleName": "INDIVIDUAL",
       "registrationProvider": "SBIS",
+      "entityName": "INDIVIDUAL",
+      "loginWithRole": true,
       "otp": true,
 
     }
@@ -248,7 +253,7 @@ export function userRegistration() {
     doPost(`${URI.signup}`, signUpParams, true, false, '')
       //.then(result => dispatch(userRegistrationSuccess(result)))
       .then(result => {
-        console.log(result);
+        //console.log(result);
         if (result.status === 2000) {
           dispatch(userLogin());
           console.log('Login');
@@ -304,14 +309,14 @@ export function updateUserProfile() {
     // console.log("User Params*******************",userProfileParams);
     const tokenValue = userDetails.token;
     // console.log("User token", tokenValue);
-    // console.log(`${URI.updateUserProfile}`);
+     //console.log(`${URI.updateUserProfile}`);
     doPut(`${URI.updateUserProfile}`, userProfileParams, true, true, tokenValue)
       .then(result => dispatch(updateUserProfileSuccess(result)))
       .catch(error => dispatch(updateUserProfileFailure(error)));
   };
 }
 export function updateUserProfileSuccess(payload) {
-
+ console.log("Success",payload);
   return {
     type: USER_TYPE.UPDATE_USER_PROFILE_SUCCESS,
     payload,
