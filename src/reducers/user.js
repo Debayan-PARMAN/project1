@@ -365,7 +365,7 @@ const handlers = {
       userDetails.maritialStatus = action.payload.data.maritialStatus !== undefined ? action.payload.data.maritialStatus : '';
       userDetails.contactNo = action.payload.data.contactNo !== undefined ? action.payload.data.contactNo : '';
       userDetails.addressList = action.payload.data.addressList !== [] ? action.payload.data.addressList : [];
-    console.log("userDetails addressList*************** ", action.payload.data.addressList);
+   // console.log("userDetails addressList*************** ", action.payload.data.addressList);
     return {
       userDetails,
       loading: false,

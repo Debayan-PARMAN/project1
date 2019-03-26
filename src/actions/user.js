@@ -75,7 +75,7 @@ export function numberCheckRegistration(callback) {
     dispatch({ type: USER_TYPE.NUMBER_CHECK });
     doGet(`${URI.verifyMobile}${userDetails.contactNo}`, false, '')
       .then(result => {
-         console.log(result);
+       //  console.log(result);
         if (result.status === 2000) {
           dispatch(numberCheckSuccess(result));
           dispatch(requestOTP());
@@ -248,10 +248,10 @@ export function userRegistration() {
     doPost(`${URI.signup}`, signUpParams, true, false, '')
       //.then(result => dispatch(userRegistrationSuccess(result)))
       .then(result => {
-        console.log(result);
+       // console.log(result);
         if (result.status === 2000) {
           dispatch(userLogin());
-          console.log('Login');
+         // console.log('Login');
           //alert('Number Not Exits, Create Account First');
         } else {
           alert(result.message);
@@ -301,17 +301,18 @@ export function updateUserProfile() {
     dispatch({
       type: USER_TYPE.UPDATE_USER_PROFILE
     });
-    // console.log("User Params*******************",userProfileParams);
+     console.log("User Params*******************",userProfileParams);
     const tokenValue = userDetails.token;
-    // console.log("User token", tokenValue);
-    // console.log(`${URI.updateUserProfile}`);
-    doPut(`${URI.updateUserProfile}`, userProfileParams, true, true, tokenValue)
+     console.log("User token", tokenValue);
+     console.log(`${URI.updateUserProfile}`);
+    //doPut(`${URI.updateUserProfile}`, userProfileParams, true, true, tokenValue)
+    doPut(`http://206.189.150.18:9090/v1/inusers/`, userProfileParams, true, true, tokenValue)
       .then(result => dispatch(updateUserProfileSuccess(result)))
       .catch(error => dispatch(updateUserProfileFailure(error)));
   };
 }
 export function updateUserProfileSuccess(payload) {
-
+  console.log(" payload******", payload);
   return {
     type: USER_TYPE.UPDATE_USER_PROFILE_SUCCESS,
     payload,
@@ -433,7 +434,7 @@ export function resetPassword() {
         // console.log(result.status);
         if (result.status === 2000) {
           dispatch(userLogin());
-          console.log('Login');
+         // console.log('Login');
           //alert('Number Not Exits, Create Account First');
         } else {
           alert('Something wrong');
