@@ -28,7 +28,7 @@ export default class Appointment_Card extends Component {
                                 <Text style={MyAppointmentStyle.doctorName}>{en.appointmentScreens.drLabel} {AppointmentDetails.doctorName} </Text>
                             <Text style={MyAppointmentStyle.chamberLocation}>{AppointmentDetails.chamberName}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
                             <Text style={MyAppointmentStyle.patientName}>{en.appointmentScreens.forLabel} {AppointmentDetails.appointmentByName}</Text>
-                            <Text style={MyAppointmentStyle.confirmpaid}>{AppointmentDetails.paymentStatus}               {AppointmentDetails.totalFees}</Text>
+                            <Text style={MyAppointmentStyle.confirmpaid}>{AppointmentDetails.paymentStatus}               {AppointmentDetails.appointmentState}</Text>
                             </View>
                             <View style={MyAppointmentStyle.rightArrow}>
                                 <TouchableOpacity onPress={(e) => this.props.selectedAppointment(AppointmentDetails)}>

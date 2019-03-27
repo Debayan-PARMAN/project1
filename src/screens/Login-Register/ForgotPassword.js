@@ -69,7 +69,7 @@ class ForgotPassword extends Component {
 
                     <Text style={[textInputStyle.primaryTextInputFontStyle, { marginTop: 15 }]}>{en.loginLabels.mobileNumberLabel}</Text>
                     <TextInput style={textInputStyle.primaryTextInput}
-                        placeholder="Enter Number"
+                       // placeholder="Enter Number"
                         value={userDetails.contactNo}
                         maxLength={13}
                        // keyboardType="numeric"

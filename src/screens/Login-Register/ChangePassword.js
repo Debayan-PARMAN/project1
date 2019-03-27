@@ -50,8 +50,8 @@ class ChangePassword extends Component {
          const { userDetails } = this.props.userState;           
             
         return (
-           
-            <ScrollView style={LoginStyles.mainWrapper}>                                      
+            <View style = {{ flex:1, padding: 8 }}>
+            <ScrollView>                                      
              <View style={{ flex:1,marginTop:15}}>               
 
                         <PasswordComponent
@@ -78,7 +78,7 @@ class ChangePassword extends Component {
                        </View>                                                             
                                  
                 </ScrollView>                  
-            
+            </View>
         ); 
       }
 };

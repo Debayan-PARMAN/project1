@@ -50,7 +50,7 @@ class Registration extends Component {
     const {userDetails} = this.props.userState;
     const regex = /[0-9]/g;
 
-    if (!(regex.test(userDetails.contactNo) && userDetails.contactNo.length === 13)){
+    if ((!(regex.test(userDetails.contactNo))) && (userDetails.contactNo.length < 10 )){
       Alert.alert(
         '',
         message='Provide a valid number',
@@ -63,6 +63,7 @@ class Registration extends Component {
         }
       );
     }
+    
     else {
       this.props.numberCheckRegistration(this.props.navigation.navigate)
     }

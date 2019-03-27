@@ -36,17 +36,17 @@ class LogIn extends Component {
     onValueChange = (value, id) => {
         const { userDetails } = this.props.userState;
         userDetails[id] = value;
-        if (id === "contactNo") {
-            if ((value.length - 3) >= 10) {
-                this.props.updateState({ toggleEnable: true });
-                // this.props.updateState({ toggleEnable: true, otpToggle: true });
-            }
-            else {
-                this.props.updateState({ toggleEnable: false });
-                // this.props.updateState({ toggleEnable: false , otpToggle: false });
+        // if (id === "contactNo") {
+        //     if ((value.length - 3) >= 10) {
+        //         this.props.updateState({ toggleEnable: true });
+        //         // this.props.updateState({ toggleEnable: true, otpToggle: true });
+        //     }
+        //     else {
+        //         this.props.updateState({ toggleEnable: false });
+        //         // this.props.updateState({ toggleEnable: false , otpToggle: false });
 
-            }
-        }
+        //     }
+        // }
         this.props.updateState({ userDetails });
     }
 
@@ -55,20 +55,43 @@ class LogIn extends Component {
     }
 
     onTogglePass = (isOn) => {
-        const { toggleEnable } = this.props.userState;
-        if (toggleEnable) {
+        // const { toggleEnable } = this.props.userState;
+        // if (toggleEnable) {
             const showPassword = !this.props.userState.showPassword;
             const otpToggle = !this.props.userState.otpToggle;
             this.props.updateState({ showPassword, otpToggle });
-        }
-        else {
+        // }
+        // else {
             return;
-        }
+       // }
     }
 
     onSubmit = () => {
-        this.props.userLogin();
+
+        const { userDetails } = this.props.userState;
+        if (userDetails.contactNo !== '' && userDetails.password !== '') {
+
+            this.props.userLogin();
+            //this.props.navigation.navigate('SearchDoctor');
+        }
+
+        else {
+            Alert.alert(
+                '',
+                message = 'Please Input Value',
+                [{
+                    text: 'Cancel',
+                    onPress: this.onCancelAlert,
+                    style: 'cancel'
+                }], {
+                    cancelable: false
+                }
+            );
+        }
     }
+
+        //this.props.userLogin();
+    
 
     onGetOtp = () => {
         const { otpActions } = this.props.userState;
@@ -78,7 +101,30 @@ class LogIn extends Component {
     }
 
     loginWithOtp = () => {
-        this.props.otpLogin();
+
+        const { userDetails } = this.props.userState;
+        if (userDetails.contactNo !== '' && userDetails.userOTP !== '') {
+
+            this.props.otpLogin();
+            //this.props.navigation.navigate('SearchDoctor');
+        }
+
+        else {
+            Alert.alert(
+                '',
+                message = 'Please Input Value',
+                [{
+                    text: 'Cancel',
+                    onPress: this.onCancelAlert,
+                    style: 'cancel'
+                }], {
+                    cancelable: false
+                }
+            );
+        }
+    
+
+        //this.props.otpLogin();
     }
 
     onCancelAlert = () => {
@@ -92,7 +138,7 @@ class LogIn extends Component {
     render() {
         const { userDetails, showPassword, responseTriggerred, successMessage, failureMessage, otpToggle, toggleEnable, otpActions
         } = this.props.userState;
-
+        
         const contactNumberArea = (<View style={LoginStyles.textInput}>
             <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.mobileNumberLabel}</Text>
             <TextInput
@@ -119,7 +165,7 @@ class LogIn extends Component {
             <Text style={textInputStyle.primaryTextInputFontStyle}>{en.OTPMsg.OTPMsgInfo}</Text>
             <TextInput
                 style={textInputStyle.primaryTextInput}
-                placeholder="Type your OTP"
+                //placeholder="Type your OTP"
                 value={userDetails.userOTP}
                 onChangeText={(e) => this.onValueChange(e, 'userOTP')} />
         </View>);
@@ -261,10 +307,10 @@ class LogIn extends Component {
                         </View>
                         <View style={LoginStyles.toggleButtonContainer}>
                             {
-                                toggleEnable ?
+                             //   toggleEnable ?
                                     <ToggleSwitch onColor='#d8c0ef' offColor='#d8c0ef' isOn={otpToggle} onToggle={(isOn) => this.onTogglePass(isOn)} />
-                                    :
-                                    <ToggleSwitch offColor='#eee' onToggle={this.onTogglePass} />
+                                  //  :
+                            //  <ToggleSwitch offColor='#eee' onToggle={this.onTogglePass} />
                             }
                             <Text style={FontStyles.font}>{showPassword ? 'Use OTP' : 'Use Password'}</Text>
                         </View>

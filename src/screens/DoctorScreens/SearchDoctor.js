@@ -35,6 +35,8 @@ class Search_Doctor extends Component {
             homeVisitFlag: '',
         };
         this.props.docUpdateState({ searchDetails });
+        const totalElements = ' ';
+        this.props.docUpdateState({ totalElements })
         // onPress = () =>{this.props.navigation.navigate('FindDoctor')}
     }
 
