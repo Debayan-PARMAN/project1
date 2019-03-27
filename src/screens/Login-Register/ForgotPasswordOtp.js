@@ -59,7 +59,7 @@ class ForgotPasswordOtp extends Component {
                       
                     <Text style={[textInputStyle.primaryTextInputFontStyle, { marginTop: 15 }]}>{en.loginLabels.mobileNumberLabel}</Text>
                         <TextInput style={textInputStyle.primaryTextInput}
-                            placeholder="Enter Number"
+                           // placeholder="Enter Number"
                             value={userDetails.contactNo}
                             maxLength={13}
                            // keyboardType="numeric"
@@ -68,7 +68,7 @@ class ForgotPasswordOtp extends Component {
                    
                     <Text style={[textInputStyle.primaryTextInputFontStyle, { marginTop: 15 }]}>{en.OTPMsg.OTPMsgInfo}</Text>
                         <TextInput style={textInputStyle.primaryTextInput}
-                            placeholder="Enter OTP"
+                           // placeholder="Enter OTP"
                             value={userDetails.userOTP}
                             maxLength={6}
                             keyboardType="numeric"

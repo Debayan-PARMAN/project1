@@ -15,6 +15,8 @@ import styleConstants from '../../constants/styleConstants';
 
 class Update_User_Profile extends Component {
 
+    
+
     static navigationOptions = {
         title: 'UpdateUserProfile',
         headerBackground: (
@@ -63,6 +65,10 @@ class Update_User_Profile extends Component {
         this.props.navigation.navigate('Home');
     }
 
+     componentWillUnmount() {
+
+      this.onSubmit();
+     }
     render() {
 
         const {userDetails} = this.props.userState;

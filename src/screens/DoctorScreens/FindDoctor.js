@@ -33,11 +33,13 @@ class Find_Doctor extends Component {
             fontWeight: 'bold',
             //paddingLeft: 50,
             textAlign: "center",
-            justifyContent: 'center',
+            justifyContent: 'space-around',
             flex: 0.8,
 
         }
     };
+
+    
 
     onPressSpeicalityButton = () => {
         this.props.updateState({ selectedBTN: 'Specialities' });
@@ -58,26 +60,26 @@ class Find_Doctor extends Component {
     
     onSearchDetails = () => {
         // console.log('Search the data');
-        const { searchDetails } = this.props.doctorState;
-        if (searchDetails.name !== '' || searchDetails.pincode!== '' ) {
+        // const { searchDetails } = this.props.doctorState;
+        // if (searchDetails.name !== '' || searchDetails.pincode!== '' ) {
 
             this.props.findDoctors();
             this.props.navigation.navigate('SearchDoctor');
-        }
+        // }
 
-        else {
-            Alert.alert(
-                '',
-                message = 'Please Input Value',
-                [{
-                    text: 'Cancel',
-                    onPress: this.onCancelAlert,
-                    style: 'cancel'
-                }], {
-                    cancelable: false
-                }
-            );
-        }
+        // else {
+        //     Alert.alert(
+        //         '',
+        //         message = 'Please Input Value',
+        //         [{
+        //             text: 'Cancel',
+        //             onPress: this.onCancelAlert,
+        //             style: 'cancel'
+        //         }], {
+        //             cancelable: false
+        //         }
+        //     );
+        // }
     }
 
     onSpecialities = (value) => {

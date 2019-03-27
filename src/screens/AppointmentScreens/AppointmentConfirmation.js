@@ -35,7 +35,6 @@ class Appointment_Confirmation extends Component {
         headerTintColor: '#fff',
         headerTitleStyle: {
             paddingLeft: 0,
-           
         },   
         headerLeft: (<Header_Home onHome={this.onHome} />),
     };   
