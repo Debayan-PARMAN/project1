@@ -1,9 +1,7 @@
 import { doGet, doDelete, doPut, doPost } from '../api/utils';
 import { DOCTOR_TYPE } from '../constants/actionReducerConstants';
 import { URI } from '../constants';
-import doctors from '../reducers/doctors';
-import { Header } from 'native-base';
-
+//import Moment from 'moment';
 
 // ================ For Update State ====================
 export function updateState(payload) {
@@ -110,7 +108,7 @@ export function getDoctorDetailsFailure(error) {
 
 export function updateApponitmentDetails() {
     return (dispatch, getState) => {
-        console.log("Trigger......")
+       // console.log("Trigger......")
         const { userDetails } = getState().userState;
         const { doctorDetails, chamberDetails, AppointmentDetails } = getState().doctorState;
         const tokenValue = userDetails.token;
@@ -139,6 +137,7 @@ export function updateApponitmentDetails() {
     };
 }
 export function updateApponitmentDetailsSuccess(payload) {
+    //action.payload.data.appointmentDate = Moment(action.payload.data.appointmentDate).format("DD-MM-YYYY");
 //console.log("Payyyyyy",payload)
     return {
         type: DOCTOR_TYPE.UPDATE_APPOINTMENT_DETAILS_SUCCESS,

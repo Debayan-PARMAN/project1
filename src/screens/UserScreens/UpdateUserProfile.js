@@ -105,6 +105,7 @@ class Update_User_Profile extends Component {
                 <TextInput editable={userDetails.fieldsEditable} style={textInputStyle.primaryTextInput}
                 onChangeText={(e) => this.onValueChange(e, 'age')}
                     value={userDetails.dateOfBirth} />
+                    
         </View>);
         }
          else {
@@ -115,7 +116,7 @@ class Update_User_Profile extends Component {
                     date={userDetails.dateOfBirth}
                     mode="date"
                     placeholder="select date"
-                    format="YYYY-MM-DD"
+                    format="DD-MM-YYYY"
                     minDate="1960-01-01"
                     maxDate="2020-12-31"
                     confirmBtnText="Confirm"

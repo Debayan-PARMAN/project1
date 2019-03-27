@@ -166,7 +166,7 @@ class Home_Screen extends Component {
                 </TouchableOpacity>
               </View>
               <View style={HomeStyles.ser_parent} >
-                <TouchableOpacity onPress={this.onNavigate} >
+                <TouchableOpacity onPress={this.onNavigate}>
                   <Image style={HomeStyles.ser_icon}
                     source={imageConstantURI.calender.src} />
                 </TouchableOpacity>

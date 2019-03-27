@@ -14,6 +14,7 @@ import imageConstantURI from '../../constants/imageConst';
 import { buttonStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
+import Moment from 'moment';
 
 class Appointment_Confirmation extends Component {
     onHome = () => {
@@ -107,7 +108,7 @@ class Appointment_Confirmation extends Component {
                         </View>
                         <View>
                             <Text style={AppointmentConfirmationStyle.text}>
-                                    {AppointmentDetails.appointmentDate}, {AppointmentDetails.appointmentTime }
+                                {Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}
                                 </Text>
                         </View>
                     </View>

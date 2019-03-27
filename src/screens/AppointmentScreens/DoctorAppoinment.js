@@ -88,7 +88,7 @@ class Doctor_Appoinment extends Component {
         //console.log("Docdata....", this.getDoctorQualification(doctorData) );
         //const { list, keyValue } = this.props.common.singleDoctorDetails;
         //console.log("DETAILS of doctor Getting Chember list:",doctorDetails);
-        console.log("DETAILS of doctor Getting Chember list:", doctorDetails.doctorChamberList);
+        //console.log("DETAILS of doctor Getting Chember list:", doctorDetails.doctorChamberList);
 
         const datePickerArea = (<View style={{justifyContent:'center',}}>
                 <TouchableOpacity>
@@ -97,7 +97,7 @@ class Doctor_Appoinment extends Component {
                         date={this.state.date}
                         mode="date"
                         placeholder="select date"
-                        format="YYYY-DD-MM"
+                        format="DD-MM-YYYY"
                         minDate={this.state.date}
                         maxDate="2019-31-12"
                         confirmBtnText="Confirm"
@@ -127,7 +127,7 @@ class Doctor_Appoinment extends Component {
                     <View style={DoctorCardStyle.subContainer1}>
                         <View style = { DoctorCardStyle.flex1 }>
                             <View style = { DoctorCardStyle.flex2 }>
-                                <Image style={DoctorCardStyle.profileImage} source={imageConstantURI.appLogo.src} />
+                            <Image style={DoctorCardStyle.profileImage} source={imageConstantURI.doctorImage.src} />
                             </View>
                             <View style={DoctorCardStyle.heartIconContainer}>
                                 {/* <Image style={ DoctorCardStyle.heartIconImage } source={imageConstantURI.heartIcon.src} /> */}
