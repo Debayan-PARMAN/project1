@@ -114,14 +114,15 @@ class AddAddress extends Component {
 
 
         const customAddressArea = (
-           
-                <TextInput
-                    style={[textInputStyle.primaryTextInput, {marginTop:10}]}
-                    placeholder="Provide Address Type"
-                    value={userDetails.addressDetails.addressType}
-                    onChangeText={(e) => this.onValueChange(e, 'addressType')}
-                />
-           
+           <View>
+                <Text style={[textInputStyle.primaryTextInputFontStyle, { marginTop: 8 }]}>Provide Address Type</Text>
+                    <TextInput
+                        style={textInputStyle.primaryTextInput}
+                        //placeholder="Provide Address Type"
+                        value={userDetails.addressDetails.addressType}
+                        onChangeText={(e) => this.onValueChange(e, 'addressType')}
+                    />
+            </View>  
         );
 
         const selectCountryArea = (
@@ -156,9 +157,10 @@ class AddAddress extends Component {
                     optionLabel='stateName'
                     optionValue='stateCode'
                 /> */}
+                <Text style={[textInputStyle.primaryTextInputFontStyle, { marginTop: 6 }]}>State</Text>
                  <TextInput
-                    style={[textInputStyle.primaryTextInput, {marginTop:10}]}
-                    placeholder="State"                
+                            style={textInputStyle.primaryTextInput}
+                   // placeholder="State"             
                    
                     value={userDetails.addressDetails.state}
                     onChangeText={(e) => this.onValueChange(e, 'state')}
@@ -166,40 +168,50 @@ class AddAddress extends Component {
             </View>
         );
         const pinCode = (
-           
+            <View>
+                <Text style={[textInputStyle.primaryTextInputFontStyle, { marginTop: 6 }]}>6 digit 0-9 pin code</Text>
                  <TextInput
-                    style={[textInputStyle.primaryTextInput, {marginTop:10}]}
-                    placeholder="6 digit 0-9 pin code"
+                            style={textInputStyle.primaryTextInput}
+                    //placeholder="6 digit 0-9 pin code"
                     keyboardType="numeric"
                     value={userDetails.addressDetails.pinCode}
                     onChangeText={(e) => this.onValueChange(e, 'pinCode')}
                 />
-            
+            </View>
         );
 
         const flatHouse = (
+            <View>
+                <Text style={[textInputStyle.primaryTextInputFontStyle, { marginTop: 6 }]}>Flat/House/Floor/Building</Text>
                     <TextInput
-                    style={[textInputStyle.primaryTextInput, {marginTop:10}]}
-                    placeholder="Flat/House/Floor/Building"
+                            style={textInputStyle.primaryTextInput}
+                    //placeholder="Flat/House/Floor/Building"
                     value={userDetails.addressDetails.line1}
                     onChangeText={(e) => this.onValueChange(e, 'line1')}
                 />
+                </View>
                     );
         const landmark = (
-            <TextInput
-                style={[textInputStyle.primaryTextInput, { marginTop: 10 }]}
-                placeholder="Landmark"
+            <View>
+                <Text style={[textInputStyle.primaryTextInputFontStyle, { marginTop: 6 }]}>Landmark</Text>
+           <TextInput
+                            style={textInputStyle.primaryTextInput}
+                //placeholder="Landmark"
                 value={userDetails.addressDetails.line2}
                 onChangeText={(e) => this.onValueChange(e, 'line2')}
             />
+            </View>
                );
         const city = (
-                <TextInput
-                    style={[textInputStyle.primaryTextInput, {marginTop:10}]}
-                    placeholder="City"
-                    value={userDetails.addressDetails.city}
-                    onChangeText={(e) => this.onValueChange(e, 'city')}
-                />
+                <View>
+                <Text style={[textInputStyle.primaryTextInputFontStyle, {marginTop:6}]}>City</Text>
+                        <TextInput
+                            style={textInputStyle.primaryTextInput}
+                          //  placeholder="City"
+                            value={userDetails.addressDetails.city}
+                            onChangeText={(e) => this.onValueChange(e, 'city')}
+                        />
+                </View>
                    );
         const addressBtn = (
             <View style={AddAddressStyle.btnContainer}>
@@ -218,7 +230,7 @@ class AddAddress extends Component {
         return (
             <View style={AddAddressStyle.mainWrapper}>
                 <ScrollView>                   
-                  
+                    <KeyboardAvoidingView behavior="position">
                             {/*<HomeAddress/>*/}                          
                                     {customAddressArea }
                                     { selectCountryArea }
@@ -228,7 +240,7 @@ class AddAddress extends Component {
                                     { city }
                                     { selectStateArea }
                                     { addressBtn }                              
-                       
+                    </KeyboardAvoidingView>   
                 </ScrollView>                  
             </View>
         );

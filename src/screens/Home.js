@@ -100,7 +100,7 @@ class Home_Screen extends Component {
                   colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }} >                
-                 <Text style={[buttonStyle.primaryBtnText]}>{en.groupLabels.updateBtnLabel} {en.homeLabels.profileLabel}</Text>
+                  <Text style={[buttonStyle.primaryBtnText]}>{en.homeLabels.myprofileLabel}</Text>
                   </LinearGradient>
                 </View>
               </TouchableOpacity>
@@ -178,7 +178,7 @@ class Home_Screen extends Component {
 
            <View style={HomeStyles.ser_subContainer}>
               <View style={HomeStyles.ser_parent} >
-                <TouchableOpacity>
+                <TouchableOpacity >
                   <Image style={HomeStyles.ser_icon}
                    source={imageConstantURI.pill.src} />
                 </TouchableOpacity>
