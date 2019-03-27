@@ -122,7 +122,7 @@ class Find_Doctor extends Component {
             <View style={ FindDoctorStyle.flex4 }>
                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.commonLabel.nameLabel}</Text>
                 <TextInput style={textInputStyle.primaryTextInput}
-                    placeholder="Name"
+                   // placeholder="Name"
                     value = {searchDetails.name }
                   onChangeText={(e) => this.onValueChange(e, 'name')}
                 />
@@ -156,7 +156,7 @@ class Find_Doctor extends Component {
                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.doctorSearchLabel.locationLabel}</Text>
                 <TextInput style={textInputStyle.primaryTextInput}
                     //editable={false} 
-                    placeholder="Kolkata"
+                   // placeholder="Kolkata"
                     value = { searchDetails.pincode }
                     onChangeText={(e) => this.onValueChange(e, 'pincode')}
                     />

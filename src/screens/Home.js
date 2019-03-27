@@ -100,7 +100,7 @@ class Home_Screen extends Component {
                   colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }} >                
-                 <Text style={[buttonStyle.primaryBtnText]}>{en.groupLabels.updateBtnLabel} {en.homeLabels.profileLabel}</Text>
+                  <Text style={[buttonStyle.primaryBtnText]}>{en.homeLabels.myprofileLabel}</Text>
                   </LinearGradient>
                 </View>
               </TouchableOpacity>
@@ -166,7 +166,7 @@ class Home_Screen extends Component {
                 </TouchableOpacity>
               </View>
               <View style={HomeStyles.ser_parent} >
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('AppointmentDetails')} >
+                <TouchableOpacity onPress={this.onNavigate} >
                   <Image style={HomeStyles.ser_icon}
                     source={imageConstantURI.calender.src} />
                 </TouchableOpacity>
@@ -178,7 +178,7 @@ class Home_Screen extends Component {
 
            <View style={HomeStyles.ser_subContainer}>
               <View style={HomeStyles.ser_parent} >
-                <TouchableOpacity onPress={this.onNavigate} >
+                <TouchableOpacity >
                   <Image style={HomeStyles.ser_icon}
                    source={imageConstantURI.pill.src} />
                 </TouchableOpacity>
@@ -210,7 +210,7 @@ class Home_Screen extends Component {
               </View>
 
               <View style={HomeStyles.ser_parent} >
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('DoctorAppoinment')} >
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('')} >
                   <Image style={HomeStyles.ser_icon}
                     source={imageConstantURI.timeLeft.src} />
                 </TouchableOpacity>
