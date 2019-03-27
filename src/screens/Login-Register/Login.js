@@ -15,6 +15,7 @@ import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import imageConstantURI from '../../constants/imageConst';
+import Footer from '../../components/Footer/Footer';
 
 class LogIn extends Component {
     static navigationOptions = {
@@ -32,7 +33,7 @@ class LogIn extends Component {
             paddingLeft: 50,
         },
     };
-    f
+    
     onValueChange = (value, id) => {
         const { userDetails } = this.props.userState;
         userDetails[id] = value;
@@ -243,8 +244,8 @@ class LogIn extends Component {
 
 
         return (
-            <ScrollView >
-                <View style={LoginStyles.mainWrapper}>
+            <View style={LoginStyles.mainWrapper}>
+                <ScrollView >
                     {contactNumberArea}
 
                     {showPassword ? passwordSection : otpSection}
@@ -262,17 +263,18 @@ class LogIn extends Component {
                         <View style={LoginStyles.toggleButtonContainer}>
                             {
                                 toggleEnable ?
-                                    <ToggleSwitch onColor='#d8c0ef' offColor='#d8c0ef' isOn={otpToggle} onToggle={(isOn) => this.onTogglePass(isOn)} />
-                                    :
-                                    <ToggleSwitch offColor='#eee' onToggle={this.onTogglePass} />
+                                <ToggleSwitch onColor='#d8c0ef' offColor='#d8c0ef' isOn={otpToggle} onToggle={(isOn) => this.onTogglePass(isOn)} />
+                                :
+                                <ToggleSwitch offColor='#eee' onToggle={this.onTogglePass} />
                             }
                             <Text style={FontStyles.font}>{showPassword ? 'Use OTP' : 'Use Password'}</Text>
                         </View>
                     </View>
 
                     {showPassword ? passwordArea : otpArea}
-                </View>
-            </ScrollView>
+                </ScrollView>
+                <Footer navigation={this.props.navigation} />
+            </View>
         );
     }
 }

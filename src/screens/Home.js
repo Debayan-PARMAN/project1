@@ -16,6 +16,8 @@ import styleConstants from '../constants/styleConstants';
 import { buttonStyle, } from '../styelsheets/CommonStyle';
 import en from '../messages/en-us';
 
+import Footer from '../components/Footer/Footer';
+
 const DeviceWidth = Dimensions.get('window').width;
 //const BannerHeight = Dimensions.get('window').width*0.2;
 class Home_Screen extends Component {
@@ -56,19 +58,20 @@ class Home_Screen extends Component {
 
   }
   static navigationOptions = {
-    title: 'MEDePAL',
+    title: 'MED-E-PAL',
     headerBackground: (
       <LinearGradient
         colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
-        style={{ flex: 1,}}
+        style={{ flex: 1, padding: 0}}
         start={[0,0]}
         end={[1,1]}
       />
-    ),   
+    ),
     headerTintColor: '#fff',
     headerTitleStyle: {      
       paddingLeft: 50,
-      alignItems:'center',
+      textAlign: 'center', 
+      alignSelf: 'center',
       justifyContent: 'center',
     },
     headerLeft: (<Header_Component_Menu />),
@@ -224,29 +227,30 @@ class Home_Screen extends Component {
     return (
       <View style={HomeStyles.mainWrapper}>
         <ScrollView>
-        {/*--- Carousel Start ---*/}
-        <View style={HomeStyles.caro}>
-          <Auto_Carousel />
-        </View>
-        {/*--- Carousel End ---*/}
+          {/*--- Carousel Start ---*/}
+          <View style={HomeStyles.caro}>
+            <Auto_Carousel />
+          </View>
+          {/*--- Carousel End ---*/}
 
-        {/*--- SignIn/CreateAccount Start ---*/}
-        {userArea}
-        {/*--- SignIn/CreateAccount End ---*/}
+          {/*--- SignIn/CreateAccount Start ---*/}
+          {userArea}
+          {/*--- SignIn/CreateAccount End ---*/}
 
-        {/*--- Offers & Discount Start ---*/}
-         {offersArea}
-        {/*--- Offers & Discount End ---*/}
+          {/*--- Offers & Discount Start ---*/}
+          {offersArea}
+          {/*--- Offers & Discount End ---*/}
 
-        {/*--- complete profile Area Start ---*/}
-         {completeprofileArea}           
-        {/*--- complete profile Area End ---*/}
+          {/*--- complete profile Area Start ---*/}
+          {completeprofileArea}           
+          {/*--- complete profile Area End ---*/}
 
-        {/*--- Menu Start ---*/}
-          {menuArea}
-        {/*--- Menu End ---*/}
+          {/*--- Menu Start ---*/}
+            {menuArea}
+          {/*--- Menu End ---*/}
 
-      </ScrollView>
+        </ScrollView>
+        <Footer navigation={this.props.navigation} /> 
       </View>
     );
   }
