@@ -4,12 +4,14 @@ import {
     Text,
     Image,
     View,
-    TouchableOpacity
+    TouchableOpacity,
+    Alert
 
 } from 'react-native';
 
 export default class Footer_Component_Home extends Component {
     render() {
+        // const { navigate } = this.props.navigation;
         return (
             <View style={{ flex: 1, alignItems: 'center', paddingTop: 2 }}>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
@@ -24,6 +26,6 @@ export default class Footer_Component_Home extends Component {
         );
     }
 }
-
+ 
 
 
