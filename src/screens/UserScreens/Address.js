@@ -26,10 +26,11 @@ class Address extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            // fontWeight: 'bold',
-            paddingLeft: 50,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            fontWeight: 'bold',
+            //paddingLeft: 50,
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 0.8,
         },
     };
 

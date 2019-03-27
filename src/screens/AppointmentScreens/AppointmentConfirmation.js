@@ -28,8 +28,12 @@ class Appointment_Confirmation extends Component {
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
-            paddingLeft: 7,
-            paddingRight: 10,           
+            fontWeight: 'bold',
+            //paddingLeft: 50,
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 0.8,
+         
         },
         headerLeft: (<Header_Home onHome={this.onHome} />),
     };   

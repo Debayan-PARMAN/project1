@@ -47,26 +47,26 @@ class Registration extends Component {
 
   onSubmit = () => {
     //console.log('Registration Button triggered');
-    const {userDetails} = this.props.userState;
-    const regex = /[0-9]/g;
+    // const {userDetails} = this.props.userState;
+    // const regex = /[0-9]/g;
 
-    if ((!(regex.test(userDetails.contactNo))) && (userDetails.contactNo.length < 10 )){
-      Alert.alert(
-        '',
-        message='Provide a valid number',
-        [{
-          text: 'Cancel',
-          onPress: this.onCancelAlert,
-          style: 'cancel'
-        }], {
-          cancelable: false
-        }
-      );
-    }
+    // if ((!(regex.test(userDetails.contactNo))) && (userDetails.contactNo.length < 10 )){
+    //   Alert.alert(
+    //     '',
+    //     message='Provide a valid number',
+    //     [{
+    //       text: 'Cancel',
+    //       onPress: this.onCancelAlert,
+    //       style: 'cancel'
+    //     }], {
+    //       cancelable: false
+    //     }
+    //   );
+    // }
     
-    else {
+    // else {
       this.props.numberCheckRegistration(this.props.navigation.navigate)
-    }
+    //}
   }
   render() {
     const { userDetails } = this.props.userState;
