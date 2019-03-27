@@ -14,6 +14,7 @@ import { LinearGradient } from 'expo';
 import { updateState, doctorSpecializations } from '../../actions/doctors';
 import { cancelAppointment } from '../../actions/doctors';
 import en from '../../messages/en-us';
+import Moment from 'moment';
 
 class AppointmentDetails extends Component {
     

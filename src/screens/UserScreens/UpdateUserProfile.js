@@ -15,6 +15,8 @@ import styleConstants from '../../constants/styleConstants';
 
 class Update_User_Profile extends Component {
 
+    
+
     static navigationOptions = {
         title: 'UpdateUserProfile',
         headerBackground: (
@@ -63,6 +65,10 @@ class Update_User_Profile extends Component {
         this.props.navigation.navigate('Home');
     }
 
+     componentWillUnmount() {
+
+      this.onSubmit();
+     }
     render() {
 
         const {userDetails} = this.props.userState;
@@ -271,8 +277,8 @@ class Update_User_Profile extends Component {
                     <ScrollView>
                         <KeyboardAvoidingView behavior="position">
                             <View style={UpdateUserProfileStyle.health}>
-                                <Text style={UpdateUserProfileStyle.healthText}>{en.userScreensLabel.healthProfileHeading}</Text>
-                            </View>
+                                {/* <Text style={UpdateUserProfileStyle.healthText}>{en.userScreensLabel.healthProfileHeading}</Text>*/}
+        </View>
                             {userProfileTabs}
                             <View style={UpdateUserProfileStyle.userdetailsArea}>
                                 {userDetailsArea}

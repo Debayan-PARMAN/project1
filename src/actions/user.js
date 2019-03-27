@@ -305,10 +305,10 @@ export function updateUserProfile() {
     dispatch({
       type: USER_TYPE.UPDATE_USER_PROFILE
     });
-     console.log("User Params*******************",userProfileParams);
+     //console.log("User Params*******************",userProfileParams);
      const tokenValue = userDetails.token;
-     console.log("User token", tokenValue);
-     console.log(`${URI.updateUserProfile}`);
+     //console.log("User token", tokenValue);
+     //console.log(`${URI.updateUserProfile}`);
      doPut(`${URI.updateUserProfile}`, userProfileParams, true, true, tokenValue)
       .then(result => dispatch(updateUserProfileSuccess(result)))
       .catch(error => dispatch(updateUserProfileFailure(error)));

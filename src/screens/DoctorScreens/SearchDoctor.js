@@ -35,6 +35,8 @@ class Search_Doctor extends Component {
             homeVisitFlag: '',
         };
         this.props.docUpdateState({ searchDetails });
+        const totalElements = ' ';
+        this.props.docUpdateState({ totalElements })
         // onPress = () =>{this.props.navigation.navigate('FindDoctor')}
     }
 
@@ -119,7 +121,8 @@ class Search_Doctor extends Component {
 
         const hospitalList = (
             <View>
-                <TextInput  style={textInputStyle.primaryTextInput} placeholder="Hospitaltist" 
+                <TextInput  style={textInputStyle.primaryTextInput} 
+                //placeholder="Hospitaltist" 
                 value={searchDetails.hospitals} editable={false} />
             </View>
         );
