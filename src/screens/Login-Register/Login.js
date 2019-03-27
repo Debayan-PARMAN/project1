@@ -98,11 +98,35 @@ class LogIn extends Component {
     
 
     onGetOtp = () => {
-        const { otpActions } = this.props.userState;
-        otpActions.otpSent = true;
-        this.props.updateState({ otpActions });
-        this.props.numberCheck();
+        const { otpActions, userDetails } = this.props.userState;
+        
+    
+
+    if(userDetails.contactNo !== '' ) {
+
+    otpActions.otpSent = true;
+    this.props.updateState({ otpActions });
+    this.props.numberCheck();
+}
+
+        else {
+    Alert.alert(
+        '',
+        message = 'Please Input Mobile Number',
+        [{
+            text: 'Cancel',
+            onPress: this.onCancelAlert,
+            style: 'cancel'
+        }], {
+            cancelable: false
+        }
+    );
+}
+
+
+        //this.props.otpLogin();
     }
+
 
     loginWithOtp = () => {
 
