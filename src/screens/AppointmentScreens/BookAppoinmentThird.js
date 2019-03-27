@@ -128,7 +128,7 @@ class Book_Appoinment_Third extends Component {
                                     colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
                                     start={{ x: 0, y: 0 }}
                                     end={{ x: 1, y: 1 }} >
-                                    <Text style={[buttonStyle.primaryBtnText, {fontSize:14}]}>{en.appointmentScreens.confirmBtnLabel2}</Text>
+                                    <Text style={[buttonStyle.primaryBtnText, {fontSize:12}]}>{en.appointmentScreens.confirmBtnLabel2}</Text>
                                 </LinearGradient>
                             </TouchableOpacity>                         
                         </View>

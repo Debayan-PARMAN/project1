@@ -14,6 +14,8 @@ import { LinearGradient } from 'expo';
 import { updateState, doctorSpecializations } from '../../actions/doctors';
 import { cancelAppointment } from '../../actions/doctors';
 import en from '../../messages/en-us';
+import Header_Blank from '../../components/Header/Header_Blank';
+import Moment from 'moment';
 
 class AppointmentDetails extends Component {
     
@@ -29,17 +31,34 @@ class AppointmentDetails extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            // fontWeight: 'bold',
-            paddingLeft: 40,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
+
         },
+        headerRight: (<Header_Blank />)  
     };        
 
     render() {
 
-        const { AppointmentDetails, doctorDetails } = this.props.doctorState;
+        const { AppointmentDetails, doctorDetails, } = this.props.doctorState;
         //console.log(doctorDetails.doctorSpecializationList);
+        const btn = ( 
+            <View style={AppointmentDetailsStyle.BtnContainer}>           
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('CancelAppointment')}>
+                        <View style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle2]}>
+                            <Text style={[buttonStyle.secondaryBtnText]}>{en.commonLabel.cancelBtnLabel} </Text>
+                        </View>
+                    </TouchableOpacity>
+              
+                <TouchableOpacity onPress={() => { }} >
+                    <View style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle2]}>
+                        <Text style={[buttonStyle.secondaryBtnText]}>{en.commonLabel.rescheduleBtnLabel}</Text>
+                    </View>
+                </TouchableOpacity>
+         </View>
+        );
+       
         const specialities = doctorDetails.doctorSpecializationList !== undefined
             && doctorDetails.doctorSpecializationList.length > 0 ?
             doctorDetails.doctorSpecializationList.map(item => item.specialization).join(',')
@@ -97,19 +116,11 @@ class AppointmentDetails extends Component {
                          </TouchableOpacity> 
                          </View>                       
                     </View>
-
-                    <View style={AppointmentDetailsStyle.BtnContainer}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('CancelAppointment')}>                       
-                         <View style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle2]}>                           
-                                <Text style={[buttonStyle.secondaryBtnText]}>{en.commonLabel.cancelBtnLabel} </Text>
-                         </View>       
-                        </TouchableOpacity>   
-                        <TouchableOpacity onPress={() => { }} >
-                            <View style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle2]}>
-                                <Text style={[buttonStyle.secondaryBtnText]}>{en.commonLabel.rescheduleBtnLabel}</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
+                   
+                        {AppointmentDetails.appointmentState !== 'COM' && AppointmentDetails.appointmentState !== 'CXL' ? btn : null }
+                         {/* {btn}                      */}
+                       
+                  
                 </ScrollView>
             </View>
         );

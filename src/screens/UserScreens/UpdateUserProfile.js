@@ -134,7 +134,7 @@ class Update_User_Profile extends Component {
                         }
                         // ... You can check the source to find the other keys.
                     }}
-                    placeholder="dateofBirth"
+                   // placeholder="dateofBirth"
                     onDateChange={(date) => { this.onValueChange(date, 'dateOfBirth') }}
                 />
             </View>);
@@ -148,7 +148,7 @@ class Update_User_Profile extends Component {
                     <TextInput editable={userDetails.fieldsEditable}
                         value={userDetails.bloodGroup}
                         style={textInputStyle.primaryTextInput}
-                        placeholder="bloodGroup"
+                        //placeholder="bloodGroup"
                         onChangeText={(e) => this.onValueChange(e, 'bloodGroup')}
                         value={userDetails.bloodGroup}
                     />
@@ -168,7 +168,7 @@ class Update_User_Profile extends Component {
                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.heightLabel}</Text>
                 <TextInput editable={userDetails.fieldsEditable}
                     style={textInputStyle.primaryTextInput}
-                    placeholder="Height"
+                    //placeholder="Height"
                     keyboardType="numeric"
                     onChangeText={(e) => this.onValueChange(e, 'height')}
                     value={userDetails.height} 
@@ -179,7 +179,7 @@ class Update_User_Profile extends Component {
                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.weightLabel}</Text>
                 <TextInput editable={userDetails.fieldsEditable}
                     style={textInputStyle.primaryTextInput}
-                    placeholder="Weight"
+                   // placeholder="Weight"
                     keyboardType="numeric"
                     onChangeText={(e) => this.onValueChange(e, 'weight')}
                     value={userDetails.weight} />
@@ -191,7 +191,7 @@ class Update_User_Profile extends Component {
             <Text editable={userDetails.fieldsEditable} style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.genderLabel}</Text>
                 <TextInput editable={userDetails.fieldsEditable}
                     style={textInputStyle.primaryTextInput}
-                    placeholder="gender"
+                    //placeholder="gender"
                     onChangeText={(e) => this.onValueChange(e, 'gender')}
                     value={userDetails.gender} />
             </View>
@@ -199,7 +199,7 @@ class Update_User_Profile extends Component {
                 <Text editable={userDetails.fieldsEditable} style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.maritalStatusLable}</Text>
                 <TextInput editable={userDetails.fieldsEditable}
                     style={textInputStyle.primaryTextInput}
-                    placeholder="maritialStatus"
+                   // placeholder="maritialStatus"
                     onChangeText={(e) => this.onValueChange(e, 'maritialStatus')}
                     value={userDetails.maritialStatus} />
             </View>
@@ -271,7 +271,7 @@ class Update_User_Profile extends Component {
                     <ScrollView>
                         <KeyboardAvoidingView behavior="position">
                             <View style={UpdateUserProfileStyle.health}>
-                                <Text style={UpdateUserProfileStyle.healthText}>{en.userScreensLabel.healthProfileHeading}</Text>
+                                {/* <Text style={UpdateUserProfileStyle.healthText}>{en.userScreensLabel.healthProfileHeading}</Text> */}
                             </View>
                             {userProfileTabs}
                             <View style={UpdateUserProfileStyle.userdetailsArea}>

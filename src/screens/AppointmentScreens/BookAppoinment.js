@@ -103,7 +103,7 @@ class Book_Appoinment extends Component {
                             
                             <View style={BookAppointmentStyle.TextInputContainer}>
                                 <TextInput style={textInputStyle.primaryTextInput}
-                                    placeholder="Patient name"
+                                    //placeholder="Patient name"
                                 //value={userDetails.username}
                                 //onChangeText={(e) => this.onValueChange(e, 'username')} 
                                 />
@@ -111,7 +111,7 @@ class Book_Appoinment extends Component {
                             <View style={BookAppointmentStyle.TextInputContainer}>
                                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.emailLabel}</Text>
                                     <TextInput style={textInputStyle.primaryTextInput}
-                                    placeholder="Patient email address"
+                                    //placeholder="Patient email address"
                                 //value={userDetails.username}
                                 //onChangeText={(e) => this.onValueChange(e, 'username')} 
                                 />
@@ -119,7 +119,7 @@ class Book_Appoinment extends Component {
                             <View style={BookAppointmentStyle.TextInputContainer}>
                                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.mobileNumberLabel}</Text>
                                 <TextInput style={[textInputStyle.primaryTextInput, { width: 200 }]}
-                                    placeholder="Patient Mobile number"
+                                    //placeholder="Patient Mobile number"
                                 //value={userDetails.username}
                                 //onChangeText={(e) => this.onValueChange(e, 'username')} 
                                 />
@@ -127,12 +127,12 @@ class Book_Appoinment extends Component {
                             <View style={BookAppointmentStyle.TextInputContainer}>
                                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.appointmentScreens.ageLabel}</Text>
                                 <TextInput style={[textInputStyle.primaryTextInput, { width: 130 } ]}
-                                    placeholder="Approx age"
+                                   // placeholder="Approx age"
                                     //value={userDetails.username}
                                     //onChangeText={(e) => this.onValueChange(e, 'username')}
                                     />                                     
                             </View>                         
-                            <Text style={BookAppointmentStyle.GenderName}>{en.appointmentScreens.genderLabel}</Text>
+                            <Text style={[textInputStyle.primaryTextInputFontStyle, {marginTop:5}]}>{en.appointmentScreens.genderLabel}</Text>
                             <View style={BookAppointmentStyle.genderBtnContainer}>
                                 <TouchableOpacity
                                     style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle4]}

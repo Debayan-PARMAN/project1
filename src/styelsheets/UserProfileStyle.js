@@ -58,6 +58,8 @@ export default UserProfileStyle = StyleSheet.create({
         height: 35,
         borderColor: '#ccc',
         borderBottomWidth: 1,
+        paddingBottom:15
+       
     },
     AgeText: {
         textAlign: styleConstants.fontStyles.textAlign,

@@ -7,7 +7,7 @@ import { userLogin, checkNoExits, updateState, otpLogin, numberCheck } from '../
 import { View, Text, Alert, TextInput, ScrollView } from 'react-native';
 import { LoginStyles, FontStyles, Button_fb_google } from '../../styelsheets/MainStyle';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
-
+import Header_Blank from '../../components/Header/Header_Blank';
 import ToggleSwitch from 'toggle-switch-react-native';
 import ButtonComponent from '../../components/Button/ButtonComponent';
 import PasswordComponent from '../../components/TextComponent/PasswordComponent';
@@ -29,10 +29,14 @@ class LogIn extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            paddingLeft: 50,
+            textAlign: "center",
+            justifyContent:'space-around', 
+            flex:1         
+
         },
+        headerRight: (<Header_Blank />)      
     };
-    f
+  
     onValueChange = (value, id) => {
         const { userDetails } = this.props.userState;
         userDetails[id] = value;
