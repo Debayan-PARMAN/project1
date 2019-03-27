@@ -23,18 +23,19 @@ class Appointment_Confirmation extends Component {
 
     static navigationOptions = {
         title: 'APPOINTMENT CONFIRMATION',
-        headerStyle: {
-            backgroundColor: '#572a6f',
-        },
+    
+        headerBackground: (
+            <LinearGradient
+                colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+                style={{ flex: 1, }}
+                start={[0, 0]}
+                end={[1, 1]}
+            />
+        ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            fontWeight: 'bold',
-            //paddingLeft: 50,
-            textAlign: "center",
-            justifyContent: 'space-around',
-            flex: 0.8,
-         
-        },
+            paddingLeft: 0,
+        },   
         headerLeft: (<Header_Home onHome={this.onHome} />),
     };   
 
@@ -161,12 +162,12 @@ class Appointment_Confirmation extends Component {
                     <View style={AppointmentConfirmationStyle.buttonContainer}>
                             <TouchableHighlight
                                 style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle1]}
-                                onPress={() => this.props.navigation.navigate('Home')}                            >
+                            onPress={() => this.props.navigation.navigate('CancelAppointment')}                            >
                                 <Text style={[buttonStyle.secondaryBtnText]}>{en.commonLabel.cancelBtnLabel}</Text>
                             </TouchableHighlight>
                             <TouchableHighlight
                                 style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle1]}
-                                onPress={() => this.props.navigation.navigate('Home')}>
+                                onPress={() => this.props.navigation.navigate('')}>
                                 <Text style={[buttonStyle.secondaryBtnText]}>{en.commonLabel.rescheduleBtnLabel} </Text>
                             </TouchableHighlight>
                     </View>

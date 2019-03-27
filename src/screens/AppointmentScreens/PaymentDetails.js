@@ -205,7 +205,7 @@ class Payment_Details extends Component {
                             colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
                             start={{ x: 0, y: 0 }}
                             end={{ x: 1, y: 1 }} >
-                            <Text style={[buttonStyle.primaryBtnText, { fontSize: 14 }]}>{en.appointmentScreens.confirmProceedLabel}</Text>
+                            <Text style={[buttonStyle.primaryBtnText, { fontSize: 12 }]}>{en.appointmentScreens.confirmProceedLabel}</Text>
                         </LinearGradient>
                     </TouchableOpacity>
                 </View>           

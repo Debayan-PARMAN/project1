@@ -76,7 +76,7 @@ class User_Profile extends Component {
             <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.emailLabel}</Text>
             <TextInput
                 style={textInputStyle.primaryTextInput}
-                placeholder="Enter Email Here"
+                //placeholder="Enter Email Here"
                 onChangeText={(e) => this.onValueChange(e, 'emailAddress')}
                 value={userDetails.emailAddress}
             />
@@ -90,8 +90,8 @@ class User_Profile extends Component {
                     style={{ width: 200 }}
                     date={userDetails.dateOfBirth === '' ? new Date() : userDetails.dateOfBirth}
                     mode="date"
-                    placeholder="select date"
-                    format="YYYY-MM-DD"
+                   // placeholder="select date"
+                    format="DD-MM-YYYY"
                     minDate="1960-01-01"
                     maxDate="2020-12-31"
                     confirmBtnText="Confirm"
@@ -125,7 +125,7 @@ class User_Profile extends Component {
                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.heightLabel}(cm)</Text>
                 <TextInput
                     style={textInputStyle.primaryTextInput}
-                    placeholder="Height"
+                   // placeholder="Height"
                     keyboardType="numeric"
                     onChangeText={(e) => this.onValueChange(e, 'height')}
                     value={userDetails.height}
@@ -140,7 +140,7 @@ class User_Profile extends Component {
                         onChangeText={(e) => this.onValueChange(e, 'bloodGroup')}
                         value={userDetails.bloodGroup}
                     /> */}
-
+              
                     <Drop_Down 
                         selectedData='bloodGroup'
                         selectedValue={userDetails.bloodGroup} 
@@ -156,7 +156,7 @@ class User_Profile extends Component {
                 <KeyboardAvoidingView behavior="padding" enabled>
                     <TextInput
                         style={textInputStyle.primaryTextInput}
-                        placeholder="Weight"
+                        //placeholder="Weight"
                         keyboardType="numeric"
                         onChangeText={(e) => this.onValueChange(e, 'weight')}
                         value={userDetails.weight}
@@ -166,7 +166,7 @@ class User_Profile extends Component {
         </View>);
 
         const genderArea = (<View style={UserProfileStyle.AgeBloodWeight}>
-            <Text style={[UserProfileStyle.GenderIama, { color: '#808080' }]}>{en.userScreensLabel.genderTypeLabel} </Text>
+            <Text style={[UserProfileStyle.GenderIama, { color: '#ad4274' }]}>{en.userScreensLabel.genderTypeLabel} </Text>
                 <View style={UserProfileStyle.Gender}>
                     <View style={userDetails.gender === 'M' ? withHover : withoutHover}>
                         <TouchableOpacity onPress={() => this.onValueChange('M', 'gender')} >

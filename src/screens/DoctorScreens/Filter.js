@@ -9,23 +9,28 @@ import FilterStyle from '../../styelsheets/FilterStyle';
 import imageConstantURI from '../../constants/imageConst';
 import { updateState as userUpdateState } from '../../actions/doctors';
 import { updateState as docUpdateState } from '../../actions/doctors';
+import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 
 class Filter extends React.Component {
 
    static navigationOptions = {
       title: 'FIND DOCTOR',
-      headerStyle: {
-         backgroundColor: '#572a6f',
-      },
+      headerBackground: (
+         <LinearGradient
+            colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+            style={{ flex: 1, }}
+            start={[0, 0]}
+            end={[1, 1]}
+         />
+      ),
       headerTintColor: '#fff',
       headerTitleStyle: {
-         fontWeight: 'bold',
-         paddingLeft: 50,
          textAlign: "center",
-         justifyContent: 'center',
-         flex: 0.8,
-      }
+         justifyContent: 'space-around',
+         flex: 1
+
+      },
    };
 
    onValueChange = (value, id) => {

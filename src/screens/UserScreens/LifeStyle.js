@@ -5,16 +5,22 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState, } from '../../actions/user';
 import { getStates } from '../../actions/common';
-import { Modal,View, Text, Image, TouchableOpacity,TouchableHighlight, TextInput, ScrollView, CheckBox,StyleSheet} from 'react-native';
+import { Modal,View, Text,TouchableOpacity, TextInput, StyleSheet} from 'react-native';
 import imageConstantURI from '../../constants/imageConst';
+import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 
 class LifeStyle extends Component {
    static navigationOptions = {
       title: 'LIFE STYLE',
-      headerStyle: {
-         backgroundColor: '#572a6f',
-      },
+      headerBackground: (
+         <LinearGradient
+            colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
+            style={{ flex: 1, }}
+            start={[0, 0]}
+            end={[1, 1]}
+         />
+      ),   
       headerTintColor: '#fff',
       headerTitleStyle: {
          // fontWeight: 'bold',

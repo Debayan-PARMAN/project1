@@ -2,7 +2,8 @@ import { createReducer } from './utils';
 import { DOCTOR_TYPE,} from '../constants/actionReducerConstants';
 
 const initialState = {
-    
+   
+
     specialitylist: [],
     hospitallist: [],
     doctorslist: [],

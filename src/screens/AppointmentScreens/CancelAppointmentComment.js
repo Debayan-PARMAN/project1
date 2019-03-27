@@ -47,7 +47,7 @@ class CancelAppointmentComment extends Component {
         const { commentText } = this.props.doctorState;
         if (commentText.appointmentCxlReason !== ''){
             this.props.cancelAppointment();
-            this.props.navigation.navigate('FindDoctor');
+            this.props.navigation.navigate('MyAppointment');
             
         }else{
             alert("Field comment section");

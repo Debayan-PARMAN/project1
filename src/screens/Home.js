@@ -66,10 +66,12 @@ class Home_Screen extends Component {
       />
     ),   
     headerTintColor: '#fff',
-    headerTitleStyle: {      
-      paddingLeft: 50,
-      alignItems:'center',
+    headerTitleStyle: {    
+    
+      textAlign: "center",
       justifyContent: 'center',
+      flex: 1,
+
     },
     headerLeft: (<Header_Component_Menu />),
     headerRight: (<Header_SearchButton />)
