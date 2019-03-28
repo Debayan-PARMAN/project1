@@ -6,6 +6,7 @@ import DatePicker from 'react-native-datepicker';
 import { Accordion } from "native-base";
 import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
+import Header_Blank from '../../components/Header/Header_Blank';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
@@ -23,10 +24,12 @@ class MyAppointmentFilter extends Component {
             />
         ),
         headerTintColor: '#fff',
-        headerTitleStyle: {            
-            paddingLeft: 40,
-           
+        headerTitleStyle: {
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
     render() {
         // const { appointmentList, AppointmentDetails } = this.props.doctorState;

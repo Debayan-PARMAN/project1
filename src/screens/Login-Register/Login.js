@@ -98,33 +98,32 @@ class LogIn extends Component {
         //this.props.userLogin();
     
 
-        onGetOtp = () => {
-            const { otpActions, userDetails } = this.props.userState;
-            
-            if(userDetails.contactNo !== '' ) {
-            
+    onGetOtp = () => {
+        const { otpActions, userDetails } = this.props.userState;
+
+        if (userDetails.contactNo !== '') {
+
             otpActions.otpSent = true;
             this.props.updateState({ otpActions });
             this.props.numberCheck();
-            }
-            
-            else {
+        }
+
+        else {
             Alert.alert(
-            '',
-            message = 'Please Input Mobile Number',
-            [{
-            text: 'Cancel',
-            onPress: this.onCancelAlert,
-            style: 'cancel'
-            }], {
-            cancelable: false
-            }
+                '',
+                message = 'Please Input Mobile Number',
+                [{
+                    text: 'Cancel',
+                    onPress: this.onCancelAlert,
+                    style: 'cancel'
+                }], {
+                    cancelable: false
+                }
             );
-            }
-            
-            
-            //this.props.otpLogin();
-            }
+        }
+        //this.props.otpLogin();
+    }
+
 
     loginWithOtp = () => {
 
@@ -346,7 +345,7 @@ class LogIn extends Component {
                     </View>
 
                     {showPassword ? passwordArea : otpArea}
-                </ScrollView>
+                    </ScrollView>
                 <Footer navigation={this.props.navigation} />
             </View>
         );

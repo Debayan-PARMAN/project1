@@ -7,6 +7,7 @@ import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-nativ
 import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { ForgotPasswordStyles, FontStyles, LoginStyles, } from '../../styelsheets/MainStyle';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
@@ -23,9 +24,12 @@ class ForgotPasswordOtp extends Component {
             />
         ),
         headerTintColor: '#fff',
-        headerTitleStyle: {           
-            paddingLeft: 30,           
+        headerTitleStyle: {
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };   
 
     onValueChange = (value, id) => {
@@ -96,11 +100,12 @@ class ForgotPasswordOtp extends Component {
                         </TouchableOpacity>
                     </View>                                                             
                    
-                </ScrollView> 
+                    </ScrollView> 
                                
-            </View>
-            <Footer navigation={this.props.navigation} />  
-            </View>
+                               </View>
+                               <Footer navigation={this.props.navigation} />  
+                               </View>
+            
         );   }
 };
 

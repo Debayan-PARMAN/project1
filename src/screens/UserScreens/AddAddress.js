@@ -8,6 +8,7 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { View, Text, TouchableOpacity, TextInput, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { LinearGradient } from 'expo';
+import Header_Blank from '../../components/Header/Header_Blank';
 import AddAddressStyle from '../../styelsheets/AddAddressStyle';
 import Drop_Down from '../../components/DropDown';
 import en from '../../messages/en-us';
@@ -26,11 +27,11 @@ class AddAddress extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            // fontWeight: 'bold',
-            paddingLeft: 50,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
     onNavigate = () => {

@@ -8,6 +8,7 @@ import { getAppoinmentList, cancelAppointment } from '../../actions/doctors';
 import MyAppointmentStyle from '../../styelsheets/MyAppointmentStyle';
 import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import Appointment_Card_Past from '../../components/Card/AppointmentCardPast';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { updateState } from '../../actions/doctors';
 import { LinearGradient } from 'expo';
 import Footer from '../../components/Footer/Footer';
@@ -30,11 +31,11 @@ class MyAppointmentPast extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            // fontWeight: 'bold',
-            paddingLeft: 40,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
     selectedAppointment = (AppointmentDetails) => {

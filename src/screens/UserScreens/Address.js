@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { updateState, addAddress } from '../../actions/user';
 import { getStates } from '../../actions/common';
 import { LinearGradient } from 'expo';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { View, Text,Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
@@ -27,12 +28,11 @@ class Address extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            fontWeight: 'bold',
-            //paddingLeft: 50,
             textAlign: "center",
             justifyContent: 'space-around',
-            flex: 0.8,
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
     openSelectedAddress = (id) => {
@@ -95,20 +95,20 @@ class Address extends Component {
 
         return (
             <View style = {{ flex: 1 }}>
-                <View style={AddAddressStyle.mainWrapper}>
-                <ScrollView>
-                <View style={AddAddressStyle.AddressType}>
-                {/* // <Text style={AddAddressStyle.AddressTypeText}>{en.userScreensLabel.addressTypeLabel}</Text> */}
+            <View style={AddAddressStyle.mainWrapper}>
+                  <ScrollView>                                          
+                        <View style={AddAddressStyle.AddressType}>
+                           {/* // <Text style={AddAddressStyle.AddressTypeText}>{en.userScreensLabel.addressTypeLabel}</Text> */}
+                        </View>
+                        {addressTypeArea}
+                        {/* {officeArea}
+                        {othersArea} */}
+                        {addnewaddressArea}                    
+                                         
+                   </ScrollView>                  
+            </View>
+            <Footer navigation={this.props.navigation} />
                 </View>
-                {addressTypeArea}
-                {/* {officeArea}
-                {othersArea} */}
-                {addnewaddressArea}
-                </ScrollView>
-                </View>
-                <Footer navigation={this.props.navigation} />
-                </View>
-            
         );
     }
 };

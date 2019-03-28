@@ -10,6 +10,7 @@ import DatePicker from 'react-native-datepicker';
 import { KeyboardAvoidingView } from 'react-native';
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { TextInputStyles } from '../../styelsheets/TextInputStyle';
@@ -29,11 +30,11 @@ class User_Profile extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-        fontWeight: 'bold',
-        paddingLeft: 50,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
     
     onSubmit = () => {
@@ -189,9 +190,8 @@ class User_Profile extends Component {
         
         return (
             <View style={{flex:1}}>
-            <View style={UserProfileStyle.mainWrapper}>
-            <View >
-                <ScrollView>
+                <View style={UserProfileStyle.mainWrapper}>
+                    <ScrollView>
                         <KeyboardAvoidingView behavior="position">
                         {welcomeHeading}
                         {staticMessageArea}
@@ -208,14 +208,12 @@ class User_Profile extends Component {
                                     end={{ x: 1, y: 1 }} >
                                     <Text style={[buttonStyle.primaryBtnText]}>{en.commonLabel.nextBtnLabel}</Text> 
                                 </LinearGradient>                           
-                               </TouchableOpacity>
-                         </View>
-                  </KeyboardAvoidingView>       
-                </ScrollView>
-            </View>
-           
-         </View>
-         <Footer navigation={this.props.navigation} />
+                            </TouchableOpacity>
+                        </View>
+                    </KeyboardAvoidingView>       
+                    </ScrollView>
+                </View>
+            <Footer navigation={this.props.navigation} />
          </View>
         );
     }

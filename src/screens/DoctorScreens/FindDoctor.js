@@ -12,10 +12,14 @@ import Specialities from '../../screens/DoctorScreens/Specialities';
 import Hospitallist from '../../screens/DoctorScreens/Hospitallist';
 import {buttonStyle,textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Header_Blank from '../../components/Header/Header_Blank';
 import {LinearGradient } from 'expo';
 import  en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0ae3f830914d51210358dc55c034436b3cb92941
 
 class Find_Doctor extends Component {
    
@@ -31,13 +35,11 @@ class Find_Doctor extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            fontWeight: 'bold',
-            //paddingLeft: 50,
             textAlign: "center",
             justifyContent: 'space-around',
-            flex: 0.8,
-
-        }
+            flex: 1
+        },
+        headerRight: (<Header_Blank />)
     };
 
     

@@ -13,6 +13,7 @@ import { updateState } from '../../actions/user';
 import imageConstantURI from '../../constants/imageConst';
 import { buttonStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Header_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
 import Moment from 'moment';
 import Footer from '../../components/Footer/Footer';
@@ -35,9 +36,14 @@ class Appointment_Confirmation extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            paddingLeft: 0,
-        },   
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
+
+        },
+        headerRight: (<Header_Blank />),
         headerLeft: (<Header_Home onHome={this.onHome} />),
+       
     };   
 
 
@@ -180,34 +186,34 @@ class Appointment_Confirmation extends Component {
 
         return (
             <View style={{flex:1}}>
-            <View style={AppointmentConfirmationStyle.mainContainer}>
-                <ScrollView>
-                    <View style={AppointmentConfirmationStyle.flex}>
-                        <View style={AppointmentConfirmationStyle.subContainer}>
-                            <View style={AppointmentConfirmationStyle.flex}>
-                                <Text style={AppointmentConfirmationStyle.medePal}> {en.commonLabel.medEPalLabel}</Text>
-                            </View>
-                            { heart_right}
-                            <View style={AppointmentConfirmationStyle.flex}>
-                                <View style={AppointmentConfirmationStyle.downloadImageContainer}>
-                                    <TouchableOpacity>
-                                        <Image style={AppointmentConfirmationStyle.downloadImageStyle}
-                                            source={imageConstantURI.download.src}/>
-                                    </TouchableOpacity>
+                <View style={AppointmentConfirmationStyle.mainContainer}>
+                    <ScrollView>
+                        <View style={AppointmentConfirmationStyle.flex}>
+                            <View style={AppointmentConfirmationStyle.subContainer}>
+                                <View style={AppointmentConfirmationStyle.flex}>
+                                    <Text style={AppointmentConfirmationStyle.medePal}> {en.commonLabel.medEPalLabel}</Text>
                                 </View>
-                                <View style={AppointmentConfirmationStyle.pdfContainer}>
-                                    <Text style={AppointmentConfirmationStyle.text}> {en.commonLabel.pdfLabel}</Text>
+                                { heart_right}
+                                <View style={AppointmentConfirmationStyle.flex}>
+                                    <View style={AppointmentConfirmationStyle.downloadImageContainer}>
+                                        <TouchableOpacity>
+                                            <Image style={AppointmentConfirmationStyle.downloadImageStyle}
+                                                source={imageConstantURI.download.src}/>
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={AppointmentConfirmationStyle.pdfContainer}>
+                                        <Text style={AppointmentConfirmationStyle.text}> {en.commonLabel.pdfLabel}</Text>
+                                    </View>
                                 </View>
                             </View>
+                        { confirm }
                         </View>
-                      { confirm }
-                    </View>
-                    { body }
-                   
-                </ScrollView>
-               
-            </View>
-            <Footer navigation={this.props.navigation} />
+                        { body }
+                    
+                    </ScrollView>
+                
+                </View>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
 

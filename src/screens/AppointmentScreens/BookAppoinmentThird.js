@@ -13,6 +13,7 @@ import BookAppointmentStyle from '../../styelsheets/BookAppointmentStyle';
 import { getDoctorDetails,} from '../../actions/doctors';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import Moment from 'moment';
@@ -32,11 +33,11 @@ class Book_Appoinment_Third extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            fontWeight: 'bold',
-            paddingLeft: 40,
-            //alignItems:'center',
-
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
     onValueChange = (value, id) => {

@@ -7,6 +7,7 @@ import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-nativ
 import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { ForgotPasswordStyles, FontStyles } from '../../styelsheets/MainStyle';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
@@ -24,8 +25,11 @@ class ForgotPassword extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            paddingLeft: 30,
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
     onValueChange = (value, id) => {
@@ -51,8 +55,7 @@ class ForgotPassword extends Component {
 
 
         return (
-            <View style={{flex:1}}>
-            <View style={ForgotPasswordStyles.mainWrapper}>
+            <View style={[ForgotPasswordStyles.mainWrapper, flex=1]}>
                 <ScrollView>
                     <View style={ForgotPasswordStyles.topContainer}>
                         <View style={ForgotPasswordStyles.topTabContainer}>
@@ -91,9 +94,7 @@ class ForgotPassword extends Component {
                     </View>
 
                 </ScrollView>
-               
-            </View>
-            <Footer navigation={this.props.navigation} />
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

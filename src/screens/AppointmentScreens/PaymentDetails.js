@@ -15,6 +15,7 @@ import { getDoctorDetails, updateApponitmentDetails } from '../../actions/doctor
 import imageConstantURI from '../../constants/imageConst';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
@@ -33,13 +34,11 @@ class Payment_Details extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            fontWeight: 'bold',
-            flex:0.8,
-            textAlign:'center',
-            //paddingLeft: 40,
-            //alignItems:'center',
-
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
     onToggle = () => {
@@ -215,29 +214,29 @@ class Payment_Details extends Component {
         return (
 
             <View style={{flex:1}}>
-            <View style={BookAppointmentStyle.mainWrapper}>
-                <ScrollView>
-                    <KeyboardAvoidingView behavior="position">
-                        <Status_Indicator />
-                        { doctorName }
-                        { chamberArea }
-                        { feesArea }
-                        { GSTArea }
-                        { paymentArea }
-                        { promoCodeArea }                     
-                        <View style={BookAppointmentStyle.PaymentArea}>
-                            { saveCard }                               
-                            { otherCard }                           
-                            { netBankingArea }                          
-                            { morePaymentArea }                           
-                            { payDuringArea }
-                        </View>                     
-                            { buttonArea }      
-                    </KeyboardAvoidingView>
-                </ScrollView>
+                <View style={BookAppointmentStyle.mainWrapper}>
+                    <ScrollView>
+                        <KeyboardAvoidingView behavior="position">
+                            <Status_Indicator />
+                            { doctorName }
+                            { chamberArea }
+                            { feesArea }
+                            { GSTArea }
+                            { paymentArea }
+                            { promoCodeArea }                     
+                            <View style={BookAppointmentStyle.PaymentArea}>
+                                { saveCard }                               
+                                { otherCard }                           
+                                { netBankingArea }                          
+                                { morePaymentArea }                           
+                                { payDuringArea }
+                            </View>                     
+                                { buttonArea }      
+                        </KeyboardAvoidingView>
+                    </ScrollView>
+                    <Footer navigation={this.props.navigation} />
                
-            </View>
-            <Footer navigation={this.props.navigation} />
+                </View>
             </View>
         );
     }

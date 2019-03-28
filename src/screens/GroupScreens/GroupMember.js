@@ -9,6 +9,7 @@ import { CheckBox } from 'react-native-elements';
 import GroupStyle from '../../styelsheets/GroupStyle';
 import { updateState, deleteMember, editMember } from '../../actions/group';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
+import Header_Blank from '../../components/Header/Header_Blank';
 import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
@@ -38,11 +39,11 @@ class GroupMember extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            // fontWeight: 'bold',
-            paddingLeft: 50,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     }; 
     onSubmit = () => {
         this.props.deleteMember();
@@ -126,6 +127,8 @@ class GroupMember extends Component {
                                 {groupBtn}                                                    
                 </ScrollView>
                 
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
             <Footer navigation={this.props.navigation} />
             </View>

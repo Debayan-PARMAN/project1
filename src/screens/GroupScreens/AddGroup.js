@@ -7,6 +7,7 @@ import { View, Text, TouchableOpacity, TextInput, ScrollView,  } from 'react-nat
 import GroupStyle from '../../styelsheets/GroupStyle';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
@@ -24,11 +25,11 @@ class AddGroup extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            // fontWeight: 'bold',
-            paddingLeft: 50,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
     
     onValueChange = (value, id) => {
@@ -89,6 +90,8 @@ class AddGroup extends Component {
                 
             </View>
              <Footer navigation={this.props.navigation} />
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }

@@ -21,7 +21,7 @@ class Footer_Component extends Component {
                     <Footer_Icons iconLabel={HomeIcon.label} iconSrc={HomeIcon.src} navigation={this.props.navigation} iconLink='Home' />
                     <Footer_Icons iconLabel={NotificationsIcon.label} iconSrc={NotificationsIcon.src} navigation={this.props.navigation} iconLink='Notifications' />
                     <Footer_Icons iconLabel={HelpIcon.label} iconSrc={HelpIcon.src} navigation={this.props.navigation} iconLink='Icon' />
-                </LinearGradient>
+                </LinearGradient >
             );
         } else {
             footerIcons = (
