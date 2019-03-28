@@ -12,6 +12,7 @@ import AddAddressStyle from '../../styelsheets/AddAddressStyle';
 import imageConstantURI from '../../constants/imageConst';
 // import Drop_Down from '../components/DropDown';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class Address extends Component {
     static navigationOptions = {
@@ -74,7 +75,7 @@ class Address extends Component {
                             
                         </View>
                     </View>
-                </TouchableOpacity >)
+                </TouchableOpacity>)
             :
             <View></View>;
         const addnewaddressArea = (
@@ -90,21 +91,24 @@ class Address extends Component {
                        
                     </View>
                 </View>
-            </TouchableOpacity >);     
+            </TouchableOpacity>);     
 
         return (
-            <View style={AddAddressStyle.mainWrapper}>
-                  <ScrollView>                                          
-                        <View style={AddAddressStyle.AddressType}>
-                           {/* // <Text style={AddAddressStyle.AddressTypeText}>{en.userScreensLabel.addressTypeLabel}</Text> */}
-                        </View>
-                        {addressTypeArea}
-                        {/* {officeArea}
-                        {othersArea} */}
-                        {addnewaddressArea}                    
-                                         
-                   </ScrollView>                  
-            </View>
+            <View style = {{ flex: 1 }}>
+                <View style={AddAddressStyle.mainWrapper}>
+                <ScrollView>
+                <View style={AddAddressStyle.AddressType}>
+                {/* // <Text style={AddAddressStyle.AddressTypeText}>{en.userScreensLabel.addressTypeLabel}</Text> */}
+                </View>
+                {addressTypeArea}
+                {/* {officeArea}
+                {othersArea} */}
+                {addnewaddressArea}
+                </ScrollView>
+                </View>
+                <Footer navigation={this.props.navigation} />
+                </View>
+            
         );
     }
 };

@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { SpecialitiesStyle } from '../../styelsheets/SpecialitiesStyle';
 import imageConstantURI from '../../constants/imageConst';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class Hospitallist extends Component {
     render() {
@@ -10,6 +11,7 @@ class Hospitallist extends Component {
         //console.log("ARPAN KHAN........",list1);
 
         return (
+            <View style={{flex:1}}>
             <View style = { SpecialitiesStyle.mainContainer }>
                 {list1.map((data, index) =>
                     <TouchableOpacity onPress={() => this.props.onHospitals(data.hospitalName)} key={index}>
@@ -26,6 +28,8 @@ class Hospitallist extends Component {
                     </View>
                     </TouchableOpacity>
             )}
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }

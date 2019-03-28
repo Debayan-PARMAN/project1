@@ -15,6 +15,7 @@ import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import imageConstantURI from '../../constants/imageConst';
+import Footer from '../../components/Footer/Footer';
 
 class LogIn extends Component {
     static navigationOptions = {
@@ -36,7 +37,7 @@ class LogIn extends Component {
         },
         headerRight: (<Header_Blank />)      
     };
-  
+    
     onValueChange = (value, id) => {
         const { userDetails } = this.props.userState;
         userDetails[id] = value;
@@ -97,12 +98,33 @@ class LogIn extends Component {
         //this.props.userLogin();
     
 
-    onGetOtp = () => {
-        const { otpActions } = this.props.userState;
-        otpActions.otpSent = true;
-        this.props.updateState({ otpActions });
-        this.props.numberCheck();
-    }
+        onGetOtp = () => {
+            const { otpActions, userDetails } = this.props.userState;
+            
+            if(userDetails.contactNo !== '' ) {
+            
+            otpActions.otpSent = true;
+            this.props.updateState({ otpActions });
+            this.props.numberCheck();
+            }
+            
+            else {
+            Alert.alert(
+            '',
+            message = 'Please Input Mobile Number',
+            [{
+            text: 'Cancel',
+            onPress: this.onCancelAlert,
+            style: 'cancel'
+            }], {
+            cancelable: false
+            }
+            );
+            }
+            
+            
+            //this.props.otpLogin();
+            }
 
     loginWithOtp = () => {
 
@@ -293,8 +315,8 @@ class LogIn extends Component {
 
 
         return (
-            <ScrollView >
-                <View style={LoginStyles.mainWrapper}>
+            <View style={LoginStyles.mainWrapper}>
+                <ScrollView >
                     {contactNumberArea}
 
                     {showPassword ? passwordSection : otpSection}
@@ -311,18 +333,22 @@ class LogIn extends Component {
                         </View>
                         <View style={LoginStyles.toggleButtonContainer}>
                             {
+
                              //   toggleEnable ?
                                     <ToggleSwitch onColor='#d8c0ef' offColor='#d8c0ef' isOn={otpToggle} onToggle={(isOn) => this.onTogglePass(isOn)} />
                                   //  :
                             //  <ToggleSwitch offColor='#eee' onToggle={this.onTogglePass} />
+
+                              
                             }
                             <Text style={FontStyles.font}>{showPassword ? 'Use OTP' : 'Use Password'}</Text>
                         </View>
                     </View>
 
                     {showPassword ? passwordArea : otpArea}
-                </View>
-            </ScrollView>
+                </ScrollView>
+                <Footer navigation={this.props.navigation} />
+            </View>
         );
     }
 }

@@ -9,6 +9,7 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class AddGroup extends Component {
     static navigationOptions = {
@@ -46,13 +47,16 @@ class AddGroup extends Component {
    render() {
         
         //const { addGroup } = this.props.userState;
-       const customAddressArea = (           
+       const customAddressArea = ( 
+           <View>
+               <Text style={textInputStyle.primaryTextInputFontStyle}>Group Name</Text>          
                <TextInput
-                    style={textInputStyle.primaryTextInput}
-                    placeholder="Group Name"
+                    style={[textInputStyle.primaryTextInput, {marginTop:5}]}
+                    //placeholder="Group Name"
                     //value={addGroup.groupName}
                     onChangeText={(e) => this.onValueChange(e, 'groupName')}
-                />           
+                />
+                </View>           
         );
 
         const groupBtn = (
@@ -69,6 +73,7 @@ class AddGroup extends Component {
             </View>
         );
         return (
+            <View style={{flex:1}}>
             <View style={GroupStyle.mainWrapper}>
                 <ScrollView>
                     {/* <View style={{ flex: 1, }} >
@@ -81,6 +86,9 @@ class AddGroup extends Component {
                      { customAddressArea }
                      { groupBtn }                          
                 </ScrollView>
+                
+            </View>
+             <Footer navigation={this.props.navigation} />
             </View>
         );
     }

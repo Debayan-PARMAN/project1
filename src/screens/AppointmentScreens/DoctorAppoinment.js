@@ -16,6 +16,7 @@ import { LinearGradient } from 'expo';
 import { buttonStyle, } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class Doctor_Appoinment extends Component {
 
@@ -174,6 +175,7 @@ class Doctor_Appoinment extends Component {
         );
                 
         return (
+            <View style={{flex:1}}>
             <View style={DoctorCardStyle.mainWrapper}>
                 <KeyboardAvoidingView behavior="position">
 
@@ -183,6 +185,9 @@ class Doctor_Appoinment extends Component {
                     {doctorChamberDetails}
  
                 </KeyboardAvoidingView>
+                
+            </View>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

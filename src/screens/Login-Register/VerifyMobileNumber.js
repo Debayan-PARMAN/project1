@@ -9,6 +9,7 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { ForgotPasswordStyles, FontStyles, LoginStyles, Space } from '../../styelsheets/MainStyle';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class Verify_Mobile_Number extends Component {
     static navigationOptions = {
@@ -106,6 +107,7 @@ class Verify_Mobile_Number extends Component {
                     
 
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

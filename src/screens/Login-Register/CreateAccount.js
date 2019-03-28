@@ -11,6 +11,7 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import Header_Component_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
 import PasswordComponent from '../../components/TextComponent/PasswordComponent';
+import Footer from '../../components/Footer/Footer';
 
 class Create_Account extends Component {
     componentDidMount() {
@@ -260,7 +261,8 @@ class Create_Account extends Component {
         }
 
         return (
-                            
+                  
+            <View style={{flex:1}}>
             <ScrollView style={LoginStyles.mainWrapper}> 
                     <KeyboardAvoidingView behavior="position">                   
                         {userNameArea}               
@@ -292,6 +294,8 @@ class Create_Account extends Component {
                     </View>
                 </KeyboardAvoidingView>                   
              </ScrollView>
+             <Footer navigation={this.props.navigation} />
+             </View>
            
         );
     }

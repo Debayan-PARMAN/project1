@@ -10,6 +10,7 @@ import { LinearGradient } from 'expo';
 import { buttonStyle,  } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { View, Text,TouchableOpacity, KeyboardAvoidingView,  ScrollView } from 'react-native';
+import Footer from '../../components/Footer/Footer';
 
 class CancelAppointment extends Component {
     // componentDidMount() {
@@ -72,6 +73,7 @@ class CancelAppointment extends Component {
                     </View>                  
                 </KeyboardAvoidingView>
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

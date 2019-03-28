@@ -88,6 +88,7 @@ class OtpLogin extends Component {
             );
         }
         return (
+            <View style={{flex:1}}>
             <KeyboardAvoidingView style={LoginStyles.mainWrapper} behavior="padding" enabled>
                 <View style={LoginStyles.bannerArea2_Text}>
                     <Text style={FontStyles.font}>{en.createAccountMsg.createAccountHeading}</Text>
@@ -184,6 +185,8 @@ class OtpLogin extends Component {
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView>
+            <Footer navigation={this.props.navigation} />
+            </View>
         );
     }
 };

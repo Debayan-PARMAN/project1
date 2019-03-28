@@ -16,6 +16,7 @@ import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import Moment from 'moment';
+import Footer from '../../components/Footer/Footer';
 
 class Book_Appoinment_Third extends Component {
 
@@ -60,6 +61,7 @@ class Book_Appoinment_Third extends Component {
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
 
         return (
+            <View style={{flex:1}}>
             <View style={BookAppointmentStyle.mainWrapper}>
                 <KeyboardAvoidingView behavior="position">
                 <ScrollView>
@@ -136,6 +138,9 @@ class Book_Appoinment_Third extends Component {
                    
                     </ScrollView> 
                     </KeyboardAvoidingView>
+                    
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }
