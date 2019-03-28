@@ -13,6 +13,7 @@ import { textInputStyle } from '../../styelsheets/CommonStyle';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class Find_Doctor_Filter extends Component {
     
@@ -167,6 +168,7 @@ class Find_Doctor_Filter extends Component {
                 <View style={ SearchDoctorStyle.flex }>
                     {loading ? <Text>{en.commonLabel.loadingDataMsg}</Text> : doctorListArea}
                 </View>
+                <Footer navigation={this.props.navigation} />
             </View>         
                 
         );

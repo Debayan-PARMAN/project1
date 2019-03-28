@@ -13,6 +13,7 @@ import Header_Blank from '../../components/Header/Header_Blank';
 import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class GroupMember extends Component {
     componentWillUnmount() {
@@ -90,6 +91,7 @@ class GroupMember extends Component {
             </View>
         );
         return (
+            <View style={{flex:1}}>
             <View style={GroupStyle.mainWrapper}>
                 <ScrollView>
                     {/* <View style={{ flex: 1, }} >
@@ -124,6 +126,8 @@ class GroupMember extends Component {
                                        </View>                              
                                 {groupBtn}                                                    
                 </ScrollView>
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }

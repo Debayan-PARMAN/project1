@@ -15,7 +15,7 @@
   "dependencies": {
     "@expo/vector-icons": "^8.1.0",
     "expo": "^31.0.2",
-    "expo-cli": "^2.11.9",
+    "expo-cli": "^2.13.0",
     "install": "^0.12.2",
     "moment": "^2.24.0",
     "native-base": "^2.10.0",

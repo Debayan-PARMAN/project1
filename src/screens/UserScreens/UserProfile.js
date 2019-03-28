@@ -14,6 +14,7 @@ import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { TextInputStyles } from '../../styelsheets/TextInputStyle';
+import Footer from '../../components/Footer/Footer';
 
 class User_Profile extends Component {
 
@@ -188,6 +189,7 @@ class User_Profile extends Component {
         </View>);
         
         return (
+            <View style={{flex:1}}>
             <View style={UserProfileStyle.mainWrapper}>
             <View >
                 <ScrollView>
@@ -210,8 +212,11 @@ class User_Profile extends Component {
                                </TouchableOpacity>
                          </View>
                   </KeyboardAvoidingView>       
-                </ScrollView>
+                  </ScrollView>
             </View>
+           
+         </View>
+         <Footer navigation={this.props.navigation} />
          </View>
         );
     }

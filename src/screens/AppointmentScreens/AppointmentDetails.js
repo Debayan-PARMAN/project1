@@ -16,6 +16,7 @@ import { cancelAppointment } from '../../actions/doctors';
 import en from '../../messages/en-us';
 import Header_Blank from '../../components/Header/Header_Blank';
 import Moment from 'moment';
+import Footer from '../../components/Footer/Footer';
 
 class AppointmentDetails extends Component {
     
@@ -122,6 +123,7 @@ class AppointmentDetails extends Component {
                        
                   
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

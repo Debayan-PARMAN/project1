@@ -15,7 +15,7 @@ import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import {LinearGradient } from 'expo';
 import  en from '../../messages/en-us';
-
+import Footer from '../../components/Footer/Footer';
 
 class Find_Doctor extends Component {
    
@@ -246,6 +246,7 @@ class Find_Doctor extends Component {
                             }
                         </ScrollView>
                     </View>
+                    <Footer navigation={this.props.navigation} />
                 </View>         
 
 

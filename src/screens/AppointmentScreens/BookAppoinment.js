@@ -17,6 +17,7 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
 import Moment from 'moment';
+import Footer from '../../components/Footer/Footer';
 
 class Book_Appoinment extends Component {
     getDoctorQualification = (doctorData) => {
@@ -57,6 +58,7 @@ class Book_Appoinment extends Component {
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
         //console.log("chamber/............:",chamberDetails);
         return (
+            <View style={{flex:1}}>
             <View style={BookAppointmentStyle.mainWrapper}>
                 <ScrollView>
                     <KeyboardAvoidingView behavior='position' >
@@ -182,6 +184,8 @@ class Book_Appoinment extends Component {
                
             </View>                    */}
          </ScrollView>
+        </View>
+        <Footer navigation={this.props.navigation} />
         </View>
         );
     }

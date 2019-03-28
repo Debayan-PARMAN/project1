@@ -12,6 +12,7 @@ import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class CancelAppointmentComment extends Component {
     static navigationOptions = {
@@ -110,6 +111,7 @@ class CancelAppointmentComment extends Component {
                     </View>
 
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

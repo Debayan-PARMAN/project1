@@ -11,6 +11,7 @@ import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class AddNewGroupMember extends Component {
     static navigationOptions = {
@@ -132,6 +133,7 @@ class AddNewGroupMember extends Component {
         );  
         
         return (
+            <View style={{flex:1}}>
             <View style={GroupStyle.mainWrapper}>
                 <ScrollView>                      
                     {/* <Text style={GroupStyle.headerText}>{en.groupLabels.newMemberLabel}{groupDetails.groupName}</Text> */}
@@ -143,6 +145,8 @@ class AddNewGroupMember extends Component {
                                     {addbuttonArea}                  
                                    
                 </ScrollView>                  
+            </View>
+            <Footer navigation={this.props.navigation} />  
             </View>
         );   }
 };
