@@ -12,6 +12,7 @@ import Header_Blank from '../../components/Header/Header_Blank';
 import AddAddressStyle from '../../styelsheets/AddAddressStyle';
 import Drop_Down from '../../components/DropDown';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class AddAddress extends Component {
     static navigationOptions = {
@@ -229,6 +230,7 @@ class AddAddress extends Component {
         );
 
         return (
+            <View style={{flex: 1 }}>
             <View style={AddAddressStyle.mainWrapper}>
                 <ScrollView>                   
                     <KeyboardAvoidingView behavior="position">
@@ -243,6 +245,8 @@ class AddAddress extends Component {
                                     { addressBtn }                              
                     </KeyboardAvoidingView>   
                 </ScrollView>                  
+            </View>
+            <Footer navigation={this.props.navigation} />            
             </View>
         );
     }

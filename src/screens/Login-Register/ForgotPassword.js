@@ -10,6 +10,7 @@ import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { ForgotPasswordStyles, FontStyles } from '../../styelsheets/MainStyle';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class ForgotPassword extends Component {
     static navigationOptions = {
@@ -54,6 +55,7 @@ class ForgotPassword extends Component {
 
 
         return (
+            <View style={{flex:1}}>
             <View style={ForgotPasswordStyles.mainWrapper}>
                 <ScrollView>
                     <View style={ForgotPasswordStyles.topContainer}>
@@ -93,6 +95,8 @@ class ForgotPassword extends Component {
                     </View>
 
                 </ScrollView>
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }

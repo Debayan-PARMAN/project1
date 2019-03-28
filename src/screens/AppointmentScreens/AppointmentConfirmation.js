@@ -16,6 +16,7 @@ import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
 import Moment from 'moment';
+import Footer from '../../components/Footer/Footer';
 
 class Appointment_Confirmation extends Component {
     onHome = () => {
@@ -184,6 +185,7 @@ class Appointment_Confirmation extends Component {
 
 
         return (
+            <View style={{flex:1}}>
             <View style={AppointmentConfirmationStyle.mainContainer}>
                 <ScrollView>
                     <View style={AppointmentConfirmationStyle.flex}>
@@ -209,6 +211,8 @@ class Appointment_Confirmation extends Component {
                     { body }
                    
                 </ScrollView>
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
 

@@ -15,6 +15,7 @@ import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import imageConstantURI from '../../constants/imageConst';
+import Footer from '../../components/Footer/Footer';
 
 class LogIn extends Component {
     static navigationOptions = {
@@ -313,8 +314,8 @@ class LogIn extends Component {
 
 
         return (
-            <ScrollView >
-                <View style={LoginStyles.mainWrapper}>
+            <View style={LoginStyles.mainWrapper}>
+                <ScrollView >
                     {contactNumberArea}
 
                     {showPassword ? passwordSection : otpSection}
@@ -341,8 +342,9 @@ class LogIn extends Component {
                     </View>
 
                     {showPassword ? passwordArea : otpArea}
-                </View>
-            </ScrollView>
+                    </ScrollView>
+                <Footer navigation={this.props.navigation} />
+            </View>
         );
     }
 }

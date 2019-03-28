@@ -12,6 +12,7 @@ import { TextInputStyles } from '../../styelsheets/TextInputStyle';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class Registration extends Component {
 
@@ -146,6 +147,7 @@ class Registration extends Component {
             </TouchableHighlight>                      
           </View>
         </ScrollView>
+        <Footer navigation={this.props.navigation} />
       </View>
     );
   }

@@ -11,6 +11,7 @@ import Appointment_Card_Past from '../../components/Card/AppointmentCardPast';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { updateState } from '../../actions/doctors';
 import { LinearGradient } from 'expo';
+import Footer from '../../components/Footer/Footer';
 
 class MyAppointmentPast extends Component {
     componentDidMount() {
@@ -67,6 +68,7 @@ class MyAppointmentPast extends Component {
                     
 
                     </ScrollView>
+                    <Footer navigation={this.props.navigation} />
              </View>
         );
     }

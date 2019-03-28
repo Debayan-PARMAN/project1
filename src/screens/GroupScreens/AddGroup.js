@@ -70,6 +70,7 @@ class AddGroup extends Component {
             </View>
         );
         return (
+            <View style={{flex:1}}>
             <View style={GroupStyle.mainWrapper}>
                 <ScrollView>
                     {/* <View style={{ flex: 1, }} >
@@ -82,6 +83,8 @@ class AddGroup extends Component {
                      { customAddressArea }
                      { groupBtn }                          
                 </ScrollView>
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }
