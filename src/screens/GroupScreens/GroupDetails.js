@@ -122,10 +122,7 @@ class GroupDetails extends Component {
                     { memberArea }                        
                 </View>
                 <Footer navigation={this.props.navigation} />
-                </View>                                         
-               <Footer navigation={this.props.navigation} />
-               </View>  
-           
+                </View>   
         );
     }
 };

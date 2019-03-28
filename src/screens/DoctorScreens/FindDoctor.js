@@ -16,10 +16,6 @@ import Header_Blank from '../../components/Header/Header_Blank';
 import {LinearGradient } from 'expo';
 import  en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
-<<<<<<< HEAD
-
-=======
->>>>>>> 0ae3f830914d51210358dc55c034436b3cb92941
 
 class Find_Doctor extends Component {
    
