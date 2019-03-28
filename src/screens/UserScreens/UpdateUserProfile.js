@@ -18,7 +18,7 @@ class Update_User_Profile extends Component {
     
 
     static navigationOptions = {
-        title: 'UpdateUserProfile',
+        title: 'UPDATE USER PROFILE',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
