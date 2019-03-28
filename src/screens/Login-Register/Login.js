@@ -120,10 +120,9 @@ class LogIn extends Component {
                 }
             );
         }
-
-
         //this.props.otpLogin();
     }
+
 
     loginWithOtp = () => {
 
