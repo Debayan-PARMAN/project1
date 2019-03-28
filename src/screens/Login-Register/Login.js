@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import { userLogin, checkNoExits, updateState, otpLogin, numberCheck } from '../../actions/user';
 import { View, Text, Alert, TextInput, ScrollView } from 'react-native';
 import { LoginStyles, FontStyles, Button_fb_google } from '../../styelsheets/MainStyle';
@@ -15,6 +14,7 @@ import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import imageConstantURI from '../../constants/imageConst';
+import Footer from '../../components/Footer/Footer';
 
 class LogIn extends Component {
     static navigationOptions = {
@@ -112,6 +112,7 @@ class LogIn extends Component {
         else {
     Alert.alert(
         '',
+
         message = 'Please Input Mobile Number',
         [{
             text: 'Cancel',
@@ -317,8 +318,9 @@ class LogIn extends Component {
 
 
         return (
-            <ScrollView >
+            
                 <View style={LoginStyles.mainWrapper}>
+                <ScrollView>
                     {contactNumberArea}
 
                     {showPassword ? passwordSection : otpSection}
@@ -345,8 +347,11 @@ class LogIn extends Component {
                     </View>
 
                     {showPassword ? passwordArea : otpArea}
+                    
+                     </ScrollView>
+                <Footer navigation={this.props.navigation} />
                 </View>
-            </ScrollView>
+           
         );
     }
 }

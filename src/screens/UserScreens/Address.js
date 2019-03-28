@@ -12,6 +12,7 @@ import AddAddressStyle from '../../styelsheets/AddAddressStyle';
 import imageConstantURI from '../../constants/imageConst';
 // import Drop_Down from '../components/DropDown';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class Address extends Component {
     static navigationOptions = {
@@ -93,6 +94,7 @@ class Address extends Component {
             </TouchableOpacity >);     
 
         return (
+            <View style = {{ flex: 1 }}>
             <View style={AddAddressStyle.mainWrapper}>
                   <ScrollView>                                          
                         <View style={AddAddressStyle.AddressType}>
@@ -103,8 +105,11 @@ class Address extends Component {
                         {othersArea} */}
                         {addnewaddressArea}                    
                                          
-                   </ScrollView>                  
+                   </ScrollView> 
+                </View>
+                <Footer navigation={this.props.navigation} />
             </View>
+            
         );
     }
 };

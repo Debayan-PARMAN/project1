@@ -12,6 +12,7 @@ import { LinearGradient } from 'expo';
 import Drop_Down from '../../components/DropDown';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Footer from '../../components/Footer/Footer';
 
 class Update_User_Profile extends Component {
 
@@ -272,8 +273,8 @@ class Update_User_Profile extends Component {
         </View>
         );        
         return (
-            <View style={UserProfileStyle.mainWrapper}>
-                <View>
+            <View style={UpdateUserProfileStyle.mainWrapper}>
+                <View style={UpdateUserProfileStyle.mainWrapper}>
                     <ScrollView>
                         <KeyboardAvoidingView behavior="position">
                             <View style={UpdateUserProfileStyle.health}>
@@ -291,6 +292,7 @@ class Update_User_Profile extends Component {
                         </KeyboardAvoidingView>
                     </ScrollView>
                 </View>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }
