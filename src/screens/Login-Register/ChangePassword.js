@@ -6,6 +6,7 @@ import { resetPassword, updateState } from '../../actions/user';
 import { View, Text, TouchableOpacity, TextInput, ScrollView, showPassword } from 'react-native';
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import PasswordComponent from '../../components/TextComponent/PasswordComponent';
 import styleConstants from '../../constants/styleConstants';
@@ -23,11 +24,11 @@ class ChangePassword extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            // fontWeight: 'bold',
-            paddingLeft: 30,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };   
     onValueChange = (value, id) => {
         const { userDetails } = this.props.userState;

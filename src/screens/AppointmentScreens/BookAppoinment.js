@@ -9,6 +9,7 @@ import Status_Indicator from '../../components/StatusIndicator';
 import { updateState as userUpdateState } from '../../actions/doctors';
 import { updateState as docUpdateState } from '../../actions/doctors';
 import { getDoctorDetails, } from '../../actions/doctors';
+import Header_Blank from '../../components/Header/Header_Blank';
 import BookAppoinmentStyle from '../../styelsheets/BookAppointmentStyle';
 import { joiningString } from '../../Utils';
 import { LinearGradient } from 'expo';
@@ -34,11 +35,11 @@ class Book_Appoinment extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            fontWeight: 'bold',
-            paddingLeft: 40,
-            //alignItems:'center',
-
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
     onToggle = () => {

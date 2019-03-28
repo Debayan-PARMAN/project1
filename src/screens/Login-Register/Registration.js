@@ -7,6 +7,7 @@ import { View, Image, Text, Alert, TouchableOpacity, TextInput, ScrollView, Touc
 import { LoginStyles, FontStyles, Button_fb_google, } from '../../styelsheets/MainStyle';
 import imageConstantURI from '../../constants/imageConst';
 import { LinearGradient } from 'expo';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { TextInputStyles } from '../../styelsheets/TextInputStyle';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
@@ -26,10 +27,11 @@ class Registration extends Component {
     ),   
     headerTintColor: '#fff',
     headerTitleStyle: {
-      fontWeight: 'bold',
-      paddingLeft: 30,
-      //alignItems:'center',
+      textAlign: "center",
+      justifyContent: 'space-around',
+      flex: 1
     },
+    headerRight: (<Header_Blank />)
   };
 
   onValueChange = (value, id) => {

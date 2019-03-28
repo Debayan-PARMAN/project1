@@ -17,7 +17,7 @@ import { buttonStyle, } from '../styelsheets/CommonStyle';
 import en from '../messages/en-us';
 
 const DeviceWidth = Dimensions.get('window').width;
-//const BannerHeight = Dimensions.get('window').width*0.2;
+//const BannerHeight = Dimensions.get('window').height*0.2;
 class Home_Screen extends Component {
   constructor(props) {
     super(props);

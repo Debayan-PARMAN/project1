@@ -7,6 +7,7 @@ import { updateState, } from '../../actions/user';
 import { getStates } from '../../actions/common';
 import { Modal,View, Text,TouchableOpacity, TextInput, StyleSheet} from 'react-native';
 import imageConstantURI from '../../constants/imageConst';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 
@@ -23,11 +24,11 @@ class LifeStyle extends Component {
       ),   
       headerTintColor: '#fff',
       headerTitleStyle: {
-         // fontWeight: 'bold',
-         paddingLeft: 50,
-         //justifyContent: 'center',
-         //alignItems: 'center',
+         textAlign: "center",
+         justifyContent: 'space-around',
+         flex: 1
       },
+      headerRight: (<Header_Blank />)
    };
 
 

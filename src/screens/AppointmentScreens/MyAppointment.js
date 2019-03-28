@@ -10,6 +10,7 @@ import MyAppointmentStyle from '../../styelsheets/MyAppointmentStyle';
 import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import Appointment_Card from '../../components/Card/AppointmentCard';
 import { updateState, doctorSpecializations } from '../../actions/doctors';
+import Header_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
 
@@ -31,11 +32,11 @@ class MyAppointment extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            // fontWeight: 'bold',
-            paddingLeft: 40,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
     selectedAppointment = (AppointmentDetails) => {

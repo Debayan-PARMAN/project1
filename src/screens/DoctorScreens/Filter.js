@@ -9,6 +9,7 @@ import FilterStyle from '../../styelsheets/FilterStyle';
 import imageConstantURI from '../../constants/imageConst';
 import { updateState as userUpdateState } from '../../actions/doctors';
 import { updateState as docUpdateState } from '../../actions/doctors';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 
@@ -29,8 +30,8 @@ class Filter extends React.Component {
          textAlign: "center",
          justifyContent: 'space-around',
          flex: 1
-
       },
+      headerRight: (<Header_Blank />)
    };
 
    onValueChange = (value, id) => {

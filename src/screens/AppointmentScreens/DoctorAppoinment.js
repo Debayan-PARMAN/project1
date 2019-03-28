@@ -13,6 +13,7 @@ import { bindActionCreators } from 'redux';
 import { updateState as docUpdateState } from '../../actions/doctors';
 import { updateState } from '../../actions/doctors';
 import { LinearGradient } from 'expo';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
@@ -51,11 +52,11 @@ class Doctor_Appoinment extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            fontWeight: 'bold',
-            paddingLeft: 50,
-            //alignItems:'center',
-
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
     ///Pass Value////
     selectedChamber = (chamberDetails,timeSlot) => {
@@ -176,9 +177,7 @@ class Doctor_Appoinment extends Component {
         return (
             <View style={DoctorCardStyle.mainWrapper}>
                 <KeyboardAvoidingView behavior="position">
-
                     {datePickerArea}
-
                     {doctorDetailArea}                   
                     {doctorChamberDetails}
  

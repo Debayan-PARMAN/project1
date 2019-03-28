@@ -7,6 +7,7 @@ import { BackHandler, View, Text, Alert, TextInput, ScrollView, ProgressBarAndro
 import { LoginStyles, FontStyles, } from '../../styelsheets/MainStyle';
 import PasswordInputText from 'react-native-hide-show-password-input';
 import { LinearGradient } from 'expo';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import Header_Component_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
@@ -36,6 +37,12 @@ class Create_Account extends Component {
                 end={[1, 1]}
             />
         ),
+        headerTitleStyle: {
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
+        },
+        headerRight: (<Header_Blank />),
         headerLeft: (<Header_Component_Blank />),
     };
 

@@ -7,6 +7,7 @@ import { updateState as docUpdateState } from '../../actions/doctors';
 import { getAppoinmentList, } from '../../actions/doctors';
 import CancelAppointmentStyle from '../../styelsheets/CancelAppointmentStyle';
 import { LinearGradient } from 'expo';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle,  } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { View, Text,TouchableOpacity, KeyboardAvoidingView,  ScrollView } from 'react-native';
@@ -28,8 +29,11 @@ class CancelAppointment extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            paddingLeft: 20,          
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
 
