@@ -12,6 +12,7 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class GroupDetails extends Component {
 
@@ -110,6 +111,7 @@ class GroupDetails extends Component {
         }
 
         return (
+            <View style={{flex:1}}>
             <View style={GroupStyle.mainWrapper}>         
                    
                 <View style={GroupStyle.groupDetailsfixedContainer}>
@@ -117,6 +119,8 @@ class GroupDetails extends Component {
                     {groupBtn}
                 </View>                                               
                     { memberArea }                        
+                </View>
+                <Footer navigation={this.props.navigation} />
                 </View>                                         
                 
            

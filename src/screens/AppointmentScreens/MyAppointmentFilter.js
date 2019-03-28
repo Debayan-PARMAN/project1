@@ -9,6 +9,7 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
+import Footer from '../../components/Footer/Footer';
 
 class MyAppointmentFilter extends Component {
     static navigationOptions = {
@@ -159,6 +160,7 @@ class MyAppointmentFilter extends Component {
                         contentStyle={{ backgroundColor: "#fff" }}
                     />
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

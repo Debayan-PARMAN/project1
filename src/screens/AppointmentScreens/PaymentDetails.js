@@ -17,6 +17,7 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class Payment_Details extends Component {
 
@@ -154,7 +155,7 @@ class Payment_Details extends Component {
                             source={imageConstantURI.rightArrow.src}
                         />            
             </View>
-        </TouchableOpacity >
+        </TouchableOpacity>
         );
 
         const netBankingArea = (
@@ -169,7 +170,7 @@ class Payment_Details extends Component {
                             source={imageConstantURI.rightArrow.src}
                         />
                 </View>
-           </TouchableOpacity >
+           </TouchableOpacity>
         );
 
         const morePaymentArea = (
@@ -212,7 +213,8 @@ class Payment_Details extends Component {
         );
 
         return (
-            
+
+            <View style={{flex:1}}>
             <View style={BookAppointmentStyle.mainWrapper}>
                 <ScrollView>
                     <KeyboardAvoidingView behavior="position">
@@ -233,6 +235,9 @@ class Payment_Details extends Component {
                             { buttonArea }      
                     </KeyboardAvoidingView>
                 </ScrollView>
+               
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }

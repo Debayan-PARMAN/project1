@@ -73,6 +73,15 @@ export default FilterStyle = StyleSheet.create({
           borderEndWidth: 1,
           borderColor: '#972493'
      },
+     FirstThreebox1: {
+          width: 87,
+          height: 43,
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderEndWidth: 1,
+          borderColor: '#972493',
+          backgroundColor: '#972493'
+     },
      hoverboxText: {
           fontSize: 14,
           color: '#fff',
@@ -95,9 +104,17 @@ export default FilterStyle = StyleSheet.create({
      },
      Lastbox: {
           width: 87,
-          height: 40,
+          height: 43,
           justifyContent: 'center',
           alignItems: 'center',
+          backgroundColor: '#972493'
+     },
+     Lastbox1: {
+          width: 87,
+          height: 43,
+          justifyContent: 'center',
+          alignItems: 'center',
+          
      },
      CheckBoxContainer: {
           width: 20,

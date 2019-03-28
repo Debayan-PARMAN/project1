@@ -9,6 +9,7 @@ import { Modal,View, Text,TouchableOpacity, TextInput, StyleSheet} from 'react-n
 import imageConstantURI from '../../constants/imageConst';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class LifeStyle extends Component {
    static navigationOptions = {
@@ -147,7 +148,7 @@ class LifeStyle extends Component {
                </View>                  
       
             </Modal>            
-           
+            <Footer navigation={this.props.navigation} />
          </View>
       )
    }

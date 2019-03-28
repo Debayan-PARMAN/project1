@@ -12,6 +12,7 @@ import Appointment_Card from '../../components/Card/AppointmentCard';
 import { updateState, doctorSpecializations } from '../../actions/doctors';
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
+import Footer from '../../components/Footer/Footer';
 
 class MyAppointment extends Component {
     componentDidMount() {
@@ -76,10 +77,8 @@ class MyAppointment extends Component {
                     {appointmentList.map(Appointment =>
                         <Appointment_Card key={Appointment.appointmentPk} AppointmentDetails={Appointment} selectedAppointment={this.selectedAppointment}/>
                     )}  
-
-                    
-                
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
              </View>
         );
     }

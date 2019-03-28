@@ -11,6 +11,7 @@ import { addGroup, getMyGroup, viewGroupMember, deleteGroupMember, searchMember 
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
 import { textInputStyle } from '../../styelsheets/CommonStyle';
+import Footer from '../../components/Footer/Footer';
 
 class Search_Doctor extends Component {
 
@@ -177,6 +178,7 @@ class Search_Doctor extends Component {
                 <View style={SearchDoctorStyle.flex}>
                     {loading ? <Text>{en.commonLabel.loadingDataMsg}</Text> : doctorListArea}
                 </View>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

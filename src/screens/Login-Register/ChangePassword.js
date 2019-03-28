@@ -9,6 +9,7 @@ import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import PasswordComponent from '../../components/TextComponent/PasswordComponent';
 import styleConstants from '../../constants/styleConstants';
+import Footer from '../../components/Footer/Footer';
 
 class ChangePassword extends Component {
     static navigationOptions = {
@@ -50,9 +51,10 @@ class ChangePassword extends Component {
          const { userDetails } = this.props.userState;           
             
         return (
-            <View style = {{ flex:1, padding: 8 }}>
+            <View style={{flex:1}}>
+            
             <ScrollView>                                      
-             <View style={{ flex:1,marginTop:15}}>               
+             <View style={{ flex:1,marginTop:15,padding:8}}>               
 
                         <PasswordComponent
                             style={textInputStyle.primaryTextInput}
@@ -77,8 +79,11 @@ class ChangePassword extends Component {
                         </TouchableOpacity>                     
                        </View>                                                             
                                  
-                </ScrollView>                  
+                </ScrollView>  
+                <Footer navigation={this.props.navigation} />             
             </View>
+             
+            
         ); 
       }
 };
