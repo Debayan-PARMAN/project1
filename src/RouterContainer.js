@@ -61,7 +61,7 @@ const RootStack = createStackNavigator({
  
 },
   {
-    initialRouteName: 'Filter',
+    initialRouteName: 'Home',
 
   });
 
