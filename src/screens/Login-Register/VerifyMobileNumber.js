@@ -7,6 +7,7 @@ import { View, Text, Alert, TextInput,ScrollView, TouchableOpacity, } from 'reac
 import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Header_Blank from '../../components/Header/Header_Blank';
 import { ForgotPasswordStyles, FontStyles, LoginStyles, Space } from '../../styelsheets/MainStyle';
 import en from '../../messages/en-us';
 
@@ -22,9 +23,12 @@ class Verify_Mobile_Number extends Component {
             />
         ),
         headerTintColor: '#fff',
-        headerTitleStyle: {           
-            paddingLeft: 50,          
+        headerTitleStyle: {
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
     onValueChange = (value, id) => {
         const { userDetails } = this.props.userState;

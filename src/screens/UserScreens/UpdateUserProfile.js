@@ -9,8 +9,10 @@ import { KeyboardAvoidingView } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 import imageConstantURI from '../../../src/constants/imageConst';
 import { LinearGradient } from 'expo';
+import Header_Blank from '../../components/Header/Header_Blank';
 import Drop_Down from '../../components/DropDown';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
+import AddAddressStyle from '../../styelsheets/AddAddressStyle';
 import styleConstants from '../../constants/styleConstants';
 
 class Update_User_Profile extends Component {
@@ -18,7 +20,7 @@ class Update_User_Profile extends Component {
     
 
     static navigationOptions = {
-        title: 'UpdateUserProfile',
+        title: 'UPDATE USER PPROFILE',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -29,11 +31,11 @@ class Update_User_Profile extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            // fontWeight: 'bold',
-            paddingLeft: 30,
-            //justifyContent: 'center',
-            //alignItems: 'center',
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
         },
+        headerRight: (<Header_Blank />)
     };
 
     onValueChange = (value, id) => {
@@ -211,8 +213,21 @@ class Update_User_Profile extends Component {
             </View>
         </View>);
         const addressArea = (
-            <View style={{ flex: 1}} >
-                <Text style={UpdateUserProfileStyle.address}>{en.userScreensLabel.addressLabel}</Text>
+            <View style={{ flex: 1,marginTop:15}} >
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Address')} >
+                    <View style={AddAddressStyle.AddnewAreaContainer}>
+                        <View style={[AddAddressStyle.Container1,{borderColor:'#ccc'}]}>
+                            <Text style={AddAddressStyle.AddressTypeText}>My Addresses</Text>
+                        </View>
+                        <View style={[AddAddressStyle.Container2,{borderColor:'#ccc'}]}>
+
+                            <Image style={[AddAddressStyle.ImageView, { padding: 6 }]}
+                                source={imageConstantURI.rightArrow.src} />
+
+                        </View>
+                    </View>
+                </TouchableOpacity >
+                {/* <Text style={UpdateUserProfileStyle.address}>{en.userScreensLabel.addressLabel}</Text>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('Address')} >
 
                     <View style={UpdateUserProfileStyle.addaddress}>
@@ -233,7 +248,7 @@ class Update_User_Profile extends Component {
                     } 
                       
                     </View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
         );
         

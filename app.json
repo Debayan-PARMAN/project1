@@ -5,10 +5,10 @@
     "privacy": "unlisted",
     "sdkVersion": "31.0.0",
     "android": {
-      "package": "com.parmancs.medepal"
+      "package": "com.parmancs.project1"
     },
     "ios": {
-     "bundleIdentifier": "com.parmancs.medepal",
+     "bundleIdentifier": "com.parmancs.project1",
      "supportsTablet": true
     },
     "version": "1.0.0",

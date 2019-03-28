@@ -13,6 +13,7 @@ import { updateState } from '../../actions/user';
 import imageConstantURI from '../../constants/imageConst';
 import { buttonStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Header_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
 import Moment from 'moment';
 
@@ -34,9 +35,14 @@ class Appointment_Confirmation extends Component {
         ),
         headerTintColor: '#fff',
         headerTitleStyle: {
-            paddingLeft: 0,
-        },   
+            textAlign: "center",
+            justifyContent: 'space-around',
+            flex: 1
+
+        },
+        headerRight: (<Header_Blank />),
         headerLeft: (<Header_Home onHome={this.onHome} />),
+       
     };   
 
 
