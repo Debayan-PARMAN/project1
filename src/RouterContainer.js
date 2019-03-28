@@ -58,11 +58,18 @@ const RootStack = createStackNavigator({
   GroupDetails: ROUTES.GROUPDETAILS,
   GroupMember: ROUTES.GROUPMEMBER,
   MyGroups: ROUTES.MYGROUPS,
+
+  
  
 },
   {
     initialRouteName: 'Home',
 
   });
+
+  // const FooterNavigation= createStackNavigator({
+  //   HOME: ROUTES.HOME,
+  //   FooterHome: FOOTER_ROUTES.Footer_Component_Home,
+  // })
 
 export default AppContainer = createAppContainer(RootStack);

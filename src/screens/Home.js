@@ -19,6 +19,9 @@ import en from '../messages/en-us';
 const DeviceWidth = Dimensions.get('window').width;
 //const BannerHeight = Dimensions.get('window').width*0.2;
 class Home_Screen extends Component {
+  constructor(props) {
+    super(props);
+}
   
   componentDidMount(){
     this.props.getSpecialities();

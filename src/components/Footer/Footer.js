@@ -6,15 +6,21 @@ import imageConst from '../../constants/imageConst';
 import { FooterStyles } from '../../styelsheets/MainStyle';
 import Footer_Icons from './Footer_Icons';
 import { LinearGradient } from 'expo';
+import Footer_Component_Home from '../Footer/Footer_Home';
+import Footer_Component_Cart from '../Footer/Footer_Cart';
+import Footer_Component_Help from '../Footer/Footer_Help';
+import Footer_Component_MyAccount from '../Footer/Footer_MyAccount';
+//improt Footer_Component_Notification from '../Footer/Footer_Notification.js';
 
 
 const DeviceWidth = Dimensions.get('window').width;
 
 export default class Footer_Component extends Component {
+    
     render() {
-        const { HomeIcon, MyAccountIcon, MyCartIcon, NotificationsIcon, HelpIcon } = imageConst;
+       // const { HomeIcon, MyAccountIcon, MyCartIcon, NotificationsIcon, HelpIcon } = imageConst;
 
-        // <Footer_Component_Home/>
+         //<Footer_Component_Home/>
         //<Footer_Component_MyAccount/>
         // <Footer_Component_Notification/>
         // <Footer_Component_Cart/>
@@ -23,6 +29,7 @@ export default class Footer_Component extends Component {
         // <Footer_Icons iconLabel={MyAccountIcon.label} iconSrc={MyAccountIcon.src} iconLink='My Account' />
         // <Footer_Icons iconLabel={MyCartIcon.label} iconSrc={MyCartIcon.src} iconLink='Cart' />
         // <Footer_Icons iconLabel={NotificationsIcon.label} iconSrc={NotificationsIcon.src} iconLink='Notifications' />
+        // const { navigation } = this.props;
         return (
             <View Container='Footer'>
                 <LinearGradient
@@ -34,12 +41,18 @@ export default class Footer_Component extends Component {
                     start={{ x: 0, y: 1 }}
                     end={{ x: 1, y: 1 }}>
 
-
-                    <Footer_Icons iconLabel={HomeIcon.label} iconSrc={HomeIcon.src} iconLink='Home' />
+                    
+                    {/* <Footer_Icons iconLabel={HomeIcon.label} iconSrc={HomeIcon.src} iconLink='Home'  />
                     <Footer_Icons iconLabel={MyAccountIcon.label} iconSrc={MyAccountIcon.src} iconLink='My Account' />
                     <Footer_Icons iconLabel={MyCartIcon.label} iconSrc={MyCartIcon.src} iconLink='Cart' />
                     <Footer_Icons iconLabel={NotificationsIcon.label} iconSrc={NotificationsIcon.src} iconLink='Notifications' />
-                    <Footer_Icons iconLabel={HelpIcon.label} iconSrc={HelpIcon.src} iconLink='Icon' />
+                    <Footer_Icons iconLabel={HelpIcon.label} iconSrc={HelpIcon.src} iconLink='Icon' /> */}
+
+                    <Footer_Component_Home />
+                    <Footer_Component_MyAccount/>
+                    {/* <Footer_Component_Notification/> */}
+                    <Footer_Component_Cart/>
+                    <Footer_Component_Help/>
 
 
                 </LinearGradient>
