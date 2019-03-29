@@ -16,6 +16,7 @@ import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 import Moment from 'moment';
 import Footer from '../../components/Footer/Footer';
 
@@ -72,7 +73,7 @@ class Book_Appoinment extends Component {
                             </View>
                         </View>                       
                             <Text style={CardStyle.name}>{ en.doctorSearchLabel.locationLabel } - {chamberDetails.line1}, {chamberDetails.line2}</Text>
-                        <Text style={CardStyle.name}>{en.appointmentScreens.dateTimeLabel} - {Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
+                        <Text style={CardStyle.name}>{en.appointmentScreens.dateTimeLabel} - {AppointmentDetails.appointmentDate}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
                        
                         <View style={BookAppointmentStyle.TabMainContainer}>
                             <View style={[BookAppointmentStyle.TabContainer, {backgroundColor: '#93278f'}]}>
@@ -188,7 +189,6 @@ class Book_Appoinment extends Component {
         </View>
         <Footer navigation={this.props.navigation} />
         </View>
-
         );
     }
 };

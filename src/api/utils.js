@@ -75,7 +75,7 @@ export function doPut(url, body, isJson=true, needToken = false, tokenValue) {
   return doFetch(url, options,);
 }
 
-export function doDelete(url, needToken = false, tokenValue) {
+export function doDelete(url, body, isJson = true, needToken = false, tokenValue) {
   const options = {
     method: 'DELETE',
     headers: {
@@ -83,7 +83,7 @@ export function doDelete(url, needToken = false, tokenValue) {
       'Content-Type': 'application/json',
       token: needToken ? tokenValue : ''
     },
-    
+    body: isJson ? JSON.stringify(body) : body,
   };
   return doFetch(url, options);
 }

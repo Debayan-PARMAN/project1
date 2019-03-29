@@ -19,6 +19,7 @@ import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
+import Moment from 'moment';
 
 class Payment_Details extends Component {
 
@@ -77,7 +78,7 @@ class Payment_Details extends Component {
 
         const chamberArea = (
             <View style={BookAppointmentStyle.chamberArea}>
-                <Text style={[BookAppointmentStyle.HeaderText, ]}>{chamberDetails.line1}, {chamberDetails.line2}, {AppointmentDetails.appointmentDate}, {AppointmentDetails.appointmentTime}</Text>
+                <Text style={[BookAppointmentStyle.HeaderText,]}>{chamberDetails.line1}, {chamberDetails.line2}, {AppointmentDetails.appointmentDate},  {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
             </View>
         );
 
@@ -212,31 +213,31 @@ class Payment_Details extends Component {
         );
 
         return (
-
             <View style={{flex:1}}>
-                <View style={BookAppointmentStyle.mainWrapper}>
-                    <ScrollView>
-                        <KeyboardAvoidingView behavior="position">
-                            <Status_Indicator />
-                            { doctorName }
-                            { chamberArea }
-                            { feesArea }
-                            { GSTArea }
-                            { paymentArea }
-                            { promoCodeArea }                     
-                            <View style={BookAppointmentStyle.PaymentArea}>
-                                { saveCard }                               
-                                { otherCard }                           
-                                { netBankingArea }                          
-                                { morePaymentArea }                           
-                                { payDuringArea }
-                            </View>                     
-                                { buttonArea }      
-                        </KeyboardAvoidingView>
-                    </ScrollView>
-                    <Footer navigation={this.props.navigation} />
-               
-                </View>
+            
+            <View style={BookAppointmentStyle.mainWrapper}>
+                <ScrollView>
+                    <KeyboardAvoidingView behavior="position">
+                        <Status_Indicator />
+                        { doctorName }
+                        { chamberArea }
+                        { feesArea }
+                        { GSTArea }
+                        { paymentArea }
+                        { promoCodeArea }                     
+                        <View style={BookAppointmentStyle.PaymentArea}>
+                            { saveCard }                               
+                            { otherCard }                           
+                            { netBankingArea }                          
+                            { morePaymentArea }                           
+                            { payDuringArea }
+                        </View>                     
+                            { buttonArea }      
+                    </KeyboardAvoidingView>
+                </ScrollView>
+
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }

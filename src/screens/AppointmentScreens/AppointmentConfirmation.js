@@ -186,12 +186,20 @@ class Appointment_Confirmation extends Component {
 
         return (
             <View style={{flex:1}}>
-                <View style={AppointmentConfirmationStyle.mainContainer}>
-                    <ScrollView>
-                        <View style={AppointmentConfirmationStyle.flex}>
-                            <View style={AppointmentConfirmationStyle.subContainer}>
-                                <View style={AppointmentConfirmationStyle.flex}>
-                                    <Text style={AppointmentConfirmationStyle.medePal}> {en.commonLabel.medEPalLabel}</Text>
+            <View style={AppointmentConfirmationStyle.mainContainer}>
+                <ScrollView>
+                    <View style={AppointmentConfirmationStyle.flex}>
+                        <View style={AppointmentConfirmationStyle.subContainer}>
+                            <View style={AppointmentConfirmationStyle.flex}>
+                                <Text style={AppointmentConfirmationStyle.medePal}> {en.commonLabel.medEPalLabel}</Text>
+                            </View>
+                            { heart_right}
+                            <View style={AppointmentConfirmationStyle.flex}>
+                                <View style={AppointmentConfirmationStyle.downloadImageContainer}>
+                                    <TouchableOpacity>
+                                        <Image style={AppointmentConfirmationStyle.downloadImageStyle}
+                                            source={imageConstantURI.download.src}/>
+                                    </TouchableOpacity>
                                 </View>
                                 { heart_right}
                                 <View style={AppointmentConfirmationStyle.flex}>
@@ -214,6 +222,8 @@ class Appointment_Confirmation extends Component {
                 
                 </View>
                 <Footer navigation={this.props.navigation} />
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
 

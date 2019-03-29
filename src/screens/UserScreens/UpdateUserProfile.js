@@ -76,6 +76,7 @@ class Update_User_Profile extends Component {
 
         const {userDetails} = this.props.userState;
         const { bloodGroupOptions } = this.props.common;
+        
         // console.log("userDetails", userDetails);
 
         const userProfileTabs = (<View style={UpdateUserProfileStyle.userProfileTabs}>
@@ -126,8 +127,8 @@ class Update_User_Profile extends Component {
                     mode="date"
                     placeholder="select date"
                     format="DD-MM-YYYY"
-                    minDate="1960-01-01"
-                    maxDate="2020-12-31"
+                    minDate="01-01-1960"
+                    maxDate="31-12-2020"
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
                     customStyles={{
@@ -287,7 +288,7 @@ class Update_User_Profile extends Component {
          
         </View>
         );        
-        return ( 
+        return (
             <View style={UpdateUserProfileStyle.mainWrapper}>
                 <View style={UpdateUserProfileStyle.mainWrapper}>
                     <ScrollView>

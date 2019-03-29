@@ -12,12 +12,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState as docUpdateState } from '../../actions/doctors';
 import { updateState } from '../../actions/doctors';
-import { LinearGradient } from 'expo';
 import Header_Blank from '../../components/Header/Header_Blank';
+import Footer from '../../components/Footer/Footer';
+import { LinearGradient } from 'expo';
 import { buttonStyle, } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
-import Footer from '../../components/Footer/Footer';
+
 
 class Doctor_Appoinment extends Component {
 
@@ -85,14 +86,17 @@ class Doctor_Appoinment extends Component {
     }
     render() {
         
-        const { doctorDetails, doctordata,  } = this.props.doctorState;
+        const { doctorDetails, chamberDetails, doctordata,  } = this.props.doctorState;
+        // const specializationList = doctorDetails.doctorSpecializationList.map(item => item.specialization).join(',');
+        // const qualificationList = doctorDetails.doctorQualificationList.map(item => item.qualification).join(',');
              
         //console.log("Docdata....", this.getDoctorQualification(doctorData) );
         //const { list, keyValue } = this.props.common.singleDoctorDetails;
-        //console.log("DETAILS of doctor Getting Chember list:",doctorDetails);
+        //console.log("DETAILS of doctor Getting Chember list:", chamberDetails);
         //console.log("DETAILS of doctor Getting Chember list:", doctorDetails.doctorChamberList);
 
-        const datePickerArea = (<View style={{justifyContent:'center',}}>
+        const datePickerArea = (
+            <View style={{justifyContent:'center',}}>
                 <TouchableOpacity>
                     <DatePicker
                         style={{ width: 200, }}
@@ -101,7 +105,7 @@ class Doctor_Appoinment extends Component {
                         placeholder="select date"
                         format="DD-MM-YYYY"
                         minDate={this.state.date}
-                        maxDate="2019-31-12"
+                        maxDate="31-12-2019"
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
                         mode="date"
@@ -124,29 +128,32 @@ class Doctor_Appoinment extends Component {
             </View>
         );
 
-        const doctorDetailArea = (<View style={DoctorCardStyle.mainContainerAppiontment}>
+        const doctorDetailArea = (
+            <View style={DoctorCardStyle.mainContainerAppiontment}>
                 <View style={DoctorCardStyle.height1}> 
                     <View style={DoctorCardStyle.subContainer1}>
                         <View style = { DoctorCardStyle.flex1 }>
                             <View style = { DoctorCardStyle.flex2 }>
-                            <Image style={DoctorCardStyle.profileImage} source={imageConstantURI.doctorImage.src} />
+                                <Image style={DoctorCardStyle.profileImage} source={imageConstantURI.doctorImage.src} />
                             </View>
                             <View style={DoctorCardStyle.heartIconContainer}>
                                 {/* <Image style={ DoctorCardStyle.heartIconImage } source={imageConstantURI.heartIcon.src} /> */}
                             </View>
                         </View>
                         <View style={DoctorCardStyle.textContainer}>
-                            <Text style={DoctorCardStyle.doctorName} >{en.appointmentScreens.drLabel} { doctorDetails.doctorName} </Text>
-                            <Text style={DoctorCardStyle.doctorDescription} >{en.appointmentScreens.registrationLabel}</Text>
-                            <Text style={DoctorCardStyle.doctorDescription} >{doctorDetails.yearsOfExperience} {en.doctorSearchLabel.experienceLabel}</Text>
-                            <Text style={DoctorCardStyle.doctorDescription} >12 {en.commonLabel.reviewLabel}</Text>
+                            <Text style={DoctorCardStyle.doctorName} >Dr. {doctorDetails.doctorName}
+                             {/* {qualificationList} */}
+                             </Text>
+                            <Text style={DoctorCardStyle.doctorDescription}>
+                            {/* {specializationList} */}
+                            </Text>
+                            <Text style={DoctorCardStyle.doctorDescription}>Medical registration verified</Text>
+                             <Text style={DoctorCardStyle.doctorDescription}>{doctorDetails.yearsOfExperience} years of experience</Text>
+                            <Text style={DoctorCardStyle.doctorDescription}>12 reviews</Text>
                         </View>
-                        </View>
-                       {/* <View style={ DoctorCardStyle.borderLine}/> */}
-                        <View style={DoctorCardStyle.margin2}>
-                    <Text style={DoctorCardStyle.doctorDescription}>{en.appointmentScreens.chamberLabel}</Text>
-                    </View>
-                </View>
+                        </View>                     
+                   
+                    </View>               
             </View>
             // <View style={[CardStyle.mainContainer, { flex: 0.1 }]}>
             //     <View style={ CardStyle.flex }>
@@ -162,31 +169,32 @@ class Doctor_Appoinment extends Component {
 
         const doctorChamberDetails = (
             <View style={{ flex: 1 }}>
+                <Text style={[DoctorCardStyle.doctorDescription, {fontSize:16,marginLeft:10}]}>Chambers</Text>
                 {doctorDetails.doctorChamberList !== undefined && doctorDetails.doctorChamberList.length !== 0 ?
                     <ScrollView>    
                         {doctorDetails.doctorChamberList.map(chamber => 
                             <Doctor_Card key={chamber.chamberPk} chamberDetails={chamber} onTimeSlot={this.onTimeSlot} selectedChamber={this.selectedChamber} />
-                        )}   
-                      
-                   </ScrollView>
-                     : 
-                    <Text>{en.commonLabel.loadingDataMsg}</Text>
+                        )}    
+                    </ScrollView>
+                    : 
+                    <Text>Loading data.......</Text>
                 }
             </View>
         );
                 
         return (
             <View style={{flex:1}}>
-            <View style={DoctorCardStyle.mainWrapper}>
-                <KeyboardAvoidingView behavior="position">
-                    {datePickerArea}
-                    {doctorDetailArea}                   
-                    {doctorChamberDetails}
- 
-                </KeyboardAvoidingView>
-                
-            </View>
-                <Footer navigation={this.props.navigation} />
+              <View style={LoginStyles.mainWrapper}>
+                  <KeyboardAvoidingView style={LoginStyles.mainWrapper} behavior="padding" enabled>
+                      {datePickerArea}
+
+                      {doctorDetailArea}
+
+                      {doctorChamberDetails}
+
+                  </KeyboardAvoidingView>
+               </View>
+               <Footer navigation={this.props.navigation} />
             </View>
         );
     }

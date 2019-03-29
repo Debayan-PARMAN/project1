@@ -217,7 +217,17 @@ export function cancelAppointment() {
         //const tokenValue = userDetails.token;
 
         doDelete(`${URI.bookAppoinment}`, apppointmentParams, true, true, tokenValue)
-            .then(result => dispatch(cancelAppointmentSuccess(result)))
+            .then(result => {
+                // console.log(result.status);
+                if (result.status === 0) {
+                    dispatch(getAppoinmentList());
+                    //console.log('Add Group');
+
+                } else {
+                    alert('Something wrong');
+                }
+
+            })
             .catch(error => dispatch(cancelAppointmentFailure(error)));
     };
 }
@@ -235,6 +245,7 @@ export function cancelAppointmentFailure(error) {
         error,
     };
 }
+
 
 //====================For Doctor Specialization================
 export function doctorSpecializations() {

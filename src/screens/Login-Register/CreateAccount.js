@@ -267,7 +267,6 @@ class Create_Account extends Component {
         }
 
         return (
-                  
             <View style={{flex:1}}>
             <ScrollView style={LoginStyles.mainWrapper}> 
                     <KeyboardAvoidingView behavior="position">                   

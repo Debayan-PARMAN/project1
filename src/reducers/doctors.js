@@ -197,8 +197,8 @@ const handlers = {
             yearsOfExperience: action.payload.yearsOfExperience,
             doctorAddressList: action.payload.doctorAddressList,
             doctorChamberList: action.payload.doctorChamberList,
-            doctorQualificationList: action.payload.doctorQualificationList,
-            doctorSpecializationList: action.payload.doctorSpecializationList,
+            doctorQualificationList: action.payload.doctorQualifications,
+            doctorSpecializationList: action.payload.doctorSpecializations,
             doctorEAddressList: action.payload.doctorEAddressList,
             rating: action.payload.rating,
             entityName: action.payload.entityName,
@@ -276,7 +276,7 @@ const handlers = {
         };
     },
     [DOCTOR_TYPE.GET_APPOINTMENT_LIST_SUCCESS]: (state, action) => {
-    //console.log("Getting Appointment list:  ", action.payload.data);
+   // console.log("Getting Appointment list:  ", action.payload.data);
         
         const appointmentList = action.payload.data;
     return {
@@ -302,7 +302,7 @@ const handlers = {
         };
     },
     [DOCTOR_TYPE.DOCTOR_SPECIALIZATION_SUCCESS]: (state, action) => {
-        //console.log("Getting Chamber list:  ", action.payload);
+       // console.log("Getting Chamber list:  ", action.payload);
         // const action.payload = action.payload;
         //console.log("doctor specialization:",action.payload);
         const doctorDetails = {

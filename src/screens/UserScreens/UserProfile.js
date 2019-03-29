@@ -94,8 +94,8 @@ class User_Profile extends Component {
                     mode="date"
                    // placeholder="select date"
                     format="DD-MM-YYYY"
-                    minDate="1960-01-01"
-                    maxDate="2020-12-31"
+                    minDate="01-01-1960"
+                    maxDate="31-12-2020"
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
                     customStyles={{
@@ -190,8 +190,9 @@ class User_Profile extends Component {
         
         return (
             <View style={{flex:1}}>
-                <View style={UserProfileStyle.mainWrapper}>
-                    <ScrollView>
+            <View style={UserProfileStyle.mainWrapper}>
+            <View >
+                <ScrollView>
                         <KeyboardAvoidingView behavior="position">
                         {welcomeHeading}
                         {staticMessageArea}
@@ -208,12 +209,14 @@ class User_Profile extends Component {
                                     end={{ x: 1, y: 1 }} >
                                     <Text style={[buttonStyle.primaryBtnText]}>{en.commonLabel.nextBtnLabel}</Text> 
                                 </LinearGradient>                           
-                            </TouchableOpacity>
-                        </View>
-                    </KeyboardAvoidingView>       
-                    </ScrollView>
-                </View>
-            <Footer navigation={this.props.navigation} />
+                               </TouchableOpacity>
+                         </View>
+                  </KeyboardAvoidingView>       
+                  </ScrollView>
+            </View>
+           
+         </View>
+         <Footer navigation={this.props.navigation} />
          </View>
         );
     }

@@ -10,7 +10,7 @@ export default class MainApp extends Component {
     return (
       <View style={LayoutStyles.container}>
         <AppContainer />
-      <Footer />
+      {/* <Footer /> */}
       </View>
     );
   }

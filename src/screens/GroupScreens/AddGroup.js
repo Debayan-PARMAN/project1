@@ -49,15 +49,15 @@ class AddGroup extends Component {
         
         //const { addGroup } = this.props.userState;
        const customAddressArea = ( 
-           <View>
-               <Text style={textInputStyle.primaryTextInputFontStyle}>Group Name</Text>          
-               <TextInput
-                    style={[textInputStyle.primaryTextInput, {marginTop:5}]}
-                    //placeholder="Group Name"
-                    //value={addGroup.groupName}
-                    onChangeText={(e) => this.onValueChange(e, 'groupName')}
-                />
-                </View>           
+                <View>
+                    <Text style={textInputStyle.primaryTextInputFontStyle}>Group Name</Text>
+                    <TextInput
+                            style={textInputStyle.primaryTextInput}
+                        // placeholder="Group Name"
+                            //value={addGroup.groupName}
+                            onChangeText={(e) => this.onValueChange(e, 'groupName')}
+                        /> 
+                </View>
         );
 
         const groupBtn = (
@@ -90,6 +90,8 @@ class AddGroup extends Component {
                 
             </View>
              <Footer navigation={this.props.navigation} />
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }

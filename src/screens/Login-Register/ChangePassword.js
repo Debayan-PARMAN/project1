@@ -79,8 +79,7 @@ class ChangePassword extends Component {
                             </LinearGradient>
                         </TouchableOpacity>                     
                        </View>                                                             
-                                 
-                </ScrollView>  
+                       </ScrollView>  
                 <Footer navigation={this.props.navigation} />             
             </View>
              

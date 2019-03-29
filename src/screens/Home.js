@@ -253,8 +253,8 @@ class Home_Screen extends Component {
             {menuArea}
           {/*--- Menu End ---*/}
 
-        </ScrollView>
-        <Footer navigation={this.props.navigation} /> 
+      </ScrollView>
+      <Footer navigation={this.props.navigation} /> 
       </View>
     );
   }

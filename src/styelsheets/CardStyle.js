@@ -33,6 +33,7 @@ export const CardStyle = StyleSheet.create({
     },
     slotStyle: {
         textAlign: 'right',
+        
     },
     buttonContainer: {
         flex: 1, 

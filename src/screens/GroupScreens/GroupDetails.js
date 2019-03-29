@@ -120,9 +120,9 @@ class GroupDetails extends Component {
                     {groupBtn}
                 </View>                                               
                     { memberArea }                        
-                </View>
-                <Footer navigation={this.props.navigation} />
-                </View>   
+                </View>                                         
+               <Footer navigation={this.props.navigation} />
+               </View>  
         );
     }
 };
