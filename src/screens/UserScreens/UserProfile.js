@@ -14,6 +14,7 @@ import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { TextInputStyles } from '../../styelsheets/TextInputStyle';
+import Footer from '../../components/Footer/Footer';
 
 class User_Profile extends Component {
 
@@ -93,8 +94,8 @@ class User_Profile extends Component {
                     mode="date"
                    // placeholder="select date"
                     format="DD-MM-YYYY"
-                    minDate="1960-01-01"
-                    maxDate="2020-12-31"
+                    minDate="01-01-1960"
+                    maxDate="31-12-2020"
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
                     customStyles={{
@@ -188,6 +189,7 @@ class User_Profile extends Component {
         </View>);
         
         return (
+            <View style={{flex:1}}>
             <View style={UserProfileStyle.mainWrapper}>
             <View >
                 <ScrollView>
@@ -210,8 +212,11 @@ class User_Profile extends Component {
                                </TouchableOpacity>
                          </View>
                   </KeyboardAvoidingView>       
-                </ScrollView>
+                  </ScrollView>
             </View>
+           
+         </View>
+         <Footer navigation={this.props.navigation} />
          </View>
         );
     }

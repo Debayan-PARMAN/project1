@@ -14,6 +14,7 @@ import Drop_Down from '../../components/DropDown';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import AddAddressStyle from '../../styelsheets/AddAddressStyle';
 import styleConstants from '../../constants/styleConstants';
+import Footer from '../../components/Footer/Footer';
 
 class Update_User_Profile extends Component {
 
@@ -75,6 +76,7 @@ class Update_User_Profile extends Component {
 
         const {userDetails} = this.props.userState;
         const { bloodGroupOptions } = this.props.common;
+        
         // console.log("userDetails", userDetails);
 
         const userProfileTabs = (<View style={UpdateUserProfileStyle.userProfileTabs}>
@@ -125,8 +127,8 @@ class Update_User_Profile extends Component {
                     mode="date"
                     placeholder="select date"
                     format="DD-MM-YYYY"
-                    minDate="1960-01-01"
-                    maxDate="2020-12-31"
+                    minDate="01-01-1960"
+                    maxDate="31-12-2020"
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
                     customStyles={{
@@ -287,8 +289,8 @@ class Update_User_Profile extends Component {
         </View>
         );        
         return (
-            <View style={UserProfileStyle.mainWrapper}>
-                <View>
+            <View style={UpdateUserProfileStyle.mainWrapper}>
+                <View style={UpdateUserProfileStyle.mainWrapper}>
                     <ScrollView>
                         <KeyboardAvoidingView behavior="position">
                             <View style={UpdateUserProfileStyle.health}>
@@ -304,8 +306,9 @@ class Update_User_Profile extends Component {
                             </View>
                             {buttonArea}
                         </KeyboardAvoidingView>
-                    </ScrollView>
+                        </ScrollView>
                 </View>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

@@ -15,6 +15,7 @@ import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import imageConstantURI from '../../constants/imageConst';
+import Footer from '../../components/Footer/Footer';
 
 class LogIn extends Component {
     static navigationOptions = {
@@ -70,87 +71,78 @@ class LogIn extends Component {
        // }
     }
 
-    onSubmit = () => {
+   onSubmit = () => {
+const { userDetails } = this.props.userState;
+const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
+if (!(regex.test(userDetails.contactNo))) {
+Alert.alert(
+'',
+message = 'Provide a valid number',
+[{
+text: 'Cancel',
+onPress: this.onCancelAlert,
+style: 'cancel'
+}], {
+cancelable: false
+}
+);
+}
 
-        const { userDetails } = this.props.userState;
-        if (userDetails.contactNo !== '' && userDetails.password !== '') {
+else {
+this.props.userLogin();
+}
+}
 
-            this.props.userLogin();
-            //this.props.navigation.navigate('SearchDoctor');
-        }
+onGetOtp = () => {
+const { otpActions, userDetails } = this.props.userState;
+const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
+if (!(regex.test(userDetails.contactNo))) {
+Alert.alert(
+'',
+message = 'Provide a valid number',
+[{
+text: 'Cancel',
+onPress: this.onCancelAlert,
+style: 'cancel'
+}], {
+cancelable: false
+}
+);
+}
 
-        else {
-            Alert.alert(
-                '',
-                message = 'Please Input Value',
-                [{
-                    text: 'Cancel',
-                    onPress: this.onCancelAlert,
-                    style: 'cancel'
-                }], {
-                    cancelable: false
-                }
-            );
-        }
-    }
-
-        //this.props.userLogin();
-    
-
-    onGetOtp = () => {
-        const { otpActions, userDetails } = this.props.userState;
-
-        if (userDetails.contactNo !== '') {
-
-            otpActions.otpSent = true;
-            this.props.updateState({ otpActions });
-            this.props.numberCheck();
-        }
-
-        else {
-            Alert.alert(
-                '',
-                message = 'Please Input Mobile Number',
-                [{
-                    text: 'Cancel',
-                    onPress: this.onCancelAlert,
-                    style: 'cancel'
-                }], {
-                    cancelable: false
-                }
-            );
-        }
-        //this.props.otpLogin();
-    }
+else {
+otpActions.otpSent = true;
+this.props.updateState({ otpActions });
+this.props.numberCheck();
+}
+}
 
 
-    loginWithOtp = () => {
+loginWithOtp = () => {
 
-        const { userDetails } = this.props.userState;
-        if (userDetails.contactNo !== '' && userDetails.userOTP !== '') {
+const { userDetails } = this.props.userState;
+const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
+if (!(regex.test(userDetails.contactNo))) {
+Alert.alert(
+'',
+message = 'Provide a valid number',
+[{
+text: 'Cancel',
+onPress: this.onCancelAlert,
+style: 'cancel'
+}], {
+cancelable: false
+}
+);
+}
 
-            this.props.otpLogin();
-            //this.props.navigation.navigate('SearchDoctor');
-        }
+else {
+this.props.otpLogin();
 
-        else {
-            Alert.alert(
-                '',
-                message = 'Please Input Value',
-                [{
-                    text: 'Cancel',
-                    onPress: this.onCancelAlert,
-                    style: 'cancel'
-                }], {
-                    cancelable: false
-                }
-            );
-        }
-    
+}
 
-        //this.props.otpLogin();
-    }
-
+//this.props.otpLogin();
+}
     onCancelAlert = () => {
         this.props.updateState({ responseTriggerred: false });
         if (this.props.userState.userDetails.token) {
@@ -313,8 +305,8 @@ class LogIn extends Component {
 
 
         return (
-            <ScrollView >
-                <View style={LoginStyles.mainWrapper}>
+            <View style={LoginStyles.mainWrapper}>
+                <ScrollView >
                     {contactNumberArea}
 
                     {showPassword ? passwordSection : otpSection}
@@ -341,8 +333,9 @@ class LogIn extends Component {
                     </View>
 
                     {showPassword ? passwordArea : otpArea}
-                </View>
-            </ScrollView>
+                    </ScrollView>
+                <Footer navigation={this.props.navigation} />
+            </View>
         );
     }
 }

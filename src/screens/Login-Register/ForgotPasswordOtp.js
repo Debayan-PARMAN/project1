@@ -10,6 +10,7 @@ import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { ForgotPasswordStyles, FontStyles, LoginStyles, } from '../../styelsheets/MainStyle';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class ForgotPasswordOtp extends Component {
     static navigationOptions = {
@@ -58,6 +59,7 @@ class ForgotPasswordOtp extends Component {
        
         
         return (
+            <View style={{flex:1}}>
             <View style={ForgotPasswordStyles.mainWrapper}>
                 <ScrollView>                                    
                       
@@ -98,8 +100,12 @@ class ForgotPasswordOtp extends Component {
                         </TouchableOpacity>
                     </View>                                                             
                    
-                </ScrollView>                  
-            </View>
+                    </ScrollView> 
+                               
+                               </View>
+                               <Footer navigation={this.props.navigation} />  
+                               </View>
+            
         );   }
 };
 

@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { forgotPassword, updateState } from '../../actions/user';
-import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView,Alert } from 'react-native';
 import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { ForgotPasswordStyles, FontStyles } from '../../styelsheets/MainStyle';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class ForgotPassword extends Component {
     static navigationOptions = {
@@ -38,22 +39,35 @@ class ForgotPassword extends Component {
     }
 
     onSubmit = () => {
-        const { userDetails } = this.props.userState;
-        if (userDetails.contactNo !== '' && userDetails.contactNo.length === 13) {
-            this.props.forgotPassword();
-            this.props.navigation.navigate('ForgotPasswordOtp');
+const { userDetails } = this.props.userState;
+const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g;
+if (!(regex.test(userDetails.contactNo))) {
+Alert.alert(
+'',
+message = 'Provide a valid number',
+[{
+text: 'Cancel',
+onPress: this.onCancelAlert,
+style: 'cancel'
+}], {
+cancelable: false
+}
+);
+}
+else {
+this.props.forgotPassword();
+this.props.navigation.navigate('ForgotPasswordOtp');
+}
 
-        } else {
-            alert("Enter Mobile Number");
-        }
+}
 
-    }
 
     render() {
         const { userDetails } = this.props.userState;
 
 
         return (
+            <View style={{flex:1}}>
             <View style={ForgotPasswordStyles.mainWrapper}>
                 <ScrollView>
                     <View style={ForgotPasswordStyles.topContainer}>
@@ -93,6 +107,8 @@ class ForgotPassword extends Component {
                     </View>
 
                 </ScrollView>
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }

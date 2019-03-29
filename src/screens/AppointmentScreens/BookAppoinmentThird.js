@@ -16,6 +16,7 @@ import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 import Moment from 'moment';
 
 class Book_Appoinment_Third extends Component {
@@ -61,6 +62,7 @@ class Book_Appoinment_Third extends Component {
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
 
         return (
+            <View style={{flex:1}}>
             <View style={BookAppointmentStyle.mainWrapper}>
                 <KeyboardAvoidingView behavior="position">
                 <ScrollView>
@@ -76,7 +78,7 @@ class Book_Appoinment_Third extends Component {
                         </View>
 
                            <Text style={BookAppointmentStyle.HeaderText}>{en.doctorSearchLabel.locationLabel} - {chamberDetails.line1}, {chamberDetails.line2}</Text>
-                        <Text style={[BookAppointmentStyle.HeaderText, { marginTop: 5 }]}>{en.appointmentScreens.dateTimeLabel} - {Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
+                        <Text style={[BookAppointmentStyle.HeaderText, { marginTop: 5 }]}>{en.appointmentScreens.dateTimeLabel} - {AppointmentDetails.appointmentDate}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
                         
                         <View style={BookAppointmentStyle.PatientFirstPart}>
                             <View style={[BookAppointmentStyle.PatientName,]}>                                 
@@ -137,6 +139,8 @@ class Book_Appoinment_Third extends Component {
                    
                     </ScrollView> 
                     </KeyboardAvoidingView>
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
         );
     }

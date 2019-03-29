@@ -13,6 +13,7 @@ import { updateState, doctorSpecializations } from '../../actions/doctors';
 import Header_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
+import Footer from '../../components/Footer/Footer';
 
 class MyAppointment extends Component {
     componentDidMount() {
@@ -81,6 +82,7 @@ class MyAppointment extends Component {
                     
                 
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
              </View>
         );
     }

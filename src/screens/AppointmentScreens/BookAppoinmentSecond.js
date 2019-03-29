@@ -17,6 +17,7 @@ import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
 import { LinearGradient } from 'expo';
 import Moment from 'moment';
+import Footer from '../../components/Footer/Footer';
 
 class Book_Appoinment_Second extends Component {
 
@@ -49,6 +50,7 @@ class Book_Appoinment_Second extends Component {
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
         const { userDetails } = this.props.userState;
         return (
+            <View style={{flex:1}}>
             <View style={BookAppointmentStyle.mainWrapper}>
                 <ScrollView>
                     <KeyboardAvoidingView behavior="position">
@@ -64,7 +66,7 @@ class Book_Appoinment_Second extends Component {
                        
                         <Text style={[CardStyle.name, {marginTop:4}]}>{en.doctorSearchLabel.locationLabel} - {chamberDetails.line1}, {chamberDetails.line2}</Text>
                          
-                        <Text style={[CardStyle.name, { marginTop: 4 }]}>{en.appointmentScreens.dateTimeLabel} - {Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
+                        <Text style={[CardStyle.name, { marginTop: 4 }]}>{en.appointmentScreens.dateTimeLabel} - {AppointmentDetails.appointmentDate}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
                         
                       
                         <View style={BookAppointmentStyle.PatientFirstPart}>
@@ -138,6 +140,8 @@ class Book_Appoinment_Second extends Component {
                     </View>             
                 </KeyboardAvoidingView>
             </ScrollView>
+        </View>
+        <Footer navigation={this.props.navigation} />
         </View>
         );
     }

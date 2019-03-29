@@ -105,7 +105,7 @@ export const DoctorCardStyle = StyleSheet.create({
         width: 25,
     },
     height1: {
-        height: 120,
+        height: 80,
     },
     textContainer: {
         flex: 1,

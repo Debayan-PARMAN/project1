@@ -10,6 +10,7 @@ import Header_Blank from '../../components/Header/Header_Blank';
 import { TextInputStyles } from '../../styelsheets/TextInputStyle';
 import imageConstantURI from '../../constants/imageConst';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class OtpLogin extends Component {
     static navigationOptions = {
@@ -92,6 +93,7 @@ class OtpLogin extends Component {
             );
         }
         return (
+            <View style={{flex:1}}>
             <KeyboardAvoidingView style={LoginStyles.mainWrapper} behavior="padding" enabled>
                 <View style={LoginStyles.bannerArea2_Text}>
                     <Text style={FontStyles.font}>{en.createAccountMsg.createAccountHeading}</Text>
@@ -188,6 +190,8 @@ class OtpLogin extends Component {
                     </View>
                 </ScrollView>
             </KeyboardAvoidingView>
+            <Footer navigation={this.props.navigation} />
+            </View>
         );
     }
 };
