@@ -18,6 +18,7 @@ import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
 import Moment from 'moment';
+import Footer from '../../components/Footer/Footer';
 
 class Book_Appoinment extends Component {
     getDoctorQualification = (doctorData) => {
@@ -184,6 +185,7 @@ class Book_Appoinment extends Component {
                
             </View>                    */}
          </ScrollView>
+        
         </View>
         <Footer navigation={this.props.navigation} />
         </View>

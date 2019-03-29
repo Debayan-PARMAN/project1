@@ -57,7 +57,7 @@ class AddGroup extends Component {
                             //value={addGroup.groupName}
                             onChangeText={(e) => this.onValueChange(e, 'groupName')}
                         /> 
-                </View>          
+                </View>
         );
 
         const groupBtn = (
@@ -87,6 +87,9 @@ class AddGroup extends Component {
                      { customAddressArea }
                      { groupBtn }                          
                 </ScrollView>
+                
+            </View>
+             <Footer navigation={this.props.navigation} />
             </View>
             <Footer navigation={this.props.navigation} />
             </View>

@@ -37,7 +37,7 @@ class LogIn extends Component {
         },
         headerRight: (<Header_Blank />)      
     };
-  
+    
     onValueChange = (value, id) => {
         const { userDetails } = this.props.userState;
         userDetails[id] = value;
@@ -323,10 +323,13 @@ this.props.otpLogin();
                         </View>
                         <View style={LoginStyles.toggleButtonContainer}>
                             {
+
                              //   toggleEnable ?
                                     <ToggleSwitch onColor='#d8c0ef' offColor='#d8c0ef' isOn={otpToggle} onToggle={(isOn) => this.onTogglePass(isOn)} />
                                   //  :
                             //  <ToggleSwitch offColor='#eee' onToggle={this.onTogglePass} />
+
+                              
                             }
                             <Text style={FontStyles.font}>{showPassword ? 'Use OTP' : 'Use Password'}</Text>
                         </View>

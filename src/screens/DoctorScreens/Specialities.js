@@ -4,6 +4,7 @@ import { SpecialitiesStyle } from '../../styelsheets/SpecialitiesStyle';
 import imageConstantURI from '../../constants/imageConst';
 import { buttonStyle, } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
+import Footer from '../../components/Footer/Footer';
 
 class Specialities extends Component {
     render() {
@@ -11,6 +12,7 @@ class Specialities extends Component {
         //console.log(list);
 
         return (
+            <View style={{flex:1}}>
             <View style = { SpecialitiesStyle.mainContainer }>
                 {list.map((data, index) =>
                     <TouchableOpacity onPress={() => this.props.onSpecialities(data.specialization)} key={index}>
@@ -29,6 +31,9 @@ class Specialities extends Component {
                     </TouchableOpacity>
                 )}
             </View>
+            <Footer navigation={this.props.navigation} />
+            </View>
+
         );
     }
 }

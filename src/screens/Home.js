@@ -60,19 +60,20 @@ class Home_Screen extends Component {
 
   }
   static navigationOptions = {
-    title: 'MEDePAL',
+    title: 'MED-E-PAL',
     headerBackground: (
       <LinearGradient
         colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
-        style={{ flex: 1,}}
+        style={{ flex: 1, padding: 0}}
         start={[0,0]}
         end={[1,1]}
       />
-    ),   
+    ),
     headerTintColor: '#fff',
-    headerTitleStyle: {    
-    
-      textAlign: "center",
+    headerTitleStyle: {      
+      paddingLeft: 50,
+      textAlign: 'center', 
+      alignSelf: 'center',
       justifyContent: 'center',
       flex: 1,
 
@@ -230,27 +231,27 @@ class Home_Screen extends Component {
     return (
       <View style={HomeStyles.mainWrapper}>
         <ScrollView>
-        {/*--- Carousel Start ---*/}
-        <View style={HomeStyles.caro}>
-          <Auto_Carousel />
-        </View>
-        {/*--- Carousel End ---*/}
+          {/*--- Carousel Start ---*/}
+          <View style={HomeStyles.caro}>
+            <Auto_Carousel />
+          </View>
+          {/*--- Carousel End ---*/}
 
-        {/*--- SignIn/CreateAccount Start ---*/}
-        {userArea}
-        {/*--- SignIn/CreateAccount End ---*/}
+          {/*--- SignIn/CreateAccount Start ---*/}
+          {userArea}
+          {/*--- SignIn/CreateAccount End ---*/}
 
-        {/*--- Offers & Discount Start ---*/}
-         {offersArea}
-        {/*--- Offers & Discount End ---*/}
+          {/*--- Offers & Discount Start ---*/}
+          {offersArea}
+          {/*--- Offers & Discount End ---*/}
 
-        {/*--- complete profile Area Start ---*/}
-         {completeprofileArea}           
-        {/*--- complete profile Area End ---*/}
+          {/*--- complete profile Area Start ---*/}
+          {completeprofileArea}           
+          {/*--- complete profile Area End ---*/}
 
-        {/*--- Menu Start ---*/}
-          {menuArea}
-        {/*--- Menu End ---*/}
+          {/*--- Menu Start ---*/}
+            {menuArea}
+          {/*--- Menu End ---*/}
 
       </ScrollView>
       <Footer navigation={this.props.navigation} /> 

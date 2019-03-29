@@ -74,7 +74,7 @@ class MyGroups extends Component {
                             </View>
                         </View>
                     </View>
-                </TouchableOpacity >)
+                </TouchableOpacity>)
             :
             <View></View>;
 
@@ -107,6 +107,9 @@ class MyGroups extends Component {
                         {createnewArea}                     
                    
                 </ScrollView>
+               
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
             <Footer navigation={this.props.navigation} />
             </View>

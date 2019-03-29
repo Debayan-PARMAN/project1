@@ -10,6 +10,7 @@ import { updateState, doctorSpecializations } from '../../actions/doctors';
 import Header_Blank from '../../components/Header/Header_Blank';
 import {cancelAppointment } from '../../actions/doctors';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class Doctor_Details extends Component {
     // componentWillMount() {
@@ -186,6 +187,7 @@ class Doctor_Details extends Component {
                     </View>
 
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
 

@@ -144,7 +144,10 @@ class AddNewGroupMember extends Component {
                                     {minoradultbuttonArea}
                                     {addbuttonArea}                  
                                    
-                </ScrollView>                  
+                </ScrollView>   
+                            
+            </View>
+            <Footer navigation={this.props.navigation} />  
             </View>
             <Footer navigation={this.props.navigation} />  
             </View>

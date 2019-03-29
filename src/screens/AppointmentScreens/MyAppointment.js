@@ -78,9 +78,6 @@ class MyAppointment extends Component {
                     {appointmentList.map(Appointment =>
                         <Appointment_Card key={Appointment.appointmentPk} AppointmentDetails={Appointment} selectedAppointment={this.selectedAppointment}/>
                     )}  
-
-                    
-                
                 </ScrollView>
                 <Footer navigation={this.props.navigation} />
              </View>

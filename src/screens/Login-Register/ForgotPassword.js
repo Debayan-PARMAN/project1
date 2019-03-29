@@ -107,6 +107,7 @@ this.props.navigation.navigate('ForgotPasswordOtp');
                     </View>
 
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
             </View>
             <Footer navigation={this.props.navigation} />
             </View>

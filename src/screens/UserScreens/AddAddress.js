@@ -244,7 +244,9 @@ class AddAddress extends Component {
                                     { selectStateArea }
                                     { addressBtn }                              
                     </KeyboardAvoidingView>   
-                </ScrollView>                  
+                </ScrollView>  
+                </View>    
+                <Footer navigation={this.props.navigation} />            
             </View>
             <Footer navigation={this.props.navigation} />            
             </View>

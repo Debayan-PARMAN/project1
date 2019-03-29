@@ -310,6 +310,8 @@ class Update_User_Profile extends Component {
                 </View>
                 <Footer navigation={this.props.navigation} />
             </View>
+           
+
         );
     }
 };

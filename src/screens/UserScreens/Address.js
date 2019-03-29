@@ -75,7 +75,7 @@ class Address extends Component {
                             
                         </View>
                     </View>
-                </TouchableOpacity >)
+                </TouchableOpacity>)
             :
             <View></View>;
         const addnewaddressArea = (
@@ -91,7 +91,7 @@ class Address extends Component {
                        
                     </View>
                 </View>
-            </TouchableOpacity >);     
+            </TouchableOpacity>);     
 
         return (
             <View style = {{ flex: 1 }}>

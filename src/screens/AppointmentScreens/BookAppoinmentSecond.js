@@ -140,6 +140,7 @@ class Book_Appoinment_Second extends Component {
                     </View>             
                 </KeyboardAvoidingView>
             </ScrollView>
+           
         </View>
         <Footer navigation={this.props.navigation} />
         </View>

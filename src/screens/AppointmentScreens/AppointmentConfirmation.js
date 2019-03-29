@@ -201,16 +201,27 @@ class Appointment_Confirmation extends Component {
                                             source={imageConstantURI.download.src}/>
                                     </TouchableOpacity>
                                 </View>
-                                <View style={AppointmentConfirmationStyle.pdfContainer}>
-                                    <Text style={AppointmentConfirmationStyle.text}> {en.commonLabel.pdfLabel}</Text>
+                                { heart_right}
+                                <View style={AppointmentConfirmationStyle.flex}>
+                                    <View style={AppointmentConfirmationStyle.downloadImageContainer}>
+                                        <TouchableOpacity>
+                                            <Image style={AppointmentConfirmationStyle.downloadImageStyle}
+                                                source={imageConstantURI.download.src}/>
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={AppointmentConfirmationStyle.pdfContainer}>
+                                        <Text style={AppointmentConfirmationStyle.text}> {en.commonLabel.pdfLabel}</Text>
+                                    </View>
                                 </View>
                             </View>
+                        { confirm }
                         </View>
-                      { confirm }
-                    </View>
-                    { body }
-                   
-                </ScrollView>
+                        { body }
+                    
+                    </ScrollView>
+                
+                </View>
+                <Footer navigation={this.props.navigation} />
             </View>
             <Footer navigation={this.props.navigation} />
             </View>

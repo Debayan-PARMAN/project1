@@ -112,8 +112,10 @@ class Find_Doctor_Filter extends Component {
         </View>
         );
 
-        const filter = (             
+        const filter = (  
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Filter')}>           
                 <Text style={[SearchDoctorStyle.filterText, {textAlign:'right'}]}>{en.doctorSearchLabel.filterLabel}</Text>
+                </TouchableOpacity>
                
         );
 

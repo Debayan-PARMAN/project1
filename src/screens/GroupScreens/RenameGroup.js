@@ -10,6 +10,7 @@ import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
+import Footer from '../../components/Footer/Footer';
 
 class AddGroup extends Component {
     static navigationOptions = {
@@ -95,6 +96,7 @@ class AddGroup extends Component {
                         </View>
                     </View>
                 </ScrollView>
+                <Footer navigation={this.props.navigation} />
             </View>
         );
     }

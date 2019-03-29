@@ -155,7 +155,7 @@ class Payment_Details extends Component {
                             source={imageConstantURI.rightArrow.src}
                         />            
             </View>
-        </TouchableOpacity >
+        </TouchableOpacity>
         );
 
         const netBankingArea = (
@@ -170,7 +170,7 @@ class Payment_Details extends Component {
                             source={imageConstantURI.rightArrow.src}
                         />
                 </View>
-           </TouchableOpacity >
+           </TouchableOpacity>
         );
 
         const morePaymentArea = (
@@ -235,6 +235,7 @@ class Payment_Details extends Component {
                             { buttonArea }      
                     </KeyboardAvoidingView>
                 </ScrollView>
+
             </View>
             <Footer navigation={this.props.navigation} />
             </View>

@@ -123,7 +123,6 @@ class GroupDetails extends Component {
                 </View>                                         
                <Footer navigation={this.props.navigation} />
                </View>  
-           
         );
     }
 };

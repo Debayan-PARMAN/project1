@@ -15,6 +15,10 @@ import { updateState } from '../../actions/doctors';
 import Header_Blank from '../../components/Header/Header_Blank';
 import Footer from '../../components/Footer/Footer';
 import { LinearGradient } from 'expo';
+import { buttonStyle, } from '../../styelsheets/CommonStyle';
+import styleConstants from '../../constants/styleConstants';
+import en from '../../messages/en-us';
+
 
 class Doctor_Appoinment extends Component {
 
@@ -180,18 +184,17 @@ class Doctor_Appoinment extends Component {
                 
         return (
             <View style={{flex:1}}>
-            <View style={LoginStyles.mainWrapper}>
-                <KeyboardAvoidingView style={LoginStyles.mainWrapper} behavior="padding" enabled>
+              <View style={LoginStyles.mainWrapper}>
+                  <KeyboardAvoidingView style={LoginStyles.mainWrapper} behavior="padding" enabled>
+                      {datePickerArea}
 
-                    {datePickerArea}
+                      {doctorDetailArea}
 
-                    {doctorDetailArea}
+                      {doctorChamberDetails}
 
-                    {doctorChamberDetails}
-
-                </KeyboardAvoidingView>
-                 </View>
-                <Footer navigation={this.props.navigation} />
+                  </KeyboardAvoidingView>
+               </View>
+               <Footer navigation={this.props.navigation} />
             </View>
         );
     }

@@ -18,6 +18,7 @@ import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
 import Moment from 'moment';
+import Footer from '../../components/Footer/Footer';
 
 class Book_Appoinment_Third extends Component {
 
@@ -139,6 +140,9 @@ class Book_Appoinment_Third extends Component {
                    
                     </ScrollView> 
                     </KeyboardAvoidingView>
+                    
+            </View>
+            <Footer navigation={this.props.navigation} />
             </View>
             <Footer navigation={this.props.navigation} />
             </View>
