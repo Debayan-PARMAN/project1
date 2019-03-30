@@ -15,18 +15,14 @@ import { textInputStyle } from '../../styelsheets/CommonStyle';
 import Footer from '../../components/Footer/Footer';
 
 class Search_Doctor extends Component {
-
-    componentDidMount() {
-        //this.props.addGroup();
-        //this.props.getMyGroup();
-        //this.props.viewGroupMember();
-        //this.props.deleteGroupMember();
-        //this.props.searchMember();
-
-     }
+    constructor(props){
+        super(props);
+        this.state = {
+            isOn: false
+        };
+    }
 
     componentWillUnmount() {
-        // console.log('Component is being unmounted');
         const searchDetails = {
             searchQuery: '',
             location: '',
@@ -61,9 +57,9 @@ class Search_Doctor extends Component {
         headerRight: (<Header_Blank />)
     };
     
-    onToggle = () => {
-        this.props.navigation.navigate('');
-    }
+    // onTogglePass = () => {
+    //     this.props.navigation.navigate('');
+    // }
 
     onNavigate = () => {
         this.props.navigation.navigate('DoctorAppoinment');
@@ -75,8 +71,6 @@ class Search_Doctor extends Component {
     }
 
     appointmentPage = () => {
-        //console.log('Search the data');
-        //this.props.findDoctors();
         this.props.navigation.navigate('SearchDoctor');
     }
 
@@ -84,18 +78,14 @@ class Search_Doctor extends Component {
         const { doctorslist } = this.props.doctorState;
         let doctorDetails = {};
         const selectedDoctorDetails = doctorslist.filter(doctor => doctor.doctorPk === selectedId);
-        //console.log(selectedDoctorDetails[0]);
-        // console.log(selectedId);
         doctorDetails = selectedDoctorDetails[0];
-
         this.props.docUpdateState({ doctorDetails });
-
         this.props.navigation.navigate('DoctorAppoinment');
-        // console.log("button triger");
     }
 
-    onToggle = () => {
-
+    onTogglePass = () => {
+       const isOn = !this.state.isOn;
+       this.setState({isOn});
     }
 
     render() {
@@ -155,11 +145,11 @@ class Search_Doctor extends Component {
                                 <Text style={SearchDoctorStyle.bodyText}>{en.doctorSearchLabel.acceptHousecallLabel}</Text>
                             </View>
                             <View style={SearchDoctorStyle.toggleContainer}>
-                                <ToggleSwitch
-                                    isOn={false}
-                                    onColor='#972493' offColor='#972493'
+                                <ToggleSwitch isOn={this.state.isOn}
+                                    onColor='#d8c0ef' 
+                                    offColor='#d8c0ef'
                                     size='small'
-                                    onToggle={ (isOn) => console.log('changed to : ', isOn) }
+                                    onToggle={() => this.onTogglePass() }
                                 />
                             </View>
                         </View>

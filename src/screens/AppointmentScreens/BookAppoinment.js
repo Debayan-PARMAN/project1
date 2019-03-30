@@ -103,9 +103,8 @@ class Book_Appoinment extends Component {
                                 <View style={BookAppointmentStyle.PatientSecondPart}>
                                     <Text style={BookAppointmentStyle.HeaderText}>{ en.appointmentScreens.textLabel }</Text>
                                     <ToggleSwitch
-                                        //isOn={showPassword}
-                                        onColor = '#743894'
-                                        offColor='#616264'
+                                        onColor = '#d8c0ef'
+                                        offColor='#d8c0ef'
                                         size='small'
                                         onToggle={this.onToggle} />
                                  </View>       
@@ -113,33 +112,21 @@ class Book_Appoinment extends Component {
                             
                             <View style={BookAppointmentStyle.TextInputContainer}>
                                 <TextInput style={textInputStyle.primaryTextInput}
-                                    //placeholder="Patient name"
-                                //value={userDetails.username}
-                                //onChangeText={(e) => this.onValueChange(e, 'username')} 
                                 />
                             </View>
                             <View style={BookAppointmentStyle.TextInputContainer}>
                                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.emailLabel}</Text>
                                     <TextInput style={textInputStyle.primaryTextInput}
-                                    //placeholder="Patient email address"
-                                //value={userDetails.username}
-                                //onChangeText={(e) => this.onValueChange(e, 'username')} 
                                 />
                             </View>
                             <View style={BookAppointmentStyle.TextInputContainer}>
                                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.loginLabels.mobileNumberLabel}</Text>
                                 <TextInput style={[textInputStyle.primaryTextInput, { width: 200 }]}
-                                    //placeholder="Patient Mobile number"
-                                //value={userDetails.username}
-                                //onChangeText={(e) => this.onValueChange(e, 'username')} 
                                 />
                             </View>
                             <View style={BookAppointmentStyle.TextInputContainer}>
                                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.appointmentScreens.ageLabel}</Text>
                                 <TextInput style={[textInputStyle.primaryTextInput, { width: 130 } ]}
-                                   // placeholder="Approx age"
-                                    //value={userDetails.username}
-                                    //onChangeText={(e) => this.onValueChange(e, 'username')}
                                     />                                     
                             </View>                         
                             <Text style={[textInputStyle.primaryTextInputFontStyle, {marginTop:5}]}>{en.appointmentScreens.genderLabel}</Text>
@@ -167,8 +154,7 @@ class Book_Appoinment extends Component {
                     </KeyboardAvoidingView>
 
                     <View style={BookAppointmentStyle.btnContainer}>
-                        <TouchableOpacity onPress={this.onToggle}>
-                        {/* onPress={this.props.onSubmit} */}                       
+                        <TouchableOpacity onPress={this.onToggle}>                    
                             <LinearGradient
                                 style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle6,]}
                                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -178,18 +164,6 @@ class Book_Appoinment extends Component {
                             </LinearGradient>
                         </TouchableOpacity> 
                     </View>
-                {/* <View style={[LoginStyles.button,{marginTop:30}]}>               
-                    <View style={{ flex: 1, }}>
-                        <Button onPress={ this.onToggle}
-                        style={FontStyles.font}
-                        //onPress={this.props.onSubmit}
-                        title="Next"
-                        color = "#743894"
-                        width="10"
-                    />
-                </View>
-               
-            </View>                    */}
          </ScrollView>
         
         </View>

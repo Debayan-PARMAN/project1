@@ -1,4 +1,3 @@
-// import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import ROUTES from '../src/constants/route';
 
@@ -8,9 +7,7 @@ const RootStack = createStackNavigator({
   Testing: ROUTES.TEST_PAGE,
 
   // Login-Registration
-
   Login: ROUTES.LOGIN,
-  //OtpLogin: ROUTES.OTPLOGIN,
   Registration: ROUTES.REGISTRATION,
   VerifyMobileMumber: ROUTES.VERIFY_MOBILE_NUMBER,
   CreateAccount: ROUTES.CREATE_ACCOUNT,
@@ -19,7 +16,6 @@ const RootStack = createStackNavigator({
   ChangePassword: ROUTES.CHANGEPASSWORD,
   
   // UserScreens
-  
   UserProfile: ROUTES.USER_PROFILE,
   UpdateUserProfile: ROUTES.UPDATE_USER_PROFILE,
   AddAddress: ROUTES.ADDADDRESS,
@@ -27,7 +23,6 @@ const RootStack = createStackNavigator({
   LifeStyle: ROUTES.LIFESTYLE,
 
   // AppointmentScreens
- 
   AppointmentConfirmation: ROUTES.APPOINTMENT_CONFIRMATION,
   AppointmentDetails: ROUTES.APPOINTMENTDETAILS,
   DoctorDetails: ROUTES.DOCTOR_DETAILS,
@@ -43,7 +38,6 @@ const RootStack = createStackNavigator({
   PaymentDetails: ROUTES.PAYMENT_DETAILS,
 
 // DoctorScreens
-
   Filter: ROUTES.FILTER,
   FindDoctor: ROUTES.FIND_DOCTOR,
   Specialities: ROUTES.SPECIALITIES,
@@ -52,24 +46,15 @@ const RootStack = createStackNavigator({
   FindDoctorFilter: ROUTES.FIND_DOCTOR_FILTER,
   
 // GroupScreens
-  
   AddGroup: ROUTES.ADDGROUP,
   AddNewGroupMember: ROUTES.ADDNEWGROUPMEMBER,
   GroupDetails: ROUTES.GROUPDETAILS,
   GroupMember: ROUTES.GROUPMEMBER,
   MyGroups: ROUTES.MYGROUPS,
-
-  
  
-},
+  },
   {
     initialRouteName: 'Home',
-
   });
-
-  // const FooterNavigation= createStackNavigator({
-  //   HOME: ROUTES.HOME,
-  //   FooterHome: FOOTER_ROUTES.Footer_Component_Home,
-  // })
 
 export default AppContainer = createAppContainer(RootStack);

@@ -27,8 +27,6 @@ export default class Doctor_Card extends Component {
 
         const { chamberDetails } = this.props;
 
-        //console.log("Chember List : ",chamberDetails);
-
         const addressArea = (
             <View style={{ paddingBottom: 10 }}>
                 <View style={{ flex: 1, flexDirection: 'row', marginTop: 7, marginBottom: 7 }}>
@@ -72,17 +70,6 @@ export default class Doctor_Card extends Component {
             <Card container style={CardStyle}>
                 {addressArea}
                 <View style={LoginStyles.button}>
-                   
-                    {/* <View style={{ flex: 1, }}>
-                        <Button onPress={(e) => this.props.selectedChamber(chamberDetails)}
-                            style={FontStyles.font}
-                            //onPress={this.props.onSubmit}
-                            title="Book Appointment"
-                            color="#743894"
-                            width="10"
-                        />
-                    </View> */}
-
                     <TouchableOpacity onPress={(e) => this.props.selectedChamber(chamberDetails)}>
                         <LinearGradient
                             style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle6]}

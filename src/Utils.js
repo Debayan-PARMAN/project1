@@ -3,7 +3,6 @@ export function joiningString(arr) {
 }
 
 export function resetUserDetails(){
-    //console.log('User Details reset');
     return {
         masterId: '',
         userId: '',

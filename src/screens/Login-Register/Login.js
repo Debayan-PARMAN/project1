@@ -325,7 +325,10 @@ this.props.otpLogin();
                             {
 
                              //   toggleEnable ?
-                                    <ToggleSwitch onColor='#d8c0ef' offColor='#d8c0ef' isOn={otpToggle} onToggle={(isOn) => this.onTogglePass(isOn)} />
+                                    <ToggleSwitch onColor='#d8c0ef' 
+                                    offColor='#d8c0ef' 
+                                    isOn={otpToggle} 
+                                    onToggle={(isOn) => this.onTogglePass(isOn)} />
                                   //  :
                             //  <ToggleSwitch offColor='#eee' onToggle={this.onTogglePass} />
 
