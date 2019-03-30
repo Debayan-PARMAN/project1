@@ -1,7 +1,6 @@
 import React, { Component } from 'react'; 
 import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView,Image} from 'react-native'; 
 import { LoginStyles,} from '../../styelsheets/MainStyle'; 
-import { CardStyle } from '../../styelsheets/CardStyle';
 import {DoctorCardStyle} from '../../styelsheets/DoctorCardStyle';
 import imageConstantURI from '../../constants/imageConst';
 import { getDoctorDetails, } from '../../actions/doctors';
@@ -10,18 +9,21 @@ import DatePicker from 'react-native-datepicker';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { updateState as docUpdateState } from '../../actions/doctors';
 import { updateState } from '../../actions/doctors';
 import Header_Blank from '../../components/Header/Header_Blank';
 import Footer from '../../components/Footer/Footer';
 import { LinearGradient } from 'expo';
-import { buttonStyle, } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
-import en from '../../messages/en-us';
 import Moment from 'moment';
 
 
 class Doctor_Appoinment extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            selectedDate: '',
+        }
+    }
     componentDidMount() {
         const { userDetails } = this.props.userState;
         if (userDetails.userId !== ""){
@@ -67,8 +69,9 @@ class Doctor_Appoinment extends Component {
 
     onDateSelect = (newdate) => {
         const { AppointmentDetails } = this.props.doctorState; 
+        this.setState({selectedDate: newdate});
         AppointmentDetails.appointmentDate = Moment(newdate).format('YYYY-DD-MM');
-        console.log(AppointmentDetails.appointmentDate);
+        // console.log(AppointmentDetails.appointmentDate);
         this.props.updateState({ AppointmentDetails});
     }
    
@@ -80,7 +83,7 @@ class Doctor_Appoinment extends Component {
                 <TouchableOpacity>
                     <DatePicker
                         style={{ width: 200, }}
-                        date={AppointmentDetails.appointmentDate}
+                        date={this.state.selectedDate}
                         mode="date"
                         placeholder="select date"
                         format="YYYY-MM-DD"

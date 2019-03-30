@@ -44,7 +44,7 @@ class Book_Appoinment extends Component {
     };
 
     onToggle = () => {
-        const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
+        const { AppointmentDetails } = this.props.doctorState;
         if (AppointmentDetails.appointmentDate !==''){
             this.props.navigation.navigate('BookAppoinmentSecond')
         }else{
@@ -57,7 +57,8 @@ class Book_Appoinment extends Component {
     render() {
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
 
-        const timeDetails = `${Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
+        // console.log(AppointmentDetails);
+        const timeDetails = `${AppointmentDetails.appointmentDate}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
     
         return (
             <View style={{flex:1}}>
@@ -73,8 +74,12 @@ class Book_Appoinment extends Component {
                                 <Text style={CardStyle.specialization}>BDS, MDS General Dentistry</Text>
                             </View>
                         </View>                       
-                            <Text style={CardStyle.name}>{ en.doctorSearchLabel.locationLabel } - {chamberDetails.line1}, {chamberDetails.line2}</Text>
-                        <Text style={CardStyle.name}>{en.appointmentScreens.dateTimeLabel} - {timeDetails}</Text>
+                        <Text style={CardStyle.name}>
+                            { en.doctorSearchLabel.locationLabel } - {chamberDetails.line1}, {chamberDetails.line2}
+                        </Text>
+                        <Text style={CardStyle.name}>
+                            {en.appointmentScreens.dateTimeLabel} - {timeDetails}
+                        </Text>
                        
                         <View style={BookAppointmentStyle.TabMainContainer}>
                             <View style={[BookAppointmentStyle.TabContainer, {backgroundColor: '#93278f'}]}>

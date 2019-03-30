@@ -60,7 +60,7 @@ class Book_Appoinment_Third extends Component {
     render() {
         const { userDetails } = this.props.userState;
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
-        const timeDetails = `${Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
+        const timeDetails = `${AppointmentDetails.appointmentDate}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
 
         return (
             <View style={{flex:1}}>

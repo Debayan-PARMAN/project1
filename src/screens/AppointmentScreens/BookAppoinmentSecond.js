@@ -47,7 +47,7 @@ class Book_Appoinment_Second extends Component {
     render() {
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
         const { userDetails } = this.props.userState;
-        const timeDetails = `${Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
+        const timeDetails = `${AppointmentDetails.appointmentDate}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
 
         return (
             <View style={{flex:1}}>
@@ -66,7 +66,9 @@ class Book_Appoinment_Second extends Component {
                        
                         <Text style={[CardStyle.name, {marginTop:4}]}>{en.doctorSearchLabel.locationLabel} - {chamberDetails.line1}, {chamberDetails.line2}</Text>
                          
-                            <Text style={[CardStyle.name, { marginTop: 4 }]}>{en.appointmentScreens.dateTimeLabel} - {timeDetails}</Text>
+                            <Text style={[CardStyle.name, { marginTop: 4 }]}>
+                                {en.appointmentScreens.dateTimeLabel} - {timeDetails}
+                            </Text>
                         
                       
                         <View style={BookAppointmentStyle.PatientFirstPart}>
