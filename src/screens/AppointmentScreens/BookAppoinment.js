@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, Book_Appoinment } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, AppRegistry } from 'react-native';
 import { CardStyle } from '../../styelsheets/CardStyle';
 import ToggleSwitch from 'toggle-switch-react-native';
 import Status_Indicator from '../../components/StatusIndicator';

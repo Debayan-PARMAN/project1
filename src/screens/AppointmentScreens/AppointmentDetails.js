@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { updateState as userUpdateState } from '../../actions/doctors';
 import { updateState as docUpdateState } from '../../actions/doctors';
 import AppointmentDetailsStyle from '../../styelsheets/AppointmentDetailsStyle';
-import { View, Text, Image, TouchableOpacity, ScrollView, AppointmentDetails  } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, AppRegistry  } from 'react-native';
 import imageConstantURI from '../../../src/constants/imageConst';
 import { buttonStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
