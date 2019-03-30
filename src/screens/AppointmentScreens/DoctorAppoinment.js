@@ -57,6 +57,7 @@ class Doctor_Appoinment extends Component {
     };
     ///Pass Value////
     selectedChamber = (chamberDetails,timeSlot) => {
+        if (timeSlot === undefined || timeSlot === null) { return; }
         const { AppointmentDetails } = this.props.doctorState; 
         AppointmentDetails.appointmentTime = timeSlot;
         this.props.updateState({ chamberDetails, AppointmentDetails});
@@ -144,7 +145,7 @@ class Doctor_Appoinment extends Component {
             <View style={{ flex: 1 }}>
                 <Text style={[DoctorCardStyle.doctorDescription, {fontSize:16,marginLeft:10}]}>Chambers</Text>
                 {doctorDetails.doctorChamberList !== undefined && doctorDetails.doctorChamberList.length !== 0 ?
-                    <ScrollView>    
+                    <ScrollView>
                         {doctorDetails.doctorChamberList.map(chamber => 
                             <Doctor_Card key={chamber.chamberPk} chamberDetails={chamber} onTimeSlot={this.onTimeSlot} selectedChamber={this.selectedChamber} />
                         )}    

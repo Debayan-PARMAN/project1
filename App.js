@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
-// import configureStore from './store';
 import store from './src/store/index';
 import {Provider} from 'react-redux';
 import AppContainer from './src/RouterContainer';
+import { AppRegistry, View } from 'react-native';
 
-    
 export default class App extends Component {
-  componentDidMount(){
-    console.log('Loading....')
-  }
-
   render() {
     return (
       <Provider store={store}>
@@ -19,3 +14,4 @@ export default class App extends Component {
   }
 }
 
+AppRegistry.registerComponent(App, () => App);

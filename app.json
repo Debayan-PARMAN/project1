@@ -5,10 +5,10 @@
     "privacy": "unlisted",
     "sdkVersion": "31.0.0",
     "android": {
-      "package": "com.sbismedepal"
+      "package": "com.sbis.medepal"
     },
     "ios": {
-     "bundleIdentifier": "com.sbismedepal",
+     "bundleIdentifier": "com.sbis.medepal",
      "supportsTablet": true
     },
     "version": "1.0.0",
