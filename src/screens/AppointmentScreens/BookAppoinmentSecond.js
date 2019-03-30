@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState} from '../../actions/user';
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView,Button } from 'react-native';
-import { LoginStyles, FontStyles,} from '../../styelsheets/MainStyle';
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView,} from 'react-native';
 import { CardStyle } from '../../styelsheets/CardStyle';
 import Status_Indicator from '../../components/StatusIndicator.1';
 import { updateState as userUpdateState } from '../../actions/doctors';
@@ -46,9 +45,10 @@ class Book_Appoinment_Second extends Component {
     
 
     render() {
-        //console.log(userDetails.username)
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
         const { userDetails } = this.props.userState;
+        const timeDetails = `${Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
+
         return (
             <View style={{flex:1}}>
             <View style={BookAppointmentStyle.mainWrapper}>
@@ -66,7 +66,7 @@ class Book_Appoinment_Second extends Component {
                        
                         <Text style={[CardStyle.name, {marginTop:4}]}>{en.doctorSearchLabel.locationLabel} - {chamberDetails.line1}, {chamberDetails.line2}</Text>
                          
-                        <Text style={[CardStyle.name, { marginTop: 4 }]}>{en.appointmentScreens.dateTimeLabel} - {AppointmentDetails.appointmentDate}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
+                            <Text style={[CardStyle.name, { marginTop: 4 }]}>{en.appointmentScreens.dateTimeLabel} - {timeDetails}</Text>
                         
                       
                         <View style={BookAppointmentStyle.PatientFirstPart}>

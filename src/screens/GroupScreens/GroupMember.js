@@ -130,8 +130,7 @@ class GroupMember extends Component {
             </View>
             <Footer navigation={this.props.navigation} />
             </View>
-            <Footer navigation={this.props.navigation} />
-            </View>
+           
         );
     }
 };

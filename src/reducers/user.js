@@ -1,7 +1,7 @@
 import { createReducer } from './utils';
 import { USER_TYPE } from '../constants/actionReducerConstants';
 import { setAsyncStorage, resetUserDetails } from '../Utils';
-import Moment from 'moment';
+
 
 const initialState = {
   toggleEnabled: true, 
@@ -362,7 +362,7 @@ const handlers = {
       userDetails.height = action.payload.data.height !== undefined ? action.payload.data.height : '';
       userDetails.weight = action.payload.data.weight !== undefined ? action.payload.data.weight : '';
       userDetails.gender = action.payload.data.gender !== undefined ? action.payload.data.gender : '';
-      userDetails.dateOfBirth = action.payload.data.dateOfBirth !== undefined ? Moment(action.payload.data.dateOfBirth).format('DD-MM-YYYY') : '',
+      userDetails.dateOfBirth = action.payload.data.dateOfBirth !== undefined ? action.payload.data.dateOfBirth : '',
       userDetails.maritialStatus = action.payload.data.maritialStatus !== undefined ? action.payload.data.maritialStatus : '';
       userDetails.contactNo = action.payload.data.contactNo !== undefined ? action.payload.data.contactNo : '';
       userDetails.addressList = action.payload.data.addressList !== [] ? action.payload.data.addressList : [];

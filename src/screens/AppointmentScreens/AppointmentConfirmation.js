@@ -50,6 +50,7 @@ class Appointment_Confirmation extends Component {
     render() {
         const {chamberDetails, AppointmentDetails } = this.props.doctorState;
         const { userDetails } = this.props.userState;
+        const timeDetails = `${Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
         const heart_right = (
             <View style={AppointmentConfirmationStyle.heartImageContainer}>
                 <Image style={AppointmentConfirmationStyle.heartImageStyle}
@@ -120,7 +121,7 @@ class Appointment_Confirmation extends Component {
                         </View>
                         <View>
                             <Text style={AppointmentConfirmationStyle.text}>
-                                {Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}
+                                {timeDetails}
                                 </Text>
                         </View>
                     </View>
@@ -186,20 +187,12 @@ class Appointment_Confirmation extends Component {
 
         return (
             <View style={{flex:1}}>
-            <View style={AppointmentConfirmationStyle.mainContainer}>
-                <ScrollView>
-                    <View style={AppointmentConfirmationStyle.flex}>
-                        <View style={AppointmentConfirmationStyle.subContainer}>
-                            <View style={AppointmentConfirmationStyle.flex}>
-                                <Text style={AppointmentConfirmationStyle.medePal}> {en.commonLabel.medEPalLabel}</Text>
-                            </View>
-                            { heart_right}
-                            <View style={AppointmentConfirmationStyle.flex}>
-                                <View style={AppointmentConfirmationStyle.downloadImageContainer}>
-                                    <TouchableOpacity>
-                                        <Image style={AppointmentConfirmationStyle.downloadImageStyle}
-                                            source={imageConstantURI.download.src}/>
-                                    </TouchableOpacity>
+                <View style={AppointmentConfirmationStyle.mainContainer}>
+                    <ScrollView>
+                        <View style={AppointmentConfirmationStyle.flex}>
+                            <View style={AppointmentConfirmationStyle.subContainer}>
+                                <View style={AppointmentConfirmationStyle.flex}>
+                                    <Text style={AppointmentConfirmationStyle.medePal}> {en.commonLabel.medEPalLabel}</Text>
                                 </View>
                                 { heart_right}
                                 <View style={AppointmentConfirmationStyle.flex}>
@@ -209,22 +202,29 @@ class Appointment_Confirmation extends Component {
                                                 source={imageConstantURI.download.src}/>
                                         </TouchableOpacity>
                                     </View>
-                                    <View style={AppointmentConfirmationStyle.pdfContainer}>
-                                        <Text style={AppointmentConfirmationStyle.text}> {en.commonLabel.pdfLabel}</Text>
+                                    { heart_right}
+                                    <View style={AppointmentConfirmationStyle.flex}>
+                                        <View style={AppointmentConfirmationStyle.downloadImageContainer}>
+                                            <TouchableOpacity>
+                                                <Image style={AppointmentConfirmationStyle.downloadImageStyle}
+                                                    source={imageConstantURI.download.src}/>
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View style={AppointmentConfirmationStyle.pdfContainer}>
+                                            <Text style={AppointmentConfirmationStyle.text}> {en.commonLabel.pdfLabel}</Text>
+                                        </View>
                                     </View>
                                 </View>
+                            { confirm }
+                            { body }
                             </View>
-                        { confirm }
                         </View>
-                        { body }
-                    
+                        
                     </ScrollView>
-                
                 </View>
                 <Footer navigation={this.props.navigation} />
             </View>
-            <Footer navigation={this.props.navigation} />
-            </View>
+
         );
 
     }
