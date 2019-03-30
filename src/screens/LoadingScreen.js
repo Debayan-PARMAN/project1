@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, ActivityIndicator } from 'react-native';
+import { View, Image, AppRegistry } from 'react-native';
 import imageConstantURI from '../constants/imageConst';
 
 export default class Loading_Screen extends Component {
@@ -18,4 +18,4 @@ export default class Loading_Screen extends Component {
         );
     }
 }
-
+AppRegistry.registerComponent('project1', () => Loading_Screen);

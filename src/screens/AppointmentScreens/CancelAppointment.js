@@ -10,14 +10,10 @@ import { LinearGradient } from 'expo';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle,  } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
-import { View, Text,TouchableOpacity, KeyboardAvoidingView,  ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView, AppRegistry } from 'react-native';
 import Footer from '../../components/Footer/Footer';
 
 class CancelAppointment extends Component {
-    // componentDidMount() {
-    //     this.props.getAppoinmentList();
-    // }
-
     static navigationOptions = {
         title: 'CANCEL APPOINTMENT',
         headerBackground: (
@@ -95,5 +91,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userUpdateState, docUpdateState, getAppoinmentList, }, dispatch)
 });
+AppRegistry.registerComponent('project1', () => CancelAppointment);
 
 export default connect(mapStateToProps, mapDispatchToProps)(CancelAppointment);

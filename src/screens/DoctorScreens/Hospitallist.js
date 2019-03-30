@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, AppRegistry } from 'react-native';
 import { SpecialitiesStyle } from '../../styelsheets/SpecialitiesStyle';
 import imageConstantURI from '../../constants/imageConst';
-import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
 
 class Hospitallist extends Component {
     render() {
         const { list1, keyValue } = this.props;
-        //console.log("ARPAN KHAN........",list1);
-
         return (
             <View style={{flex:1}}>
             <View style = { SpecialitiesStyle.mainContainer }>
@@ -21,9 +18,7 @@ class Hospitallist extends Component {
                             <Text></Text>
                         </View>
                         <View style= { SpecialitiesStyle.imageContainer }>
-                            
-                                <Image style={ SpecialitiesStyle.imageStyle } source={imageConstantURI.rightAngle.src}/>
-                            
+                            <Image style={ SpecialitiesStyle.imageStyle } source={imageConstantURI.rightAngle.src}/>
                         </View>
                     </View>
                     </TouchableOpacity>
@@ -34,4 +29,7 @@ class Hospitallist extends Component {
         );
     }
 }
+
+AppRegistry.registerComponent('project1', () => Hospitallist);
+
 export default Hospitallist;

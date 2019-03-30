@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { userRegistration, updateState } from '../../actions/user';
-import { View, Image, Text, Alert, Button, TextInput, ScrollView, ProgressBarAndroid, KeyboardAvoidingView } from 'react-native';
+import { View, Image, Text, Alert, Button, TextInput,
+    ScrollView, ProgressBarAndroid, KeyboardAvoidingView, AppRegistry } from 'react-native';
 import { LoginStyles, FontStyles, } from '../../styelsheets/MainStyle';
 import PasswordInputText from 'react-native-hide-show-password-input';
 import Header_Blank from '../../components/Header/Header_Blank';
-import { TextInputStyles } from '../../styelsheets/TextInputStyle';
 import imageConstantURI from '../../constants/imageConst';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
@@ -207,5 +207,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userRegistration, updateState }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => OtpLogin);
 
 export default connect(mapStateToProps, mapDispatchToProps)(OtpLogin);

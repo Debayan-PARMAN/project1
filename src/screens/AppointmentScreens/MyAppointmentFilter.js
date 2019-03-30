@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import DatePicker from 'react-native-datepicker';
 import { Accordion } from "native-base";
-import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
-import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
+import { View, Text, TouchableOpacity, AppRegistry, ScrollView } from 'react-native';
+import { buttonStyle } from '../../styelsheets/CommonStyle';
 import Header_Blank from '../../components/Header/Header_Blank';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
@@ -169,9 +168,6 @@ class MyAppointmentFilter extends Component {
     }
 };
 
-MyAppointmentFilter.propTypes = {
-    // MyAppointmentFilter: PropTypes.object,
-}
 const mapStateToProps = state => ({
     userState: state.userState,
     doctorState: state.doctorState,
@@ -179,5 +175,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => MyAppointmentFilter);
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyAppointmentFilter);

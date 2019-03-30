@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { updateState } from '../../actions/common';
 import { updateState as userUpdateState } from '../../actions/doctors';
 import { updateState as docUpdateState, findDoctors } from '../../actions/doctors';
-import { View, Image, Text, Alert, TouchableOpacity, TextInput, CheckBox, Button, ScrollView, Textarea } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, AppRegistry, ScrollView } from 'react-native';
 import { LoginStyles } from '../../styelsheets/MainStyle';
 import { FindDoctorStyle } from '../../styelsheets/FindDoctorStyle';
 import Specialities from '../../screens/DoctorScreens/Specialities';
@@ -268,5 +268,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userUpdateState, docUpdateState, findDoctors, updateState}, dispatch)
 });
+AppRegistry.registerComponent('project1', () => Find_Doctor);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Find_Doctor);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { View, Image, Text, TouchableOpacity, ScrollView, TouchableHighlight } from 'react-native';
+import { View, Image, Text, TouchableOpacity, ScrollView, TouchableHighlight, AppRegistry } from 'react-native';
 import { LinearGradient } from 'expo';
 import Header_Home from '../../components/Header/Header_Menu';
 import { AppointmentConfirmationStyle } from '../../styelsheets/AppointmentConfirmationStyle';
@@ -233,5 +233,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, userUpdateState, docUpdateState, getDoctorDetails, }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Appointment_Confirmation);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Appointment_Confirmation);

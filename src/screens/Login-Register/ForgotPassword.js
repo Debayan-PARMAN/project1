@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { forgotPassword, updateState } from '../../actions/user';
-import { View, Text, TouchableOpacity, TextInput, ScrollView,Alert } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView, Alert, AppRegistry } from 'react-native';
 import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
@@ -126,5 +126,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, forgotPassword }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => ForgotPassword);
 
 export default connect(mapStateToProps, mapDispatchToProps)(ForgotPassword);

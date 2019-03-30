@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState, addGroup } from '../../actions/group';
-import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView, AppRegistry} from 'react-native';
 import AddAddressStyle from '../../styelsheets/AddAddressStyle';
-import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
-import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
 
 class AddGroup extends Component {
@@ -113,5 +111,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, addGroup, }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => AddGroup);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddGroup);

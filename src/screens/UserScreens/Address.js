@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { updateState, addAddress } from '../../actions/user';
+import { updateState } from '../../actions/user';
 import { getStates } from '../../actions/common';
 import { LinearGradient } from 'expo';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
-import { View, Text,Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, AppRegistry, ScrollView } from 'react-native';
 import AddAddressStyle from '../../styelsheets/AddAddressStyle';
 import imageConstantURI from '../../constants/imageConst';
 // import Drop_Down from '../components/DropDown';
@@ -124,5 +124,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, Address, getStates }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Address);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Address);

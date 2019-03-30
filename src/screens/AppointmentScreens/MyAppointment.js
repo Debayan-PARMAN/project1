@@ -7,7 +7,7 @@ import { updateState as docUpdateState } from '../../actions/doctors';
 import { getAppoinmentList, cancelAppointment } from '../../actions/doctors';
 import { forgotPassword } from '../../actions/user';
 import MyAppointmentStyle from '../../styelsheets/MyAppointmentStyle';
-import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, AppRegistry, ScrollView } from 'react-native';
 import Appointment_Card from '../../components/Card/AppointmentCard';
 import { updateState, doctorSpecializations } from '../../actions/doctors';
 import Header_Blank from '../../components/Header/Header_Blank';
@@ -101,5 +101,7 @@ const mapDispatchToProps = (dispatch) => ({
         doctorSpecializations,
         cancelAppointment, forgotPassword }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => MyAppointment);
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyAppointment);

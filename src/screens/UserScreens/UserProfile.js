@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState, updateUserProfile } from '../../actions/user';
-import { View, Text, TouchableOpacity, TextInput, ScrollView, } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView, AppRegistry } from 'react-native';
 import UserProfileStyle from '../../styelsheets/UserProfileStyle';
 import Drop_Down from '../../components/DropDown';
 import DatePicker from 'react-native-datepicker';
@@ -114,13 +114,7 @@ class User_Profile extends Component {
                     onDateChange={date => { this.onValueChange(date,'dateOfBirth')}}
                 />
             </TouchableOpacity>
-            {/* <TextInput
-                style={UserProfileStyle.EmailTextInput}
-                placeholder="Enter Age Hare!"
-                onChangeText={(e) => this.onValueChange(e, 'age')}
-                value={userDetails.age}
-            /> */}
-            </View>);
+        </View>);
 
         const heightBloodGroupWeightArea = (<View style={UserProfileStyle.AgeBloodWeight}>
             <View style={UserProfileStyle.AgeBloodWeightHorizontalAlignment} >
@@ -136,13 +130,6 @@ class User_Profile extends Component {
             <View style={UserProfileStyle.AgeBloodWeightHorizontalAlignment}>
                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.bloodGroupLabel}</Text>
                 <View style={UserProfileStyle.AgeBloodWeightTextInput} >
-                    {/* <TextInput
-                        style={UserProfileStyle.AgeBloodWeightTextInput}
-                        placeholder="bloodGroup"                       
-                        onChangeText={(e) => this.onValueChange(e, 'bloodGroup')}
-                        value={userDetails.bloodGroup}
-                    /> */}
-              
                     <Drop_Down 
                         selectedData='bloodGroup'
                         selectedValue={userDetails.bloodGroup} 
@@ -234,5 +221,6 @@ const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, updateUserProfile }, dispatch)
 });
 
+AppRegistry.registerComponent('project1', () => User_Profile);
 
 export default connect(mapStateToProps, mapDispatchToProps)(User_Profile);

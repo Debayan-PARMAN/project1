@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState, addMember } from '../../actions/group';
-import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView, AppRegistry } from 'react-native';
 import { FindDoctorStyle } from '../../styelsheets/FindDoctorStyle';
 import GroupStyle from '../../styelsheets/GroupStyle';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
@@ -136,14 +136,11 @@ class AddNewGroupMember extends Component {
             <View style={{flex:1}}>
             <View style={GroupStyle.mainWrapper}>
                 <ScrollView>                      
-                    {/* <Text style={GroupStyle.headerText}>{en.groupLabels.newMemberLabel}{groupDetails.groupName}</Text> */}
-                      
-                                    {nameArea}
-                                    {mobileArea}
-                                    {emailArea}
-                                    {minoradultbuttonArea}
-                                    {addbuttonArea}                  
-                                   
+                    {nameArea}
+                    {mobileArea}
+                    {emailArea}
+                    {minoradultbuttonArea}
+                    {addbuttonArea}
                 </ScrollView>   
                             
             </View>
@@ -164,5 +161,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, addMember }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => AddNewGroupMember);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddNewGroupMember);

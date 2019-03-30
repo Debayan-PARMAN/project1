@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { requestOTP, updateState, numberCheckRegistration } from '../../actions/user';
-import { View, Image, Text, Alert, TouchableOpacity, TextInput, ScrollView, TouchableHighlight,} from 'react-native';
+import { View, Image, Text, Alert, TouchableOpacity, TextInput, ScrollView, TouchableHighlight, AppRegistry} from 'react-native';
 import { LoginStyles, FontStyles, Button_fb_google, } from '../../styelsheets/MainStyle';
 import imageConstantURI from '../../constants/imageConst';
 import { LinearGradient } from 'expo';
 import Header_Blank from '../../components/Header/Header_Blank';
-import { TextInputStyles } from '../../styelsheets/TextInputStyle';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import en from '../../messages/en-us';
@@ -163,5 +162,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
   ...bindActionCreators({ requestOTP, updateState, numberCheckRegistration }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Registration);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Registration);

@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState, } from '../../actions/user';
 import { getStates } from '../../actions/common';
-import { Modal,View, Text,TouchableOpacity, TextInput, StyleSheet} from 'react-native';
-import imageConstantURI from '../../constants/imageConst';
+import { Modal, View, Text, TouchableOpacity, TextInput, StyleSheet, AppRegistry} from 'react-native';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
@@ -166,18 +165,10 @@ const mapDispatchToProps = (dispatch) => ({
    ...bindActionCreators({ updateState, LifeStyle, getStates }, dispatch)
 });
 
+AppRegistry.registerComponent('project1', () => LifeStyle);
+
 export default connect(mapStateToProps, mapDispatchToProps)(LifeStyle);
 const styles = StyleSheet.create ({
-   // container: {
-   //    flex:1,     
-   //    backgroundColor: '#ede3f2',      
-   // },
-   // modal: {
-   //    flex: 0.5,     
-   //    alignItems: 'center',
-   //    backgroundColor: '#ccc',
-      
-   // },
    text: {
       color: '#3f2949',    
       fontSize:15,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState } from '../../actions/user';
-import { View, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView} from 'react-native';
+import { View, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, AppRegistry} from 'react-native';
 import { CardStyle } from '../../styelsheets/CardStyle';
 import Status_Indicator from '../../components/StatusIndicator.2';
 import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button';
@@ -255,6 +255,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, userUpdateState, docUpdateState, getDoctorDetails, updateApponitmentDetails }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Payment_Details);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Payment_Details);
 

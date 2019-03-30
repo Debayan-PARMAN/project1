@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { updateState as userUpdateState } from '../../actions/doctors';
 import { updateState as docUpdateState } from '../../actions/doctors';
 import { cancelAppointment , updateState } from '../../actions/doctors';
-import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, AppRegistry, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import CancelAppointmentStyle from '../../styelsheets/CancelAppointmentStyle';
 import { LinearGradient } from 'expo';
 import Header_Blank from '../../components/Header/Header_Blank';
@@ -33,11 +33,6 @@ class CancelAppointmentComment extends Component {
         },
         headerRight: (<Header_Blank />)
     };
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {  };
-    // }
 
     onValueChange = (value, id) => {
         const { commentText } = this.props.doctorState;
@@ -130,5 +125,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userUpdateState, docUpdateState, updateState, cancelAppointment }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => CancelAppointmentComment);
 
 export default connect(mapStateToProps, mapDispatchToProps)(CancelAppointmentComment);

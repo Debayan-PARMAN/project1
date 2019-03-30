@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-//import { updateState, addAddress } from '../actions/user';
 import { getStates } from '../../actions/common';
-import { View, Text, Image, TouchableOpacity, TextInput, ScrollView, } from 'react-native';
+import { View, Text, Image, TouchableOpacity, AppRegistry, ScrollView, } from 'react-native';
 import { CheckBox } from 'react-native-elements';
 import GroupStyle from '../../styelsheets/GroupStyle';
 import { updateState, deleteMember, editMember } from '../../actions/group';
@@ -147,5 +146,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, GroupMember, getStates, deleteMember, editMember }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => GroupMember);
 
 export default connect(mapStateToProps, mapDispatchToProps)(GroupMember);
