@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { userLogin, checkNoExits, updateState, otpLogin, numberCheck } from '../../actions/user';
-import { View, Text, Alert, TextInput, ScrollView } from 'react-native';
+import { View, Text, Alert, TextInput, ScrollView, AppRegistry } from 'react-native';
 import { LoginStyles, FontStyles, Button_fb_google } from '../../styelsheets/MainStyle';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import Header_Blank from '../../components/Header/Header_Blank';
@@ -358,5 +358,6 @@ const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userLogin, checkNoExits, numberCheck, updateState, otpLogin }, dispatch)
 });
 
+AppRegistry.registerComponent('project1', () => LogIn);
 
 export default connect(mapStateToProps, mapDispatchToProps)(LogIn);

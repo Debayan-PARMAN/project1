@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import { getSpecialities, getCountries, getHospitals, getBloodGroupOptions, getGroup} from '../actions/common';
 import { getUserProfile, } from '../actions/user';
-import { View, ScrollView, Image, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { View, ScrollView, Image, Text, TouchableOpacity, Dimensions, AppRegistry } from 'react-native';
 import HomeStyles from '../styelsheets/HomeStyle';
 import Header_Component_Menu from '../components/Header/Header_Menu';
 import Header_SearchButton from '../components/Header/Header_SearchButton';
@@ -269,5 +269,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
   ...bindActionCreators({ getSpecialities, getCountries, getUserProfile, getHospitals, getBloodGroupOptions, getGroup}, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Home_Screen);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home_Screen);

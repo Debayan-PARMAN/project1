@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, Image } from 'react-native';
+import { Text, View, TouchableOpacity, Image, AppRegistry } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -477,5 +477,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
    ...bindActionCreators({ getChamberSlots, userUpdateState, docUpdateState }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Filter);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

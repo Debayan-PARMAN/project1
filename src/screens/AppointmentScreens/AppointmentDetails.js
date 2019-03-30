@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -6,9 +5,9 @@ import { bindActionCreators } from 'redux';
 import { updateState as userUpdateState } from '../../actions/doctors';
 import { updateState as docUpdateState } from '../../actions/doctors';
 import AppointmentDetailsStyle from '../../styelsheets/AppointmentDetailsStyle';
-import { View, Text, Image, TouchableOpacity,ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, AppointmentDetails  } from 'react-native';
 import imageConstantURI from '../../../src/constants/imageConst';
-import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
+import { buttonStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import { LinearGradient } from 'expo';
 import { updateState, doctorSpecializations } from '../../actions/doctors';
@@ -146,6 +145,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userUpdateState, updateState, docUpdateState, cancelAppointment, doctorSpecializations }, dispatch)
 });
+AppRegistry.registerComponent('project1', () => AppointmentDetails);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppointmentDetails);
 

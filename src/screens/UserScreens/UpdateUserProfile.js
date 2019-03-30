@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState, updateUserProfile } from '../../actions/user';
-import { View, Image, Text, Alert, TouchableOpacity, TextInput, ScrollView} from 'react-native';
+import { View, Image, Text, AppRegistry, TouchableOpacity, TextInput, ScrollView} from 'react-native';
 import UpdateUserProfileStyle from '../../styelsheets/UpdateUserProfileStyle';
 import { KeyboardAvoidingView } from 'react-native';
 import DatePicker from 'react-native-datepicker';
@@ -226,28 +226,6 @@ class Update_User_Profile extends Component {
                         </View>
                     </View>
                 </TouchableOpacity >
-                {/* <Text style={UpdateUserProfileStyle.address}>{en.userScreensLabel.addressLabel}</Text>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Address')} >
-
-                    <View style={UpdateUserProfileStyle.addaddress}>
-                    {userDetails.addressList.length > 0 ? 
-                            <Text style={UpdateUserProfileStyle.addaddressText}>{en.userScreensLabel.addressFoundText}.... {userDetails.addressList.length}</Text>
-                        :   
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Address')} >
-                            <View style={{ flex: 1,flexDirection: 'row', }}>
-                                <View style={UpdateUserProfileStyle.addaddresslogoContainer} >
-                            <Image style={UpdateUserProfileStyle.addaddresslogo}
-                                          source={imageConstantURI.add.src} />
-                           </View>
-                           
-                                    <Text style={[UpdateUserProfileStyle.addaddressText, { marginTop: 12,}]}>{en.userScreensLabel.addAddressLabel}</Text>
-                           
-                           </View>
-                        </TouchableOpacity>
-                    } 
-                      
-                    </View>
-                </TouchableOpacity> */}
             </View>
         );
         
@@ -324,5 +302,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, updateUserProfile }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Update_User_Profile);
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Update_User_Profile);

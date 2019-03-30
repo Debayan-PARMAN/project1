@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { View, Image, Text, TouchableOpacity, TouchableHighlight, FlatList } from 'react-native';
-import { Card } from 'react-native-elements';
+import { View, Image, Text, AppRegistry } from 'react-native';
 import { joiningString } from '../Utils';
-import { LinearGradient } from 'expo';
 import { DoctorCardStyle } from '../styelsheets/DoctorCardStyle';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -85,8 +83,6 @@ const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userUpdateState, docUpdateState }, dispatch)
 });
 
+AppRegistry.registerComponent('project1', () => Testing);
+
 export default connect(mapStateToProps, mapDispatchToProps)(Testing);
-
-
-
-

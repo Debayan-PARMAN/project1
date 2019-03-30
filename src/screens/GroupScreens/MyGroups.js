@@ -5,9 +5,9 @@ import { bindActionCreators } from 'redux';
 import { updateState } from '../../actions/user';
 import { getStates } from '../../actions/common';
 import { getMyGroup } from '../../actions/group';
-import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, AppRegistry, ScrollView } from 'react-native';
 import GroupStyle from '../../styelsheets/GroupStyle';
-import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
+import { buttonStyle} from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { LinearGradient } from 'expo';
@@ -129,5 +129,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, getMyGroup, getStates }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => MyGroups);
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyGroups);

@@ -6,7 +6,7 @@ import { updateState, addAddress } from '../../actions/user';
 import { getStates } from '../../actions/common';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
-import { View, Text, TouchableOpacity, TextInput, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView, KeyboardAvoidingView, AppRegistry } from 'react-native';
 import { LinearGradient } from 'expo';
 import Header_Blank from '../../components/Header/Header_Blank';
 import AddAddressStyle from '../../styelsheets/AddAddressStyle';
@@ -264,5 +264,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, addAddress, getStates }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => AddAddress);
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddAddress);

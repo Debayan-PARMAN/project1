@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { SearchDoctorStyle } from '../../styelsheets/SearchDoctorStyle';
 import { updateState as userUpdateState } from '../../actions/doctors';
 import { updateState as docUpdateState } from '../../actions/doctors';
-import { View, Image, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Image, Text, TouchableOpacity, TextInput, ScrollView, AppRegistry } from 'react-native';
 import Search_Doctor_Card from '../../components/Card/SearchDoctorCard';
 import ToggleSwitch from 'toggle-switch-react-native';
 import imageConstantURI from '../../constants/imageConst';
@@ -192,6 +192,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userUpdateState, docUpdateState, }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Find_Doctor_Filter);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Find_Doctor_Filter);
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { View, Text, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, ScrollView, AppRegistry } from 'react-native';
 import { updateState as docUpdateState, getChamberSlots, findDoctors } from '../../actions/doctors';
 import ToggleSwitch from 'toggle-switch-react-native';
 import { SearchDoctorStyle } from '../../styelsheets/SearchDoctorStyle';
@@ -187,6 +187,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ getChamberSlots, docUpdateState, addGroup, getMyGroup, viewGroupMember, deleteGroupMember, searchMember, findDoctors }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Search_Doctor);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search_Doctor);
 

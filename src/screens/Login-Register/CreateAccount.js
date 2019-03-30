@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { userRegistration, updateState } from '../../actions/user';
-import { BackHandler, View, Text, Alert, TextInput, ScrollView, ProgressBarAndroid, KeyboardAvoidingView, TouchableOpacity, Image } from 'react-native';
+import { BackHandler, View, Text, Alert, TextInput, ScrollView, ProgressBarAndroid,
+    KeyboardAvoidingView, TouchableOpacity, AppRegistry } from 'react-native';
 import { LoginStyles, FontStyles, } from '../../styelsheets/MainStyle';
 import { LinearGradient } from 'expo';
 import Header_Blank from '../../components/Header/Header_Blank';
@@ -83,9 +84,6 @@ class Create_Account extends Component {
     }
 
     validatePassword = (pwd) => {
-        // const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8}$/g;
-        // const regex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,64})/g;
-        // Minimum eight charactes, at least one uppercase letter, one lowercase letter, one number and one special character:
         const {userDetails} = this.props.userState;
         const regex = [];
         regex.push("[A-Z]"); //Uppercase Alphabet.
@@ -313,5 +311,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userRegistration, updateState }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Create_Account);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Create_Account);

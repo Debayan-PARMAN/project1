@@ -6,7 +6,7 @@ import { updateState as userUpdateState } from '../../actions/doctors';
 import { updateState as docUpdateState } from '../../actions/doctors';
 import { getAppoinmentList, cancelAppointment } from '../../actions/doctors';
 import MyAppointmentStyle from '../../styelsheets/MyAppointmentStyle';
-import { View, Text, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, AppRegistry, ScrollView } from 'react-native';
 import Appointment_Card_Past from '../../components/Card/AppointmentCardPast';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { updateState } from '../../actions/doctors';
@@ -87,5 +87,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ userUpdateState, updateState, docUpdateState, getAppoinmentList, cancelAppointment }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => MyAppointmentPast);
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyAppointmentPast);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView,Image} from 'react-native'; 
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView, Image, AppRegistry} from 'react-native'; 
 import { LoginStyles,} from '../../styelsheets/MainStyle'; 
 import {DoctorCardStyle} from '../../styelsheets/DoctorCardStyle';
 import imageConstantURI from '../../constants/imageConst';
@@ -187,5 +187,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, getDoctorDetails,}, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Doctor_Appoinment);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Doctor_Appoinment);

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { verifyOTP, updateState } from '../../actions/user';
-import { View, Text, Alert, TextInput,ScrollView, TouchableOpacity, } from 'react-native';
+import { View, Text, Alert, TextInput, ScrollView, TouchableOpacity, AppRegistry } from 'react-native';
 import { LinearGradient } from 'expo';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
 import Header_Blank from '../../components/Header/Header_Blank';
-import { ForgotPasswordStyles, FontStyles, LoginStyles, Space } from '../../styelsheets/MainStyle';
+import { LoginStyles, Space } from '../../styelsheets/MainStyle';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
 
@@ -92,10 +92,7 @@ class Verify_Mobile_Number extends Component {
                     </View>
                     <View style={Space.space_20}>
                     </View>
-
-                    
-                                <View style={LoginStyles.button}>                             
-
+                        <View style={LoginStyles.button}>                             
                             <TouchableOpacity onPress={this.onSubmit}>
                                 <LinearGradient
                                     style={[buttonStyle.primaryBtnStyle, buttonStyle.btnSizeStyle1]}
@@ -105,11 +102,7 @@ class Verify_Mobile_Number extends Component {
                                     <Text style={[buttonStyle.primaryBtnText]}>{en.commonLabel.nextBtnLabel}</Text>
                                 </LinearGradient>
                             </TouchableOpacity>    
-                               
-          </View>
-
-                    
-
+                        </View>
                 </ScrollView>
                 <Footer navigation={this.props.navigation} />
             </View>
@@ -128,5 +121,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ verifyOTP, updateState }, dispatch)
 });
+
+AppRegistry.registerComponent('project1', () => Verify_Mobile_Number);
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Verify_Mobile_Number);

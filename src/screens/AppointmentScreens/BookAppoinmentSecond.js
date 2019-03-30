@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState} from '../../actions/user';
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView,} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, AppRegistry} from 'react-native';
 import { CardStyle } from '../../styelsheets/CardStyle';
 import Status_Indicator from '../../components/StatusIndicator.1';
 import { updateState as userUpdateState } from '../../actions/doctors';
@@ -151,8 +151,6 @@ class Book_Appoinment_Second extends Component {
     
 };
 
-
-
 Book_Appoinment_Second.propTypes = {
     doctorDetails: PropTypes.object,
     userDetails: PropTypes.object,
@@ -167,6 +165,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     ...bindActionCreators({ updateState, userUpdateState, docUpdateState, getDoctorDetails,}, dispatch)
 });
+AppRegistry.registerComponent('project1', () => Book_Appoinment_Second);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Book_Appoinment_Second);
 

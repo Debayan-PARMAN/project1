@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import store from './src/store/index';
 import {Provider} from 'react-redux';
 import AppContainer from './src/RouterContainer';
-import { AppRegistry, View } from 'react-native';
+import { AppRegistry } from 'react-native';
 
 export default class App extends Component {
   render() {
@@ -14,4 +14,4 @@ export default class App extends Component {
   }
 }
 
-AppRegistry.registerComponent(App, () => App);
+AppRegistry.registerComponent('project1', () => App);
