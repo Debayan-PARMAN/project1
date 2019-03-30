@@ -49,36 +49,29 @@ export function userLoginFailure(error) {
 
 //============== Check No exits or not=============
 export function numberCheck(){
-// console.log('No check Triger');
 return (dispatch, getState)=>{
   const { userDetails } = getState().userState;
   dispatch({ type: USER_TYPE.NUMBER_CHECK });
   doGet(`${URI.verifyMobile}${userDetails.contactNo}`,false , '')
     .then(result => {
-      // console.log(result.status);
       if(result.status === 2000){
         dispatch(numberCheckSuccess(result));
         dispatch(requestOTP());
-        // console.log('Number Not Exits');
-        
       } else {
         alert('Number Not Exits, Create Account First');
       }
 
     })
     .catch(error => dispatch(numberCheckFailure(error)));
-    //console.log(doGet());
   };
 }; 
 
 export function numberCheckRegistration(callback) {
-  // console.log('No check Triger');
   return (dispatch, getState) => {
     const { userDetails } = getState().userState;
     dispatch({ type: USER_TYPE.NUMBER_CHECK });
     doGet(`${URI.verifyMobile}${userDetails.contactNo}`, false, '')
       .then(result => {
-       //  console.log(result);
         if (result.status === 2000) {
           dispatch(numberCheckSuccess(result));
           dispatch(requestOTP());
@@ -88,7 +81,6 @@ export function numberCheckRegistration(callback) {
         }
       })
       .catch(error => dispatch(numberCheckFailure(error)));
-    //console.log(doGet());
   };
 }; 
 
@@ -108,7 +100,6 @@ export function numberCheckFailure(error) {
 
 // =========== Login With OTP ============
 export function otpLogin() {
-  // console.log('Login With OTP Trigger');
   return (dispatch, getState) => {
 
     const { userDetails } = getState().userState;
@@ -125,7 +116,6 @@ export function otpLogin() {
     dispatch({
       type: USER_TYPE.LOGIN_USER
     });
-    // console.log(loginParams);
     doPost(`${URI.login}`, loginParams, true, false, '' )
       .then(result => dispatch(otpLoginSuccess(result)))
       .catch(error => dispatch(otpLoginFailure(error)));
@@ -144,37 +134,6 @@ export function otpLoginFailure(error) {
   };
 }
 
-// ================ For OTP ====================
-// export function requestOTP() {
-//   return (dispatch, getState) => {
-//     const { userDetails, otpActions } = getState().userState;
-//     const otpParams = {
-//       "q": userDetails.contactNo,
-//       //"smsActionType": otpActions.sendActionType,
-//     }
-//     dispatch({
-//       type: USER_TYPE.UPDATE_USER_PROFILE
-//     });
-//     console.log(otpParams);
-//     console.log(Response.status);
-//     doGet(`${URI.otpParams}`, otpParams, dispatch)
-//       .then(result => dispatch(requestOTPSuccess(result)))
-//       .catch(error => dispatch(requestOTPFailure(error)));
-//   };
-// };
-
-// export function requestOTPSuccess(payload) {
-//   return {
-//     type: USER_TYPE.SEND_OTP_SUCCESS,
-//     payload,
-//   };
-// }
-
-// export function requestOTPFailure(error) {
-//   return {
-//     type: USER_TYPE.SEND_OTP_FAILURE,
-//     error,
-//   };
 export function requestOTP() {
   return (dispatch, getState) => {
     const { userDetails, otpActions } = getState().userState;
@@ -185,7 +144,6 @@ export function requestOTP() {
     dispatch({
       type: USER_TYPE.SEND_OTP
     });
-    // console.log(otpParams);
     doPost(`${URI.otp}`, otpParams, true, false, '')
       .then(result => dispatch(requestOTPSuccess(result)))
       .catch(error => dispatch(requestOTPFailure(error)));
@@ -215,7 +173,6 @@ export function verifyOTP() {
     dispatch({
       type: USER_TYPE.VERIFY_OTP
     });
-    // console.log(otpParams);
     doPost(`${URI.otp}`, otpParams, true, false, '')
       .then(result => dispatch(verifyOTPSuccess(result)))
       .catch(error => dispatch(verifyOTPFailure(error)));
@@ -249,13 +206,11 @@ export function userRegistration() {
       type: USER_TYPE.REGISTER_USER
     });
 
-    // console.log(signUpParams);
     doPost(`${URI.signup}`, signUpParams, true, false, '')
       //.then(result => dispatch(userRegistrationSuccess(result)))
       .then(result => {
         if (result.status === 2000) {
           dispatch(userLogin());
-         // console.log('Login');
           //alert('Number Not Exits, Create Account First');
         } else {
           alert(result.message);
@@ -264,11 +219,9 @@ export function userRegistration() {
       })
       //.then(result => dispatch(userLogin()))
       .catch(error => dispatch(userRegistrationFailure(error)));
-      // console.log(signUpParams);
   };
 }
 export function userRegistrationSuccess(payload) {
-  //console.log(payload);
   return {
       type: USER_TYPE.REGISTER_USER_SUCCESS,
       payload,
@@ -285,12 +238,11 @@ export function userRegistrationFailure(error) {
 export function updateUserProfile() {
   return (dispatch, getState) => {
     const { userDetails } = getState().userState;
-    // console.log(userDetails);
     const userProfileParams = {
       "id": userDetails.userId === undefined ? '' : userDetails.userId,
       "bloodGroup": userDetails.bloodGroup === undefined ? '' : userDetails.bloodGroup,
       "contactNo": userDetails.contactNo === undefined ? '' : userDetails.contactNo,
-      "dateOfBirth": userDetails.dateOfBirth === undefined ? '' : userDetails.dateOfBirth + "T00:00:00.000Z",
+      "dateOfBirth": userDetails.dateOfBirth === undefined ? '' : userDetails.dateOfBirth,
       "emailAddress": userDetails.emailAddress === undefined ? '' : userDetails.emailAddress,
       "firstName": userDetails.firstName === undefined ? '' : userDetails.firstName,
       "lastName": userDetails.lastName === undefined ? '' : userDetails.lastName,
@@ -305,10 +257,7 @@ export function updateUserProfile() {
     dispatch({
       type: USER_TYPE.UPDATE_USER_PROFILE
     });
-     //console.log("User Params*******************",userProfileParams);
      const tokenValue = userDetails.token;
-     //console.log("User token", tokenValue);
-     //console.log(`${URI.updateUserProfile}`);
      doPut(`${URI.updateUserProfile}`, userProfileParams, true, true, tokenValue)
       .then(result => dispatch(updateUserProfileSuccess(result)))
       .catch(error => dispatch(updateUserProfileFailure(error)));
@@ -336,21 +285,18 @@ export function getUserProfile() {
     dispatch({
       type: USER_TYPE.GET_USER_PROFILE
     });
-    // console.log(`${URI.getUserProfileDetails}/${userProfileId}`);
     doGet(`${URI.getUserProfileDetails}/${userProfileId}`, needToken = true, tokenValue)
       .then(result => dispatch(getUserProfileSuccess(result)))
       .catch(error => dispatch(getUserProfileFailure(error)));
   };
 }
 export function getUserProfileSuccess(payload) {
-  // console.log("Success",payload);
   return {
     type: USER_TYPE.GET_USER_PROFILE_SUCCESS,
     payload,
   };
 }
 export function getUserProfileFailure(error) {
-  // console.log("Error",error);
   return {
     type: USER_TYPE.GET_USER_PROFILE_FAILURE,
     error,
@@ -370,7 +316,6 @@ export function addAddress() {
     dispatch({
       type: USER_TYPE.ADD_ADDRESS
     });
-    // console.log("addAddress Params*******************",addAddressParams);
     doPut(`${URI.updateUserProfile}`, addAddressParams, true, true, tokenValue)
     // doPut(`http://206.189.150.18:9090/v1/inusers`, addAddressParams, true, true, tokenValue)
       .then(result => dispatch(addAddressSuccess(result)))
@@ -378,7 +323,6 @@ export function addAddress() {
   };
 }
 export function addAddressSuccess(payload) {
-  // console.log("Success", payload);
   return {
     type: USER_TYPE.ADD_ADDRESS_SUCCESS,
     payload,
@@ -433,10 +377,8 @@ export function resetPassword() {
     });
     doPost(`${URI.resetPassword}`, contactParams, true, false, '')
       .then(result => {
-        // console.log(result.status);
         if (result.status === 2000) {
           dispatch(userLogin());
-         // console.log('Login');
           //alert('Number Not Exits, Create Account First');
         } else {
           alert('Something wrong');

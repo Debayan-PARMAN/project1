@@ -15,10 +15,16 @@ import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
 import AddAddressStyle from '../../styelsheets/AddAddressStyle';
 import styleConstants from '../../constants/styleConstants';
 import Footer from '../../components/Footer/Footer';
+import Moment from 'moment';
 
 class Update_User_Profile extends Component {
 
-    
+    componentWillUnmount() {
+        // this.onSubmit();
+        const { userDetails} = this.props.userState;
+        userDetails.fieldsEditable = false;
+        this.props.updateState({userDetails});
+    }
 
     static navigationOptions = {
         title: 'UPDATE USER PPROFILE',
@@ -41,26 +47,23 @@ class Update_User_Profile extends Component {
 
     onValueChange = (value, id) => {
         const { userDetails } = this.props.userState;
-        userDetails[id] = value;
+        userDetails[id] = id === 'dateOfBirth' ? Moment(value, 'YYYY-MM-DD') : value;
         this.props.updateState({ userDetails });
     }
 
     onUpdateProfile = () => {
-        //console.log('function triggered');
         const { userDetails } = this.props.userState;
         userDetails.fieldsEditable = true;
         this.props.updateState({ userDetails });
     }
 
     onSaveUpdatedProfile = () => {
-        //console.log('function triggered');
         const { userDetails } = this.props.userState;
         userDetails.fieldsEditable = false;
         this.props.updateState({ userDetails });
     }
 
     onSubmit = () => {
-        // console.log('Save Profile Button triggered');
         this.onSaveUpdatedProfile();
         this.props.updateUserProfile();
         // this.props.navigation.navigate('AddAddress');
@@ -68,17 +71,11 @@ class Update_User_Profile extends Component {
         this.props.navigation.navigate('Home');
     }
 
-     componentWillUnmount() {
-
-      this.onSubmit();
-     }
+    
     render() {
 
         const {userDetails} = this.props.userState;
         const { bloodGroupOptions } = this.props.common;
-        
-        // console.log("userDetails", userDetails);
-
         const userProfileTabs = (<View style={UpdateUserProfileStyle.userProfileTabs}>
             <View style={UpdateUserProfileStyle.userProfileInnerTabs}>
                 <View style={UpdateUserProfileStyle.userProfileInnerFirstTabs} >
@@ -114,8 +111,9 @@ class Update_User_Profile extends Component {
                 <Text style={textInputStyle.primaryTextInputFontStyle}>{en.userScreensLabel.dateOfBirthLabel}</Text>
                 <TextInput editable={userDetails.fieldsEditable} style={textInputStyle.primaryTextInput}
                 onChangeText={(e) => this.onValueChange(e, 'age')}
-                    value={userDetails.dateOfBirth} />
-                    
+                    //value={userDetails.dateOfBirth} 
+                    value={Moment(userDetails.dateOfBirth).format("DD-MM-YYYY")} />
+                  
         </View>);
         }
          else {
@@ -126,9 +124,9 @@ class Update_User_Profile extends Component {
                     date={userDetails.dateOfBirth}
                     mode="date"
                     placeholder="select date"
-                    format="DD-MM-YYYY"
-                    minDate="01-01-1960"
-                    maxDate="31-12-2020"
+                    format="YYYY-MM-DD"
+                    minDate="1960-01-01"
+                    maxDate={new Date()}
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
                     customStyles={{
@@ -144,7 +142,6 @@ class Update_User_Profile extends Component {
                         }
                         // ... You can check the source to find the other keys.
                     }}
-                   // placeholder="dateofBirth"
                     onDateChange={(date) => { this.onValueChange(date, 'dateOfBirth') }}
                 />
             </View>);

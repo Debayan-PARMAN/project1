@@ -70,14 +70,11 @@ export function findDoctorsFailure(error) {
 }
 //====================For Doctor Details================
 export function getDoctorDetails(){
-    //console.log("get doctor list pressed")
     return (dispatch,getState) => {
         const { doctorDetails } = getState().doctorState;
         const { userDetails } = getState().userState;
-        //console.log(doctorPk);
         const doctorParams = doctorDetails.doctorPk;
         const tokenValue = userDetails.token;
-        //console.log(tokenValue);
         dispatch({
             type: DOCTOR_TYPE.GET_DOCTOR_DETAILS
         });
@@ -89,7 +86,6 @@ export function getDoctorDetails(){
 }
 
 export function getDoctorDetailsSuccess(payload) {
-    // console.log(payload);
     return {
         type: DOCTOR_TYPE.GET_DOCTOR_DETAILS_SUCCESS,
         payload,
@@ -108,11 +104,9 @@ export function getDoctorDetailsFailure(error) {
 
 export function updateApponitmentDetails() {
     return (dispatch, getState) => {
-       // console.log("Trigger......")
         const { userDetails } = getState().userState;
         const { doctorDetails, chamberDetails, AppointmentDetails } = getState().doctorState;
         const tokenValue = userDetails.token;
-        //console.log(userDetails);
         const apppointmentParams = {
             "userPk": userDetails.userId,
             "appointmentBy": userDetails.userId,
@@ -124,7 +118,7 @@ export function updateApponitmentDetails() {
             "appointmentDateStr": AppointmentDetails.appointmentDate,
            };
 
-        //console.log("apppointmentParams ", apppointmentParams);
+        console.log("apppointmentParams ", apppointmentParams);
         dispatch({
             type: DOCTOR_TYPE.UPDATE_APPOINTMENT_DETAILS
         });
@@ -138,7 +132,7 @@ export function updateApponitmentDetails() {
 }
 export function updateApponitmentDetailsSuccess(payload) {
     //action.payload.data.appointmentDate = Moment(action.payload.data.appointmentDate).format("DD-MM-YYYY");
-//console.log("Payyyyyy",payload)
+    console.log("Payload....",payload)
     return {
         type: DOCTOR_TYPE.UPDATE_APPOINTMENT_DETAILS_SUCCESS,
         payload,
@@ -175,7 +169,6 @@ export function getAppoinmentList() {
 
 export function getAppoinmentListSuccess(payload) {
     //const dateArray = payload.data.map(item => item.appointmentDate).filter((item, index) => array.indexOf(item) !== index);
-    //console.log("datelist",dateArray);
     return {
         type: DOCTOR_TYPE.GET_APPOINTMENT_LIST_SUCCESS,
         payload,
@@ -193,11 +186,9 @@ export function getAppoinmentListFailure(error) {
 
 export function cancelAppointment() {
     return (dispatch, getState) => {
-        //console.log("Trigger Cencel......")
         const { userDetails } = getState().userState;
         const { AppointmentDetails, commentText } = getState().doctorState;
         const tokenValue = userDetails.token;
-        //console.log(tokenValue);
         //+ ":" + AppointmentDetails.appointmentTime
         const apppointmentParams = {
             "appointmentCxlBy": AppointmentDetails.userPk,
@@ -209,7 +200,6 @@ export function cancelAppointment() {
             "status": "",
         };
 
-        //console.log("apppointmentParams ", apppointmentParams);
         dispatch({
             type: DOCTOR_TYPE.CANCEL_APPOINTMENT
         });
@@ -218,10 +208,8 @@ export function cancelAppointment() {
 
         doDelete(`${URI.bookAppoinment}`, apppointmentParams, true, true, tokenValue)
             .then(result => {
-                // console.log(result.status);
                 if (result.status === 0) {
                     dispatch(getAppoinmentList());
-                    //console.log('Add Group');
 
                 } else {
                     alert('Something wrong');
@@ -232,7 +220,6 @@ export function cancelAppointment() {
     };
 }
 export function cancelAppointmentSuccess(payload) {
-    //console.log("Pay Res",payload)
     alert("Your appointment is cancelled");
     return {
         type: DOCTOR_TYPE.CANCEL_APPOINTMENT_SUCCESS,
@@ -249,14 +236,11 @@ export function cancelAppointmentFailure(error) {
 
 //====================For Doctor Specialization================
 export function doctorSpecializations() {
-    //console.log("get doctor specialization pressed")
     return (dispatch, getState) => {
         const { AppointmentDetails } = getState().doctorState;
         const { userDetails } = getState().userState;
-        //console.log(doctorPk);
         const doctorParams = AppointmentDetails.doctorPk;
         const tokenValue = userDetails.token;
-        //console.log(tokenValue);
         dispatch({
             type: DOCTOR_TYPE.DOCTOR_SPECIALIZATION
         });
@@ -268,7 +252,6 @@ export function doctorSpecializations() {
 }
 
 export function doctorSpecializationsSuccess(payload) {
-    //console.log("DoctorDetails:",payload);
     return {
         type: DOCTOR_TYPE.DOCTOR_SPECIALIZATION_SUCCESS,
         payload,

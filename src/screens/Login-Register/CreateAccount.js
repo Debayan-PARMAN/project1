@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import { userRegistration, updateState } from '../../actions/user';
 import { BackHandler, View, Text, Alert, TextInput, ScrollView, ProgressBarAndroid, KeyboardAvoidingView, TouchableOpacity, Image } from 'react-native';
 import { LoginStyles, FontStyles, } from '../../styelsheets/MainStyle';
-import PasswordInputText from 'react-native-hide-show-password-input';
 import { LinearGradient } from 'expo';
 import Header_Blank from '../../components/Header/Header_Blank';
 import { buttonStyle, textInputStyle } from '../../styelsheets/CommonStyle';
@@ -13,6 +12,7 @@ import Header_Component_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
 import PasswordComponent from '../../components/TextComponent/PasswordComponent';
 import Footer from '../../components/Footer/Footer';
+
 class Create_Account extends Component {
     componentDidMount() {
         BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
@@ -76,11 +76,9 @@ class Create_Account extends Component {
 
     onSubmit = () => {
         const {userDetails} = this.props.userState;
-        // console.log("DATA:",userDetails);
         if (userDetails.username === '' && userDetails.password === ''){
             return ;
         }
-        // console.log('Registration Button triggered');
         this.props.userRegistration();
     }
 
@@ -162,7 +160,6 @@ class Create_Account extends Component {
         const { userDetails, showPassword, responseTriggerred, successMessage, failureMessage } = this.props.userState;
         if (responseTriggerred) {
             const message = userDetails.token ? successMessage : failureMessage;
-            // console.log(userDetails.token);
             Alert.alert(
                 '',
                 message,

@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import { updateState } from '../../actions/user';
-import { View, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, Button} from 'react-native';
-import { LoginStyles, FontStyles,} from '../../styelsheets/MainStyle';
+import { View, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView} from 'react-native';
 import { CardStyle } from '../../styelsheets/CardStyle';
 import Status_Indicator from '../../components/StatusIndicator.2';
 import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button';
@@ -64,7 +62,7 @@ class Payment_Details extends Component {
     render() {
        
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
-       
+        const timeDetails = `${AppointmentDetails.appointmentDate}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
         const doctorName = (
             <View style={CardStyle.mainContainer}>
                 <View style={CardStyle.flex}>
@@ -78,7 +76,7 @@ class Payment_Details extends Component {
 
         const chamberArea = (
             <View style={BookAppointmentStyle.chamberArea}>
-                <Text style={[BookAppointmentStyle.HeaderText,]}>{chamberDetails.line1}, {chamberDetails.line2}, {AppointmentDetails.appointmentDate},  {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
+                <Text style={[BookAppointmentStyle.HeaderText,]}>{chamberDetails.line1}, {chamberDetails.line2}, {timeDetails}</Text>
             </View>
         );
 

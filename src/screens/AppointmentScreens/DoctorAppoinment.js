@@ -1,7 +1,6 @@
 import React, { Component } from 'react'; 
 import { View, Text, TouchableOpacity, KeyboardAvoidingView, ScrollView,Image} from 'react-native'; 
 import { LoginStyles,} from '../../styelsheets/MainStyle'; 
-import { CardStyle } from '../../styelsheets/CardStyle';
 import {DoctorCardStyle} from '../../styelsheets/DoctorCardStyle';
 import imageConstantURI from '../../constants/imageConst';
 import { getDoctorDetails, } from '../../actions/doctors';
@@ -10,27 +9,23 @@ import DatePicker from 'react-native-datepicker';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { updateState as docUpdateState } from '../../actions/doctors';
 import { updateState } from '../../actions/doctors';
 import Header_Blank from '../../components/Header/Header_Blank';
 import Footer from '../../components/Footer/Footer';
 import { LinearGradient } from 'expo';
-import { buttonStyle, } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
-import en from '../../messages/en-us';
+import Moment from 'moment';
 
 
 class Doctor_Appoinment extends Component {
-
-    // getDoctorQualification = (doctorData) => {
-    //     return joiningString(doctorData.doctorQualifications.map(item => item.qualification));
-
-    // }
-
-
+    constructor(props){
+        super(props);
+        this.state = {
+            selectedDate: '',
+        }
+    }
     componentDidMount() {
         const { userDetails } = this.props.userState;
-        console.log(userDetails);
         if (userDetails.userId !== ""){
             this.props.getDoctorDetails();
         }else{
@@ -69,43 +64,31 @@ class Doctor_Appoinment extends Component {
     }
 
     onTimeSlot = () => {
-        // console.log('click.....');
         this.props.navigation.navigate('BookAppoinment');
     }
 
     onDateSelect = (newdate) => {
         const { AppointmentDetails } = this.props.doctorState; 
-        AppointmentDetails.appointmentDate = newdate;
-        this.setState({ date: newdate });
+        this.setState({selectedDate: newdate});
+        AppointmentDetails.appointmentDate = Moment(newdate).format('YYYY-DD-MM');
+        // console.log(AppointmentDetails.appointmentDate);
         this.props.updateState({ AppointmentDetails});
     }
-
-    constructor(props) {
-        super(props)
-        this.state = { date: new Date() }
-    }
+   
     render() {
         
-        const { doctorDetails, chamberDetails, doctordata,  } = this.props.doctorState;
-        // const specializationList = doctorDetails.doctorSpecializationList.map(item => item.specialization).join(',');
-        // const qualificationList = doctorDetails.doctorQualificationList.map(item => item.qualification).join(',');
-             
-        //console.log("Docdata....", this.getDoctorQualification(doctorData) );
-        //const { list, keyValue } = this.props.common.singleDoctorDetails;
-        //console.log("DETAILS of doctor Getting Chember list:", chamberDetails);
-        //console.log("DETAILS of doctor Getting Chember list:", doctorDetails.doctorChamberList);
-
+        const { doctorDetails, AppointmentDetails } = this.props.doctorState;
         const datePickerArea = (
             <View style={{justifyContent:'center',}}>
                 <TouchableOpacity>
                     <DatePicker
                         style={{ width: 200, }}
-                        date={this.state.date}
+                        date={this.state.selectedDate}
                         mode="date"
                         placeholder="select date"
-                        format="DD-MM-YYYY"
-                        minDate={this.state.date}
-                        maxDate="31-12-2019"
+                        format="YYYY-MM-DD"
+                        minDate={new Date()}
+                        maxDate="2019-12-31"
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
                         mode="date"
@@ -155,16 +138,6 @@ class Doctor_Appoinment extends Component {
                    
                     </View>               
             </View>
-            // <View style={[CardStyle.mainContainer, { flex: 0.1 }]}>
-            //     <View style={ CardStyle.flex }>
-            //         <Text style={CardStyle.name}>Dr. {doctorDetails.doctorName}</Text>
-            //     </View>
-            //     <View style={CardStyle.flex}>
-            //         <Text style={CardStyle.specialization}>
-            //             {/*this.getDoctorQualification(doctorQualifications)*/}
-            //         </Text>
-            //     </View>
-            // </View>
         );
 
         const doctorChamberDetails = (
@@ -181,7 +154,6 @@ class Doctor_Appoinment extends Component {
                 }
             </View>
         );
-                
         return (
             <View style={{flex:1}}>
               <View style={LoginStyles.mainWrapper}>

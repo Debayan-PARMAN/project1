@@ -13,9 +13,9 @@ import { updateState } from '../../actions/user';
 import imageConstantURI from '../../constants/imageConst';
 import { buttonStyle } from '../../styelsheets/CommonStyle';
 import styleConstants from '../../constants/styleConstants';
-import Header_Blank from '../../components/Header/Header_Blank';
 import en from '../../messages/en-us';
 import Moment from 'moment';
+import Header_Blank from '../../components/Header/Header_Blank';
 import Footer from '../../components/Footer/Footer';
 
 class Appointment_Confirmation extends Component {
@@ -24,8 +24,7 @@ class Appointment_Confirmation extends Component {
     };
 
     static navigationOptions = {
-        title: 'APPOINTMENT CONFIRMATION',
-    
+        title: 'BOOKING CONFIRMATION',
         headerBackground: (
             <LinearGradient
                 colors={[styleConstants.colorStyles.primaryGradientColor, styleConstants.colorStyles.secondaryGradientColor]}
@@ -39,17 +38,18 @@ class Appointment_Confirmation extends Component {
             textAlign: "center",
             justifyContent: 'space-around',
             flex: 1
-
         },
         headerRight: (<Header_Blank />),
-        headerLeft: (<Header_Home onHome={this.onHome} />),
+         headerLeft: (<Header_Home onHome={this.onHome} />)
+    };
        
-    };   
-
+   
 
     render() {
         const {chamberDetails, AppointmentDetails } = this.props.doctorState;
-        const { userDetails } = this.props.userState;
+        //const { userDetails } = this.props.userState;
+        
+        const timeDetails = `${Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
         const heart_right = (
             <View style={AppointmentConfirmationStyle.heartImageContainer}>
                 <Image style={AppointmentConfirmationStyle.heartImageStyle}
@@ -120,8 +120,8 @@ class Appointment_Confirmation extends Component {
                         </View>
                         <View>
                             <Text style={AppointmentConfirmationStyle.text}>
-                                {Moment(AppointmentDetails.appointmentDate).format("DD-MM-YYYY")}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}
-                                </Text>
+                                {timeDetails}
+                            </Text>
                         </View>
                     </View>
                     <View style={AppointmentConfirmationStyle.addressContainer}>
@@ -169,12 +169,12 @@ class Appointment_Confirmation extends Component {
                     <View style={AppointmentConfirmationStyle.buttonContainer}>
                             <TouchableHighlight
                                 style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle1]}
-                            onPress={() => this.props.navigation.navigate('CancelAppointment')}                            >
+                                onPress={() => this.props.navigation.navigate('Home')}                            >
                                 <Text style={[buttonStyle.secondaryBtnText]}>{en.commonLabel.cancelBtnLabel}</Text>
                             </TouchableHighlight>
                             <TouchableHighlight
                                 style={[buttonStyle.secondaryBtnStyle, buttonStyle.btnSizeStyle1]}
-                                onPress={() => this.props.navigation.navigate('')}>
+                                onPress={() => this.props.navigation.navigate('Home')}>
                                 <Text style={[buttonStyle.secondaryBtnText]}>{en.commonLabel.rescheduleBtnLabel} </Text>
                             </TouchableHighlight>
                     </View>
@@ -185,7 +185,7 @@ class Appointment_Confirmation extends Component {
 
 
         return (
-            <View style={{flex:1}}>
+            <View style={{ flex: 1 }}>
             <View style={AppointmentConfirmationStyle.mainContainer}>
                 <ScrollView>
                     <View style={AppointmentConfirmationStyle.flex}>
@@ -201,30 +201,19 @@ class Appointment_Confirmation extends Component {
                                             source={imageConstantURI.download.src}/>
                                     </TouchableOpacity>
                                 </View>
-                                { heart_right}
-                                <View style={AppointmentConfirmationStyle.flex}>
-                                    <View style={AppointmentConfirmationStyle.downloadImageContainer}>
-                                        <TouchableOpacity>
-                                            <Image style={AppointmentConfirmationStyle.downloadImageStyle}
-                                                source={imageConstantURI.download.src}/>
-                                        </TouchableOpacity>
-                                    </View>
-                                    <View style={AppointmentConfirmationStyle.pdfContainer}>
-                                        <Text style={AppointmentConfirmationStyle.text}> {en.commonLabel.pdfLabel}</Text>
-                                    </View>
+                                <View style={AppointmentConfirmationStyle.pdfContainer}>
+                                    <Text style={AppointmentConfirmationStyle.text}> {en.commonLabel.pdfLabel}</Text>
                                 </View>
                             </View>
-                        { confirm }
                         </View>
-                        { body }
-                    
-                    </ScrollView>
-                
-                </View>
+                      { confirm }
+                    </View>
+                    { body }
+                   
+                </ScrollView>                
+               </View>
                 <Footer navigation={this.props.navigation} />
-            </View>
-            <Footer navigation={this.props.navigation} />
-            </View>
+            </View> 
         );
 
     }

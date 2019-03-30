@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateState } from '../../actions/user';
-import { View, Image, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, Button, } from 'react-native';
-import { LoginStyles, FontStyles,} from '../../styelsheets/MainStyle';
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, } from 'react-native';
 import { CardStyle } from '../../styelsheets/CardStyle';
 import Status_Indicator from '../../components/StatusIndicator.1';
 import { updateState as userUpdateState } from '../../actions/doctors';
@@ -18,7 +17,7 @@ import { LinearGradient } from 'expo';
 import en from '../../messages/en-us';
 import Footer from '../../components/Footer/Footer';
 import Moment from 'moment';
-import Footer from '../../components/Footer/Footer';
+
 
 class Book_Appoinment_Third extends Component {
 
@@ -61,6 +60,7 @@ class Book_Appoinment_Third extends Component {
     render() {
         const { userDetails } = this.props.userState;
         const { doctorDetails, chamberDetails, AppointmentDetails } = this.props.doctorState;
+        const timeDetails = `${AppointmentDetails.appointmentDate}, ${Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}`;
 
         return (
             <View style={{flex:1}}>
@@ -79,7 +79,7 @@ class Book_Appoinment_Third extends Component {
                         </View>
 
                            <Text style={BookAppointmentStyle.HeaderText}>{en.doctorSearchLabel.locationLabel} - {chamberDetails.line1}, {chamberDetails.line2}</Text>
-                        <Text style={[BookAppointmentStyle.HeaderText, { marginTop: 5 }]}>{en.appointmentScreens.dateTimeLabel} - {AppointmentDetails.appointmentDate}, {Moment(AppointmentDetails.appointmentTime, "h:mm A").format("HH:mm")}</Text>
+                            <Text style={[BookAppointmentStyle.HeaderText, { marginTop: 5 }]}>{en.appointmentScreens.dateTimeLabel} - {timeDetails}</Text>
                         
                         <View style={BookAppointmentStyle.PatientFirstPart}>
                             <View style={[BookAppointmentStyle.PatientName,]}>                                 
@@ -141,8 +141,6 @@ class Book_Appoinment_Third extends Component {
                     </ScrollView> 
                     </KeyboardAvoidingView>
                     
-            </View>
-            <Footer navigation={this.props.navigation} />
             </View>
             <Footer navigation={this.props.navigation} />
             </View>
