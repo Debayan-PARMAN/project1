@@ -1,12 +1,6 @@
 {
   "main": "node_modules/expo/AppEntry.js",
-  "rnpm": {
-    "assets": [
-      "assets/fonts/Roboto"
-    ]
-  },
   "scripts": {
-    "postinstall": "rndebugger-open",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -16,6 +10,7 @@
     "@expo/vector-icons": "^8.1.0",
     "expo": "^31.0.2",
     "moment": "^2.24.0",
+    "native-base": "^2.12.1",
     "prop-types": "^15.6.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
